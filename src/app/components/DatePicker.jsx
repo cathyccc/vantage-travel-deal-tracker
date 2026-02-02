@@ -3,25 +3,29 @@ import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { ChevronDownIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { format } from "date-fns";
+import { format, isBefore, startOfTomorrow } from "date-fns";
 
-export default function DatePicker({label, field, updateFormField}) {
+export default function DatePicker({label, field}) {
+  const [open, setOpen] = useState(false);
   const [date, setDate] = useState();
 
+  const formValue = date ? format(date, 'yyyy-MM-dd') : '';
+
   const onDateSelect = (newDate) => {
-    const formatted = format(newDate, 'yyyy-LL-dd');
-    setDate(formatted)
-    updateFormField(field, date);
+    setDate(newDate);
+    setOpen(false);
   }
 
   return (
     <div className="flex flex-col">
-      <label className="text-sm text-zinc-400 block">
+      <label htmlFor={field} className="text-sm text-zinc-400 block">
         {label}
       </label>
-      <Popover >
+      <input type="hidden" name={field} value={formValue}/>
+      <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild className="bg-zinc-900 text-zinc-100 mt-1 hover:bg-zinc-900 hover:text-zinc-100">
           <Button
+            id={field}
             variant="outline"
             data-empty={!date}
             className="px-4 py-3 border border-zinc-800"
@@ -36,8 +40,8 @@ export default function DatePicker({label, field, updateFormField}) {
             mode="single"
             selected={date}
             onSelect={onDateSelect}
-            defaultMonth={date}
-            disabled={(date) => date < new Date()}
+            defaultMonth={new Date()}
+            disabled={(date) => isBefore(date, startOfTomorrow())}
           />
         </PopoverContent>
       </Popover>

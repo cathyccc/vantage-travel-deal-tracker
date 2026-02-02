@@ -3,43 +3,14 @@
 import { useState } from 'react';
 import OffersSearchForm from './OffersSearchForm';
 import FeaturedOffers from './FeaturedOffers';
+import { getFlightOffers } from '../actions/flight-search'
 
 export default function Main() {
   const [offers, setOffers] = useState([]);
 
-   // QUERY FORMAT: 
-  // {
-  //   "originLocationCode": "YYZ", 
-  //   "destinationLocationCode": "SFO", 
-  //   "departureDate": "2026-10-21", 
-  //   "adults": 1
-  // }
-
-  // const [loading, setLoading] = useState(false)
-
   const searchOffers = async (formData) => {
-    const searchParams = {
-      originLocationCode: formData.originLocationCode,
-      destinationLocationCode: formData.destinationLocationCode,
-      date: formData.departureDate,
-      adults: formData.adults
-    };
-
-    const queryString = new URLSearchParams(searchParams).toString();
-
-    try {
-      const response = await fetch(`/api/flight-offers-search?${queryString}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await response.json();
-      setOffers(data)
-    } catch(error) {
-      setError("Something went wrong. Please try again.");
-      console.error("API Error:", error);
-    }
+    const offerResults = await getFlightOffers(formData);
+    setOffers(offerResults);
   }
 
   return (

@@ -4,71 +4,51 @@ import AirportSearch from './AirportSearch';
 import DatePicker from './DatePicker';
 
 export default function FlightSearchForm({searchOffers}) {
-  const [formData, setFormData] = useState({
-    originLocationCode: '',
-    destinationLocationCode: '',
-    departureDate: '',
-    adults: 1
-  });
+ const [adults, setAdults] = useState(1)
 
   const minusAdult = () => {
-    setFormData(prevForm => ({
-      ...prevForm,
-      adults: prevForm.adults > 1 ? prevForm.adults- 1 : 1
-    }))
+    setAdults(prevAdults => prevAdults > 1 ? prevAdults-1 : 1);
   }
 
   const addAdult = () => {
-    setFormData(prevForm => ({
-      ...prevForm,
-      adults: prevForm.adults+1
-    }))
+    setAdults(prevAdults => prevAdults < 10 ? prevAdults+1 : 9);
   }
 
-  const updateFormField = (field, text) => {
-    setFormData(prevForm => ({
-      ...prevForm,
-      [field]: text
-    }))
-  }
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(formData)
-    searchOffers(formData)
-  }
+  const searchFlightOffers = formData => searchOffers(formData);
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8 shadow-2xl">
-      <form onSubmit={handleSubmit}>
+      <form action={searchFlightOffers}>
         <div className="pb-4">
-          <AirportSearch label="Origin" field="originLocationCode" updateFormField={updateFormField}/>
+          <AirportSearch label="Origin" field="originLocationCode"/>
         </div>
 
         <div className="pb-4">
-          <AirportSearch label="Destination" field="destinationLocationCode" updateFormField={updateFormField}/>
+          <AirportSearch label="Destination" field="destinationLocationCode"/>
         </div>
 
        <div className="pb-4">
-          <DatePicker label="Departure" field="departureDate" updateFormField={updateFormField}/>
+          <DatePicker label="Departure" field="departureDate"/>
         </div>
 
        <div className="pb-4 flex justify-between items-center">
-          <label className="text-sm text-zinc-400">Adults</label>
+          <label htmlFor="adults" className="text-sm text-zinc-400">Adults</label>
           <div className="flex items-center justify-center gap-2">
             <Button
               type="button"
-              disabled={formData.adults <= 1}
+              disabled={adults <= 1}
               onClick={minusAdult}
               className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 -
             </Button>
-            <span className="inline-block w-12 text-center">{formData.adults}</span>
+            <input type="hidden" name="adults" value={adults} />
+            <span className="inline-block w-12 text-center">{adults}</span>
             <Button
               type="button"
+              disabled={adults >= 9}
               onClick={addAdult}
-              className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700"
+              className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 +
             </Button>

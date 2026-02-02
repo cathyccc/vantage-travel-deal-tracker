@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Command, CommandInput, CommandList, CommandItem, CommandEmpty } from '@/components/ui/command'
 
-export default function AirportSearch({label, field, updateFormField}) {
+export default function AirportSearch({label, field}) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [airports, setAirports] = useState([]);
@@ -48,7 +48,6 @@ export default function AirportSearch({label, field, updateFormField}) {
 
   const handleSelect = ({value, code}) => {
     setSelectedValue(code);
-    updateFormField(field, code);
     setOpen(false);
     setSearch(value);
     setAirports([]);
@@ -71,10 +70,12 @@ export default function AirportSearch({label, field, updateFormField}) {
 
   return (
     <div className="relative">
-      <label className="text-sm text-zinc-400">{label}</label>
+      <label htmlFor={field} className="text-sm text-zinc-400">{label}</label>
+      <input type="hidden" name={field} value={selectedValue || ''} />
       <Command className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-2xl mt-1 overflow-visible">
         <div className="[&_div]:!border-b-0 [&_div]:!border-none">
           <CommandInput
+            id={field}
             value={search}
             onValueChange={handleChange}
             placeholder="Search airport or city..."
