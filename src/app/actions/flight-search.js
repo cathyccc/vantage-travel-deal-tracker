@@ -17,7 +17,6 @@ export async function getFlightOffers(formData) {
   try {
     const {originLocationCode, destinationLocationCode, departureDate, adults} = validatedData.data;
     const queryString = new URLSearchParams({originLocationCode, destinationLocationCode, departureDate, adults}).toString();
-
     const response = await fetch(`${baseUrl}/api/flight-offers-search?${queryString}`, {
         method: 'GET',
         headers: {

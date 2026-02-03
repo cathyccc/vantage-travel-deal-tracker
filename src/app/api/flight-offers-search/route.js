@@ -28,8 +28,10 @@ export async function GET(request) {
       originLocationCode,
       destinationLocationCode,
       departureDate,
-      adults
+      adults,
+      currencyCode: "CAD"
     });
+    console.log(response.data)
     return NextResponse.json(response.data);
   } catch (error) {
     return NextResponse.json(
