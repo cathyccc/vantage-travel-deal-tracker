@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✈️ Vantage Flight Deal Tracker
 
-## Getting Started
+Vantage is a high-performance flight search and deal tracking application designed to help users find the best airfare with a seamless, modern interface. 
 
-First, run the development server:
+## 🚀 Features
 
+* **Real-time Search:** Powered by the **Amadeus Flight Offers API** for accurate, live pricing.
+* **Smart Autofill:** Currently leveraging **Supabase** for destination data, with a migration to **Fuse.js** underway for lightning-fast local fuzzy searching.
+* **Modern UI:** A sleek, responsive interface built with **Tailwind CSS** and **shadcn/ui** components.
+* **Hybrid Architecture:** Leveraging **Next.js** for routing and **Vite** for optimized development.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | Next.js (App Router) |
+| **Build Tool** | Vite |
+| **Styling** | Tailwind CSS + shadcn/ui |
+| **Database/Backend** | Supabase |
+| **Search Logic** | Fuse.js (Transitioning) |
+| **Flight Data** | Amadeus Flight Offers API |
+
+---
+
+## 🗺️ Roadmap
+[x] Initial Next.js & Vite setup.
+[x] Amadeus API flight search integration.
+[ ] In Progress: Display flight offer details after "View Details" button.
+[ ] Confirm the availability and price with Amadeus Flight Offers Price API.
+[ ] Create the reservation with Amadeus Flight Create Orders API.
+[ ] Transitioning autofill from Supabase to Fuse.js for local fuzzy searching.
+
+---
+
+## ⚙️ Setup & Configuration
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/cathyccc/vantage-flight-deal-tracker.git](https://github.com/cathyccc/vantage-flight-deal-tracker.git)
+cd vantage-flight-deal-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Environment Variables
+Create a file named .env in the root directory and add your credentials:
+```code
+# Amadeus API Credentials
+AMADEUS_CLIENT_ID=your_amadeus_key_here
+AMADEUS_CLIENT_SECRET=your_amadeus_secret_here
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Next Configuration
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+### 3. Install & Run
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Start the development server
+npm run dev
+```
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🗄️ Database Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To power the destination autofill, you need to set up an `airports` table in Supabase. Run the following SQL in your **Supabase SQL Editor**:
 
-## Deploy on Vercel
+```sql
+-- Create table for airport data
+CREATE TABLE airports (
+  id bigint primary key generated always as identity,
+  iata_code text unique not null,
+  name text not null,
+  city text not null,
+  country text not null,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-- Enable pg_trgm for optimized searching
+CREATE extension if not exists pg_trgm;
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-- Create indexes
+CREATE INDEX airports_iata_idx ON airports(iata_code);
+CREATE INDEX airports_city_idx ON airports USING gin(city gin_trgm_ops);
+
+-- Security: Enable RLS and public read access
+ALTER TABLE airports ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow public read access" ON airports FOR SELECT TO anon USING (true);
+Note: This table currently handles the autofill logic. We are in the process of migrating this data to a local airports.json file to be handled by Fuse.js for zero-latency client-side searching.
+```
+## 🏗️ Seeding the Database
+
+To populate your `airports` table, you will need a dataset of IATA codes. 
+
+### 1. Source the Data
+You can download the latest global airport datasets in CSV format from:
+* **[OurAirports Data](https://ourairports.com/data/)** (Download `airports.csv`)
+* **[OpenFlights Data](https://openflights.org/data.html)**
+
+### 2. Prepare the Data
+Since these CSVs contain hundreds of columns, you'll want to filter for "large_airports" or "medium_airports" to keep your search relevant.
+
+### 3. Run the Seed Command
+In your Supabase SQL Editor, you can use the `INSERT` statement. For a small set of major hubs, you can use this snippet to test:
+
+```sql
+INSERT INTO airports (iata_code, name, city, country)
+VALUES 
+  ('JFK', 'John F. Kennedy International Airport', 'New York', 'United States'),
+  ('LHR', 'London Heathrow Airport', 'London', 'United Kingdom'),
+  ('HND', 'Haneda Airport', 'Tokyo', 'Japan'),
+  ('CDG', 'Charles de Gaulle Airport', 'Paris', 'France'),
+  ('DXB', 'Dubai International Airport', 'Dubai', 'United Arab Emirates'),
+  ('SIN', 'Singapore Changi Airport', 'Singapore', 'Singapore');
+```
+
+## 📄 License
+Distributed under the MIT License.
