@@ -8,13 +8,16 @@ const amadeus = new Amadeus({
 });
 
 // Toggle for testing
-const USE_MOCK_DATA = true; // Set to false when ready to use real API
+const USE_MOCK_DATA = false; // Set to false when ready to use real API
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
+  console.log('here!')
+  console.log(searchParams)
   const originLocationCode = searchParams.get('originLocationCode');
   const destinationLocationCode = searchParams.get('destinationLocationCode');
   const departureDate = searchParams.get('departureDate');
+  const returnDate = searchParams.get('returnDate');
   const adults = searchParams.get('adults');
 
   try {
@@ -28,8 +31,10 @@ export async function GET(request) {
       originLocationCode,
       destinationLocationCode,
       departureDate,
+      returnDate,
       adults,
-      currencyCode: "CAD"
+      currencyCode: "CAD",
+      max:30
     });
     console.log(response.data)
     return NextResponse.json(response.data);

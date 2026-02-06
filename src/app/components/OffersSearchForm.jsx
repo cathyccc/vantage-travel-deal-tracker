@@ -2,9 +2,12 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import AirportSearch from './AirportSearch';
 import DatePicker from './DatePicker';
+import { isAfter, isBefore, startOfTomorrow, subDays, endOfDay } from 'date-fns';
 
 export default function FlightSearchForm({searchOffers}) {
- const [adults, setAdults] = useState(1)
+ const [adults, setAdults] = useState(1);
+ const [departureDate, setDepartureDate] = useState('');
+ const [returnDate, setReturnDate] = useState('');
 
   const minusAdult = () => {
     setAdults(prevAdults => prevAdults > 1 ? prevAdults-1 : 1);
@@ -14,7 +17,24 @@ export default function FlightSearchForm({searchOffers}) {
     setAdults(prevAdults => prevAdults < 10 ? prevAdults+1 : 9);
   }
 
-  const searchFlightOffers = formData => searchOffers(formData);
+  const searchFlightOffers = formData => {
+    searchOffers(formData);
+  }
+
+  const departureDisabledDates = () => {
+    if (!returnDate) return (date) => isBefore(date, startOfTomorrow());
+    if (returnDate) return (date) => isBefore(date, startOfTomorrow()) || isAfter(date, subDays(returnDate, 1));
+  }
+
+  const returnDisabledDates = () => {
+    if (!departureDate) return (date) => isBefore(date, startOfTomorrow());
+    if (departureDate) return (date) => isBefore(date, endOfDay(departureDate));
+  }
+
+  const handleDateChange = (field, selectedDate) => {
+    if (field === 'departureDate') return setDepartureDate(selectedDate);
+    if (field === 'returnDate') return setReturnDate(selectedDate);
+  }
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8 shadow-2xl">
@@ -28,7 +48,21 @@ export default function FlightSearchForm({searchOffers}) {
         </div>
 
        <div className="pb-4">
-          <DatePicker label="Departure" field="departureDate"/>
+          <DatePicker
+            label="Departure"
+            field="departureDate"
+            disabledDates={departureDisabledDates}
+            handleDateChange={handleDateChange}
+          />
+        </div>
+
+        <div className="pb-4">
+          <DatePicker
+            label="Return"
+            field="returnDate"
+            disabledDates={returnDisabledDates}
+            handleDateChange={handleDateChange}
+          />
         </div>
 
        <div className="pb-4 flex justify-between items-center">

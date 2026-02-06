@@ -6,10 +6,10 @@ export default function AirportSearch({label, field}) {
   const [search, setSearch] = useState("");
   const [airports, setAirports] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedAirportCode, setSelectedAirportCode] = useState(null);
 
   useEffect(() => {
-    if (selectedValue) return;
+    if (selectedAirportCode) return;
 
     if (search.length < 2 ) {
       setAirports([]);
@@ -39,17 +39,17 @@ export default function AirportSearch({label, field}) {
     }, 300)
 
     return () => clearTimeout(timer)
-  },[search, selectedValue])
+  },[search, selectedAirportCode])
 
-  const handleChange = (value) => {
+  const handleInputChange = (value) => {
     // if (search.length === 0) setOpen(true);
     setSearch(value);
   }
 
-  const handleSelect = ({value, code}) => {
-    setSelectedValue(code);
+  const handleSelect = ({displayName, iataCode}) => {
+    setSelectedAirportCode(iataCode);
     setOpen(false);
-    setSearch(value);
+    setSearch(displayName);
     setAirports([]);
   }
 
@@ -59,7 +59,7 @@ export default function AirportSearch({label, field}) {
         <CommandItem
           key={airport.iata_code}
           value={`${airport.iata_code}, (${airport.name}), ${airport.city}, ${airport.country}`}
-          onSelect={(e) => handleSelect({value: e, code: airport.iata_code})}
+          onSelect={(e) => handleSelect({displayName: e, iataCode: airport.iata_code})}
         >
         <span>{`${airport.iata_code}, (${airport.name}), ${airport.city}, ${airport.country}`}</span>
         </CommandItem>
@@ -71,13 +71,13 @@ export default function AirportSearch({label, field}) {
   return (
     <div className="relative">
       <label htmlFor={field} className="text-sm text-zinc-400">{label}</label>
-      <input type="hidden" name={field} value={selectedValue || ''} />
+      <input type="hidden" name={field} value={selectedAirportCode || ''} />
       <Command className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-2xl mt-1 overflow-visible">
         <div className="[&_div]:!border-b-0 [&_div]:!border-none">
           <CommandInput
             id={field}
             value={search}
-            onValueChange={handleChange}
+            onValueChange={handleInputChange}
             placeholder="Search airport or city..."
           />
         </div>
