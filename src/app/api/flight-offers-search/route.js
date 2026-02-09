@@ -12,8 +12,6 @@ const USE_MOCK_DATA = false; // Set to false when ready to use real API
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  console.log('here!')
-  console.log(searchParams)
   const originLocationCode = searchParams.get('originLocationCode');
   const destinationLocationCode = searchParams.get('destinationLocationCode');
   const departureDate = searchParams.get('departureDate');
