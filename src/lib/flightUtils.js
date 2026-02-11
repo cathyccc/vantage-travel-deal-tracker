@@ -43,12 +43,12 @@ export function getDepartureTimeToDestination(itineraries, formData) {
   const segment = itineraries
     .flatMap(itinerary => itinerary.segments)
     .find(segment => segment.departure.iataCode === originCode);
-  
+
   if (segment) {
     const departureTime = segment.departure.at;
     return format(departureTime, 'h:mm aaaa');
   }
-  
+
   return null;
 }
 
@@ -59,12 +59,12 @@ export function getArrivalTimeToDestination(itineraries, formData) {
   const segment = itineraries
     .flatMap(itinerary => itinerary.segments)
     .find(segment => segment.arrival.iataCode === destinationCode);
-  
+
   if (segment) {
     const arrivalTime = segment.arrival.at;
     return format(arrivalTime, 'h:mm aaaa');
   }
-  
+
   return null;
 }
 
@@ -82,7 +82,7 @@ const getDuration = (startTime, endTime) => {
 
 export function getLayoverInfo(segments) {
   const getLayoverCounts = segments.length - 1;
-  if (getLayoverCounts <= 0) return null;
+  if (getLayoverCounts <= 0) return [];
 
   const layovers = segments.slice(0, `-${getLayoverCounts}`).map((segment, index) => {
     const nextSegment = segments[index+1];

@@ -1,8 +1,10 @@
 import { Fragment } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { Button} from '@/components/ui/button';
 import { PlaneTakeoff, PlaneLanding, Luggage } from 'lucide-react';
 import { getLocationName, displayStops } from '@/lib/flightUtils';
+import OfferDetailsCard from './OfferDetailsCard';
 
 export default function OfferResultsCard(props) {
   const { id,
@@ -115,8 +117,12 @@ export default function OfferResultsCard(props) {
             <div className="text-end">
                 { displayLuggages(checkedBagsQuantity) }
             </div>
-
-            <Button className="border-1 border-violet-400 text-xs px-2 text-violet-400">VIEW DETAILS</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="border-1 border-violet-400 text-xs px-2 text-violet-400">VIEW DETAILS</Button>
+              </DialogTrigger>
+              <OfferDetailsCard />
+            </Dialog>
           </div>
         </div>
 
