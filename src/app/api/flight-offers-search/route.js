@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import Amadeus from 'amadeus';
-import mockAPIResults from '../mock-data/api-results.json';
 
 const amadeus = new Amadeus({
   clientId: process.env.AMADEUS_CLIENT_ID,
@@ -8,7 +7,7 @@ const amadeus = new Amadeus({
 });
 
 // Toggle for testing
-const USE_MOCK_DATA = true; // Set to false when ready to use real API
+const USE_MOCK_DATA = process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -21,6 +20,8 @@ export async function GET(request) {
   try {
     // Use mock data during development
     if (USE_MOCK_DATA) {
+      const mockModule = await import('../mock-data/api-results.json');
+      const mockAPIResults = mockModule.default;
       return NextResponse.json(mockAPIResults);
     }
 
