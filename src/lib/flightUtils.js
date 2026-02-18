@@ -1,13 +1,27 @@
 import { GLOBAL_AIRLINES_300 as CARRIER_NAMES } from './top300carriers_feb2026';
 import { AIRPORTS } from './top396airport_hubs_feb2026';
+import { AIRCRAFTS } from './aircraft_codes.js';
 import { format, parseISO, intervalToDuration } from 'date-fns';
 
 export function getLocationName(iataCode) {
+  if (!iataCode) return '';
   const findAirport = AIRPORTS.find(airport => airport.iata === iataCode);
   return findAirport? findAirport.city : iataCode;
 }
 
-export function extractUniqueAirlines(itineraries) {
+export function getAirportName(iataCode) {
+  if (!iataCode) return '';
+  const findAirport = AIRPORTS.find(airport => airport.iata === iataCode);
+  return findAirport? findAirport.name : iataCode;
+}
+
+export function getAirlineName(carrierCode) {
+  if (!carrierCode) return '';
+  const findAirline = CARRIER_NAMES[carrierCode];
+  return findAirline? findAirline : carrierCode;
+}
+
+export function extractUniqueAirlinesForFullTrip(itineraries) {
   const uniqueAirlines = new Map();
   
   itineraries.forEach(itinerary => {
@@ -36,36 +50,14 @@ export function extractUniqueAirlines(itineraries) {
   return Array.from(uniqueAirlines.values());
 }
 
-export function getDepartureTimeToDestination(itineraries, formData) {
-  if (!formData) return null;
-  const originCode = formData.originLocationCode;
-  
-  const segment = itineraries
-    .flatMap(itinerary => itinerary.segments)
-    .find(segment => segment.departure.iataCode === originCode);
-
-  if (segment) {
-    const departureTime = segment.departure.at;
-    return format(departureTime, 'h:mm aaaa');
-  }
-
-  return null;
+export function getDepartureTimeToDestination(itineraries) {
+  const departureTime = itineraries[0].segments[0].departure.at;
+  return format(departureTime, 'h:mm aaaa');
 }
 
-export function getArrivalTimeToDestination(itineraries, formData) {
-  if (!formData) return null;
-  const destinationCode = formData.destinationLocationCode;
-
-  const segment = itineraries
-    .flatMap(itinerary => itinerary.segments)
-    .find(segment => segment.arrival.iataCode === destinationCode);
-
-  if (segment) {
-    const arrivalTime = segment.arrival.at;
-    return format(arrivalTime, 'h:mm aaaa');
-  }
-
-  return null;
+export function getArrivalTimeToDestination(itineraries) {
+  const arrivalTime = itineraries[1].segments[itineraries[1].segments.length-1].arrival.at;
+  return format(arrivalTime, 'h:mm aaaa');
 }
 
 const getDuration = (startTime, endTime) => {
@@ -111,4 +103,19 @@ export function displayStops(num) {
   if (num === 0) return `NON-STOP`;
   if (num === 1) return `1 STOP`;
   if (num > 1) return `${stops} STOPS`;
+}
+
+export function isNonStop(segments) {
+  return segments.length === 1;
+}
+
+export function getAircraftName(iataCode) {
+  if (!iataCode) return '';
+  const findAircraft = AIRCRAFTS[iataCode];
+  return findAircraft? findAircraft : 'Unknown aircraft';
+}
+
+export function getFareDetailsForSegment(id, fullDetails) {
+  const segmentDetails = fullDetails.find((seg) => seg.segmentId === id);
+  return segmentDetails ? segmentDetails : {};
 }

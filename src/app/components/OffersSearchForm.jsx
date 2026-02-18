@@ -4,7 +4,7 @@ import AirportSearch from './AirportSearch';
 import DatePicker from './DatePicker';
 import { isAfter, isBefore, startOfTomorrow, subDays, endOfDay } from 'date-fns';
 
-export default function FlightSearchForm({searchOffers}) {
+export default function OffersSearchForm({searchOffers, errors}) {
  const [adults, setAdults] = useState(1);
  const [departureDate, setDepartureDate] = useState('');
  const [returnDate, setReturnDate] = useState('');
@@ -14,11 +14,14 @@ export default function FlightSearchForm({searchOffers}) {
   }
 
   const addAdult = () => {
+    if (adults === 9) return setAdultError('Max adult passenger reached.')
     setAdults(prevAdults => prevAdults < 10 ? prevAdults+1 : 9);
   }
 
-  const searchFlightOffers = formData => {
-    searchOffers(formData);
+  const searchFlightOffers = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+    searchOffers(formData)
   }
 
   const departureDisabledDates = () => {
@@ -38,13 +41,15 @@ export default function FlightSearchForm({searchOffers}) {
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8 shadow-2xl">
-      <form action={searchFlightOffers}>
+      <form onSubmit={searchFlightOffers}>
         <div className="pb-4">
           <AirportSearch label="Origin" field="originLocationCode"/>
+          {errors?.originLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.originLocationCode[0]}</p>}
         </div>
 
         <div className="pb-4">
           <AirportSearch label="Destination" field="destinationLocationCode"/>
+          {errors?.destinationLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.destinationLocationCode[0]}</p>}
         </div>
 
        <div className="pb-4">
@@ -54,6 +59,7 @@ export default function FlightSearchForm({searchOffers}) {
             disabledDates={departureDisabledDates}
             handleDateChange={handleDateChange}
           />
+          {errors?.departureDate && <p className="text-red-400 text-xs pt-1">{errors?.departureDate}</p>}
         </div>
 
         <div className="pb-4">
@@ -63,6 +69,7 @@ export default function FlightSearchForm({searchOffers}) {
             disabledDates={returnDisabledDates}
             handleDateChange={handleDateChange}
           />
+          {errors?.returnDate && <p className="text-red-400 text-xs pt-1">{errors?.returnDate}</p>}
         </div>
 
        <div className="pb-4 flex justify-between items-center">
@@ -77,6 +84,7 @@ export default function FlightSearchForm({searchOffers}) {
                 -
             </Button>
             <input type="hidden" name="adults" value={adults} />
+            {errors?.adults && <p className="text-red-400 text-xs pt-1">{errors?.adults}</p>}
             <span className="inline-block w-12 text-center">{adults}</span>
             <Button
               type="button"

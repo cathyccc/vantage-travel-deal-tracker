@@ -8,7 +8,7 @@ const amadeus = new Amadeus({
 });
 
 // Toggle for testing
-const USE_MOCK_DATA = false; // Set to false when ready to use real API
+const USE_MOCK_DATA = true; // Set to false when ready to use real API
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -34,7 +34,6 @@ export async function GET(request) {
       currencyCode: "CAD",
       max:30
     });
-    console.log(response.data)
     return NextResponse.json(response.data);
   } catch (error) {
     return NextResponse.json(

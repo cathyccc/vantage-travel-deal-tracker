@@ -3,22 +3,28 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { Button} from '@/components/ui/button';
 import { PlaneTakeoff, PlaneLanding, Luggage } from 'lucide-react';
-import { getLocationName, displayStops } from '@/lib/flightUtils';
 import OfferDetailsCard from './OfferDetailsCard';
+import { extractUniqueAirlinesForFullTrip,
+         getLocationName,
+         getDepartureTimeToDestination,
+         getArrivalTimeToDestination,
+         getLayoverInfo,
+         displayStops,
+         parseISODuration } from '@/lib/flightUtils';
 
-export default function OfferResultsCard(props) {
-  const { id,
-          duration,
-          layoverInfo,
-          carriers,
-          departureTime,
-          arrivalTime,
-          departureLocation,
-          arrivalLocation,
-          price,
-          checkedBagsQuantity,
-        } = props;
-  
+export default function OfferResultsCard({offer}) {
+  const {itineraries} = offer;
+  const id = offer.id;
+  const duration = parseISODuration(itineraries[0].duration);
+  const layoverInfo = getLayoverInfo(itineraries[0].segments);
+  const carriers = extractUniqueAirlinesForFullTrip(itineraries);
+  const departureTime = getDepartureTimeToDestination(itineraries);
+  const arrivalTime = getArrivalTimeToDestination(itineraries);
+  const departureLocationName = getLocationName(itineraries[0].segments[0].departure.iataCode);
+  const arrivalLocationName = getLocationName(itineraries[0].segments[itineraries[0].segments.length-1]?.arrival.iataCode);
+  const price = offer.price.grandTotal;
+  const checkedBagsQuantity = offer.travelerPricings[0].fareDetailsBySegment[0].includedCheckedBags?.quantity || 0;
+
   const displayAirlines = () => {
     const carriersArr = carriers.map((airline, index) => {
       const isLast = index === carriers.length - 1;
@@ -83,7 +89,7 @@ export default function OfferResultsCard(props) {
               <span className="p-1"><PlaneTakeoff size={16} strokeWidth={1}/></span>
               <div className="px-1 flex items-start flex-col">
                 <div className="block text-xl font-thin">{departureTime}</div>
-                <div className="block text-xs font-thin">{departureLocation}</div>
+                <div className="block text-xs font-thin">{departureLocationName}</div>
               </div>
             </div>
 
@@ -108,7 +114,7 @@ export default function OfferResultsCard(props) {
               <span className="p-1"><PlaneLanding size={16} strokeWidth={1}/></span>
               <div className="px-1 flex flex-col items-start">
                 <div className="block text-xl font-thin">{arrivalTime}</div>
-                <div className="block text-xs font-thin">{arrivalLocation}</div>
+                <div className="block text-xs font-thin">{arrivalLocationName}</div>
               </div>
             </div>
           </div>
@@ -121,7 +127,7 @@ export default function OfferResultsCard(props) {
               <DialogTrigger asChild>
                 <Button className="border-1 border-violet-400 text-xs px-2 text-violet-400">VIEW DETAILS</Button>
               </DialogTrigger>
-              <OfferDetailsCard />
+              <OfferDetailsCard offer={offer}/>
             </Dialog>
           </div>
         </div>
