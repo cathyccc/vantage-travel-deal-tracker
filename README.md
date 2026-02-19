@@ -18,8 +18,7 @@ Vantage is a high-performance flight search and deal tracking application design
 | **Framework** | Next.js (App Router) |
 | **Build Tool** | Vite |
 | **Styling** | Tailwind CSS + shadcn/ui |
-| **Database/Backend** | Supabase |
-| **Search Logic** | Fuse.js (Transitioning) |
+| **Search Logic** | Fuse.js |
 | **Flight Data** | Amadeus Flight Offers API |
 
 ---
@@ -27,9 +26,9 @@ Vantage is a high-performance flight search and deal tracking application design
 ## 🗺️ Roadmap
 - [x] Initial Next.js & Vite setup.
 - [x] Amadeus API flight search integration.
-- [ ] In Progress: Display flight offer details after "View Details" button.
-- [ ] Transitioning autofill from Supabase to Fuse.js for local fuzzy searching.
-- [ ] Migrate from Amadeus API (decommissioning in July 2026) to Duffel API.
+- [x] Display flight offer details after "View Details" button.
+- [x] Transitioning autofill from Supabase to Fuse.js for local fuzzy searching.
+- [ ] In Progress: Migrate from Amadeus API (decommissioning in July 2026) to Duffel API.
 - [ ] Confirm the availability and price with Amadeus Flight Offers Price API.
 - [ ] Create the reservation with Amadeus Flight Create Orders API.
 
