@@ -1,5 +1,5 @@
 import { GLOBAL_AIRLINES_300 as CARRIER_NAMES } from './top300carriers_feb2026';
-import { AIRPORTS } from './top396airport_hubs_feb2026';
+import AIRPORTS from './airports_feb2026.json';
 import { AIRCRAFTS } from './aircraft_codes.js';
 import { format, parseISO, intervalToDuration } from 'date-fns';
 
@@ -118,4 +118,16 @@ export function getAircraftName(iataCode) {
 export function getFareDetailsForSegment(id, fullDetails) {
   const segmentDetails = fullDetails.find((seg) => seg.segmentId === id);
   return segmentDetails ? segmentDetails : {};
+}
+
+export function getTimezoneAbbr(iata) {
+  const airport = AIRPORTS.find(airport => airport.iata === iata);
+  const timeZone = airport.timezone;
+  try {
+    const tz = new Intl.DateTimeFormat('en-US', {timeZone, timeZoneName: 'short'})
+    return tz.formatToParts(new Date()).find(part => part.type === 'timeZoneName').value
+  } catch (err) {
+    console.error(err)
+    return null;
+  }
 }

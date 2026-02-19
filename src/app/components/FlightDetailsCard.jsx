@@ -2,7 +2,8 @@ import { getAirlineName,
          getAirportName,
          getLocationName,
          getAircraftName,
-         parseISODuration, 
+         parseISODuration,
+         getTimezoneAbbr, 
          getFareDetailsForSegment} from "@/lib/flightUtils";
 import { format } from 'date-fns';
 
@@ -47,12 +48,12 @@ export default function FlightDetailsCard({ segment, fareDetailsForFullTrip }) {
           <div className="flex flex-col justify-between text-right py-2">
             <div>
               <span className="block text-lg/5 text-zinc-200">{format(segment.departure.at, 'h:mm aaaa')}</span>
-              <span className="block font-light text-xs text-zinc-200">EDT</span>
+              <span className="block font-light text-xs text-zinc-200">{getTimezoneAbbr(segment.departure.iataCode)}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.departure.at, 'EEE, MMM M')}</span>
             </div>
             <div>
               <span className="block text-lg/5 text-zinc-200">{format(segment.arrival.at, 'h:mm aaaa')}</span>
-              <span className="block font-light text-xs text-zinc-200">JST</span>
+              <span className="block font-light text-xs text-zinc-200">{getTimezoneAbbr(segment.arrival.iataCode)}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.arrival.at, 'EEE, MMM M')}</span>
             </div>
           </div>

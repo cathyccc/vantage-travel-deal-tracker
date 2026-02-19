@@ -1,67 +1,52 @@
-import { useState, useEffect } from 'react';
-import { Command, CommandInput, CommandList, CommandItem, CommandEmpty } from '@/components/ui/command'
+import { useState, useMemo } from 'react';
+import { Command, CommandInput, CommandList, CommandItem, CommandEmpty, CommandGroup } from '@/components/ui/command';
+import Fuse from "fuse.js";
+import airportData from "../../lib/airports_feb2026.json";
 
 export default function AirportSearch({label, field}) {
   const [open, setOpen] = useState(false);
-  const [search, setSearch] = useState("");
-  const [airports, setAirports] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedAirportCode, setSelectedAirportCode] = useState(null);
 
-  useEffect(() => {
-    if (selectedAirportCode) return;
+  const fuse = useMemo(() => {
+    return new Fuse (airportData, {
+      keys: [
+        {name: "iata", weight: 1},
+        {name: "name", weight: 1},
+        {name: "city", weight: 2}
+      ],
+      threshold: 0.3
+    });
+  }, []);
 
-    if (search.length < 2 ) {
-      setAirports([]);
-      setOpen(false);
-      return;
+  const results = useMemo(()=> {
+    if (searchQuery.length < 2) {
+      return airportData.filter(a => a.is_major_hub).slice(0,5);
     }
 
-    const timer = setTimeout(async() => {
-      setIsLoading(true);
-      try {
-        const response = await fetch(`/api/airports?q=${encodeURIComponent(search)}`,{
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        const data = await response.json();
-        setOpen(true);
-        setAirports(data);
-      } catch(error) {
-        console.error('Search error:', error)
-        setOpen(false);
-        setAirports([]);
-      } finally {
-        setIsLoading(false);
-      }
-    }, 300)
+    return fuse.search(searchQuery).slice(0,5).map(result => result.item);
+  }, [searchQuery, fuse]);
 
-    return () => clearTimeout(timer)
-  },[search, selectedAirportCode])
-
-  const handleInputChange = (value) => {
-    // if (search.length === 0) setOpen(true);
-    setSearch(value);
+  const handleSearch = (value) => {
+    if (searchQuery.length > 0) setOpen(true);
+    setSearchQuery(value);
   }
 
   const handleSelect = ({displayName, iataCode}) => {
     setSelectedAirportCode(iataCode);
     setOpen(false);
-    setSearch(displayName);
-    setAirports([]);
+    setSearchQuery(displayName);
   }
 
   const loadAirportResults = () => {
-    return airports.map((airport) => {
+    return results.map((airport) => {
       return (
         <CommandItem
-          key={airport.iata_code}
-          value={`${airport.iata_code}, (${airport.name}), ${airport.city}, ${airport.country}`}
-          onSelect={(e) => handleSelect({displayName: e, iataCode: airport.iata_code})}
+          key={airport.iata}
+          value={`${airport.city} (${airport.iata} - ${airport.name}, ${airport.country})`}
+          onSelect={(e) => handleSelect({displayName: e, iataCode: airport.iata})}
         >
-        <span>{`${airport.iata_code}, (${airport.name}), ${airport.city}, ${airport.country}`}</span>
+          <span>{`${airport.city} (${airport.iata} - ${airport.name}, ${airport.country})`}</span>
         </CommandItem>
       )
     }
@@ -76,16 +61,16 @@ export default function AirportSearch({label, field}) {
         <div className="[&_div]:!border-b-0 [&_div]:!border-none">
           <CommandInput
             id={field}
-            value={search}
-            onValueChange={handleInputChange}
+            value={searchQuery}
+            onValueChange={handleSearch}
             placeholder="Search airport or city..."
           />
         </div>
         {open && (
-          <div className="absolute top-full left-0 w-full z-50 bg-zinc-900 border border-zinc-800 rounded-md shadow-xl">
+          <div className="absolute top-[calc(100%+4px)] left-0 w-full z-50 bg-zinc-800 border border-zinc-700 rounded-md shadow-2xl animate-in fade-in-0 zoom-in-95">
             <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
-                {!isLoading && airports.length && loadAirportResults()}
+              {results.length === 0 && <CommandEmpty>No results found.</CommandEmpty>}
+              {results.length > 0 && <CommandGroup className="text-zinc-500 px-2">{loadAirportResults()}</CommandGroup>}
             </CommandList>
           </div>
         )}
