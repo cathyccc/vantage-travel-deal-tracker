@@ -5,7 +5,7 @@ Vantage is a high-performance flight search and deal tracking application design
 ## 🚀 Features
 
 * **Real-time Search:** Powered by the **Amadeus Flight Offers API** for accurate, live pricing.
-* **Smart Autofill:** Currently leveraging **Supabase** for destination data, with a migration to **Fuse.js** underway for lightning-fast local fuzzy searching.
+* **Smart Autofill:** Currently leveraging **Fuse.js** for lightning-fast local fuzzy searching.
 * **Modern UI:** A sleek, responsive interface built with **Tailwind CSS** and **shadcn/ui** components.
 * **Hybrid Architecture:** Leveraging **Next.js** for routing and **Vite** for optimized development.
 
@@ -19,7 +19,7 @@ Vantage is a high-performance flight search and deal tracking application design
 | **Build Tool** | Vite |
 | **Styling** | Tailwind CSS + shadcn/ui |
 | **Search Logic** | Fuse.js |
-| **Flight Data** | Amadeus Flight Offers API |
+| **Flight Data** | Duffel API |
 
 ---
 
@@ -28,9 +28,18 @@ Vantage is a high-performance flight search and deal tracking application design
 - [x] Amadeus API flight search integration.
 - [x] Display flight offer details after "View Details" button.
 - [x] Transitioning autofill from Supabase to Fuse.js for local fuzzy searching.
-- [ ] In Progress: Migrate from Amadeus API (decommissioning in July 2026) to Duffel API.
-- [ ] Confirm the availability and price with Amadeus Flight Offers Price API.
-- [ ] Create the reservation with Amadeus Flight Create Orders API.
+- [x] Migrate from Amadeus API (decommissioning in July 2026) to Duffel API for flight offers.
+- [ ] In Progress: Display fare details after "Continue to Fare Details" button.
+- [ ] Clean airports JSON data: Remove entries for airports that do not support commercial aviation.
+- [ ] Implement offer selection UI: Add functionality to select a specific flight offer from search results, storing the selected offer ID and details in state (e.g., using React Context or Redux).
+- [ ] Create passenger details form: Build a form to collect traveler information (name, DOB, passport details, etc.) required by Duffel API for order creation; include validation for required fields.
+- [ ] Integrate Duffel API for offer request/creation: Use the selected offer to call Duffel's "Create Offer Request" endpoint if needed, or directly proceed to "Create Order" with passenger data; handle API responses and errors.
+- [ ] Simulate fake payment process: Implement a mock payment gateway UI (e.g., a form with dummy card details) that "processes" payment without real transactions; use Duffel's payment intent simulation if available, or a simple client-side mock with success/failure states.
+- [ ] Handle order creation with Duffel: Submit the order to Duffel API including passenger details and fake payment confirmation; retrieve and display order confirmation details (e.g., booking reference, itinerary).
+- [ ] Build confirmation page: Create a dedicated page or modal to show booking summary, confirmation number, and downloadable itinerary after successful order creation.
+- [ ] Add error handling and loading states: Implement global error boundaries, loading spinners, and user-friendly messages for API failures, invalid inputs, or payment simulation issues throughout the flow.
+- [ ] Test end-to-end flow: Write unit/integration tests for key components (search, offer selection, form validation, API calls); perform manual testing for the full user journey from search to fake booking.
+- [ ] Optimize UI/UX: Refine styling, add responsive design tweaks, and incorporate accessibility features (e.g., ARIA labels for forms and buttons).
 
 ---
 
@@ -52,9 +61,8 @@ AMADEUS_CLIENT_SECRET=your_amadeus_secret_here
 # Next Configuration
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+# Duffel Configuration
+DUFFEL_ACCESS_TOKEN=your_duffel_test_access_token
 ```
 
 ### 3. Install & Run
@@ -66,59 +74,6 @@ npm install
 npm run dev
 ```
 ---
-
-## 🗄️ Database Setup
-
-To power the destination autofill, you need to set up an `airports` table in Supabase. Run the following SQL in your **Supabase SQL Editor**:
-
-```sql
--- Create table for airport data
-CREATE TABLE airports (
-  id bigint primary key generated always as identity,
-  iata_code text unique not null,
-  name text not null,
-  city text not null,
-  country text not null,
-  created_at timestamp with time zone default timezone('utc'::text, now()) not null
-);
-
--- Enable pg_trgm for optimized searching
-CREATE extension if not exists pg_trgm;
-
--- Create indexes
-CREATE INDEX airports_iata_idx ON airports(iata_code);
-CREATE INDEX airports_city_idx ON airports USING gin(city gin_trgm_ops);
-
--- Security: Enable RLS and public read access
-ALTER TABLE airports ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Allow public read access" ON airports FOR SELECT TO anon USING (true);
-Note: This table currently handles the autofill logic. We are in the process of migrating this data to a local airports.json file to be handled by Fuse.js for zero-latency client-side searching.
-```
-## 🏗️ Seeding the Database
-
-To populate your `airports` table, you will need a dataset of IATA codes. 
-
-### 1. Source the Data
-You can download the latest global airport datasets in CSV format from:
-* **[OurAirports Data](https://ourairports.com/data/)** (Download `airports.csv`)
-* **[OpenFlights Data](https://openflights.org/data.html)**
-
-### 2. Prepare the Data
-Since these CSVs contain hundreds of columns, you'll want to filter for "large_airports" or "medium_airports" to keep your search relevant.
-
-### 3. Run the Seed Command
-In your Supabase SQL Editor, you can use the `INSERT` statement. For a small set of major hubs, you can use this snippet to test:
-
-```sql
-INSERT INTO airports (iata_code, name, city, country)
-VALUES 
-  ('JFK', 'John F. Kennedy International Airport', 'New York', 'United States'),
-  ('LHR', 'London Heathrow Airport', 'London', 'United Kingdom'),
-  ('HND', 'Haneda Airport', 'Tokyo', 'Japan'),
-  ('CDG', 'Charles de Gaulle Airport', 'Paris', 'France'),
-  ('DXB', 'Dubai International Airport', 'Dubai', 'United Arab Emirates'),
-  ('SIN', 'Singapore Changi Airport', 'Singapore', 'Singapore');
-```
 
 ## 📄 License
 Distributed under the MIT License.
