@@ -1,15 +1,12 @@
 import { NextResponse } from 'next/server';
-import Amadeus from 'amadeus';
+import { Duffel } from '@duffel/api';
 
-const amadeus = new Amadeus({
-  clientId: process.env.AMADEUS_CLIENT_ID,
-  clientSecret: process.env.AMADEUS_CLIENT_SECRET
-});
+const duffel = new Duffel ({token: process.env.DUFFEL_ACCESS_TOKEN})
 
 // Toggle for testing
 const USE_MOCK_DATA = process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
 
-export async function GET(request) {
+export async function POST(request) {
   const { searchParams } = new URL(request.url);
   const originLocationCode = searchParams.get('originLocationCode');
   const destinationLocationCode = searchParams.get('destinationLocationCode');
@@ -18,33 +15,49 @@ export async function GET(request) {
   const adults = searchParams.get('adults');
 
   try {
-    // Use mock data during development
     if (USE_MOCK_DATA) {
-      const mockModule = await import('../mock-data/api-results.json');
-      const mockAPIResults = mockModule.default;
+      const mockModule = await import('../mock-data/duffel-api-results.json');
+      const mockAPIResults = mockModule.default.data;
       return NextResponse.json(mockAPIResults);
     }
-
-    // receives 30 offers from API
-    const response = await amadeus.shopping.flightOffersSearch.get({
-      originLocationCode,
-      destinationLocationCode,
-      departureDate,
-      returnDate,
-      adults,
-      currencyCode: "CAD",
-      max:30
-    });
-    return NextResponse.json(response.data);
-  } catch (error) {
-    return NextResponse.json(
+    const slices = [
       {
-        errorCode: error.code,
-        errorStatusCode: error.response?.statusCode,
-        errorMessage: error.response?.result?.error,
-        error: "Failed to search flights. Please try again"
+        origin: originLocationCode,
+        destination: destinationLocationCode,
+        departure_date: departureDate
       },
-      { status: 500 }
-    );
+      {
+        origin: destinationLocationCode,
+        destination: originLocationCode,
+        departure_date: returnDate
+      }
+    ];
+    const passengers = Array.from({ length: adults }, () => ({ type: "adult" }));
+
+    const offerRequest =  await duffel.offerRequests.create({
+      slices,
+      passengers,
+      cabin_class: "economy",
+      return_offers: true
+    })
+
+    const offers = await duffel.offers.list({
+      offer_request_id: offerRequest.data.id,
+      sort: 'total_amount',
+      currency: 'CAD'
+    })
+
+    return NextResponse.json({
+      offerRequestId: offerRequest.data.id,
+      offers: offers.data
+    });
+  } catch (error) {
+    console.error("Duffel API Failure:", error.errors);
+    const statusCode = error.meta?.status || 500;
+
+    return NextResponse.json({
+      message: error.errors[0]?.message,
+      type: error.errors[0].type || "api_error"
+    }, { status: statusCode});
   }
 }

@@ -9,6 +9,7 @@ export async function getFlightOffers(formData) {
 
   if (!validatedData.success) {
     return {
+      success: false,
       errors: validatedData.error.flatten().fieldErrors,
       messages: "Please fix the highlighted fields."
      };
@@ -18,22 +19,36 @@ export async function getFlightOffers(formData) {
     const {originLocationCode, destinationLocationCode, departureDate, returnDate, adults} = validatedData.data;
     const queryString = new URLSearchParams({originLocationCode, destinationLocationCode, departureDate, returnDate, adults}).toString();
     const response = await fetch(`${baseUrl}/api/flight-offers-search?${queryString}`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Duffel-Version': 'v2',
+          'Accept': 'application/json',
+          'Accept-Encoding': 'gzip'
         },
       });
+
+    if(!response.ok) {
+      const errorData = await response.json();
+      return {
+        success: false,
+        code: errorData.errorCode,
+        errors: {'root': errorData.message},
+      };
+    }
+
     const data = await response.json();
+
     return {
       data: data || [], 
       success: true,
-      errors: null 
+      errors: null
     };
   } catch(error) {
-    console.error("API Error:", error);
     return {
+      data:[],
       success: false,
-      error: "Something went wrong. Please try again."
+      errors: { root: [error.messages]}
     };
   }
 }
