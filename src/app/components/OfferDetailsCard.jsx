@@ -14,9 +14,6 @@ import { isNonStop,
 
 export default function OfferDetailsCard({offer}) {
   const {slices} = offer;
-  console.log('nonstop: ', isNonStop(slices[0].segments))
-  console.log(slices[0].segments.length)
-  console.log(getLayoverInfo(slices[0].segments))
 
   return ( 
     <DialogContent

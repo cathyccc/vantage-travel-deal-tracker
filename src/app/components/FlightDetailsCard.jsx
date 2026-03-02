@@ -1,4 +1,4 @@
-import { parseISODuration, getTimezoneAbbr } from "@/lib/flightUtils";
+import { parseISODuration } from "@/lib/flightUtils";
 import { differenceInCalendarDays, format, parseISO } from 'date-fns';
 
 export default function FlightDetailsCard({ segment }) {
@@ -51,7 +51,7 @@ export default function FlightDetailsCard({ segment }) {
           <div className="flex flex-col justify-between text-right py-2">
             <div>
               <span className="block text-lg/5 text-zinc-200">{format(segment.departing_at, 'h:mm aaaa')}</span>
-              <span className="block font-light text-xs text-zinc-200">{getTimezoneAbbr(segment.origin.time_zone)}</span>
+              <span className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.departing_at, 'EEE, MMM d')}</span>
             </div>
             <div>
@@ -59,7 +59,7 @@ export default function FlightDetailsCard({ segment }) {
                 <span className="text-lg/5 text-zinc-200">{format(segment.arriving_at, 'h:mm aaaa')}</span>
                 <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff()}</span>
               </span>
-              <span className="block font-light text-xs text-zinc-200">{getTimezoneAbbr(segment.destination.time_zone)}</span>
+              <span className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.arriving_at, 'EEE, MMM d')}</span>
             </div>
           </div>

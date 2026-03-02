@@ -78,8 +78,3 @@ export function getAircraftName(iataCode) {
   const findAircraft = AIRCRAFTS[iataCode];
   return findAircraft? findAircraft : 'Unknown aircraft';
 }
-
-export function getTimezoneAbbr(timezone) {
-  const tz = new Intl.DateTimeFormat('en-US', {timezone, timeZoneName: 'short'})
-  return tz.formatToParts(new Date()).find(part => part.type === 'timeZoneName').value
-}
