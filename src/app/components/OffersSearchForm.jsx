@@ -59,7 +59,7 @@ export default function OffersSearchForm({searchOffers, errors}) {
             disabledDates={departureDisabledDates}
             handleDateChange={handleDateChange}
           />
-          {errors?.departureDate && <p className="text-red-400 text-xs pt-1">{errors?.departureDate}</p>}
+          {errors?.departureDate && <p className="text-red-400 text-xs pt-1">{errors?.departureDate[0]}</p>}
         </div>
 
         <div className="pb-4">
@@ -69,7 +69,7 @@ export default function OffersSearchForm({searchOffers, errors}) {
             disabledDates={returnDisabledDates}
             handleDateChange={handleDateChange}
           />
-          {errors?.returnDate && <p className="text-red-400 text-xs pt-1">{errors?.returnDate}</p>}
+          {errors?.returnDate && <p className="text-red-400 text-xs pt-1">{errors?.returnDate[0]}</p>}
         </div>
 
        <div className="pb-4 flex justify-between items-center">
@@ -84,7 +84,7 @@ export default function OffersSearchForm({searchOffers, errors}) {
                 -
             </Button>
             <input type="hidden" name="adults" value={adults} />
-            {errors?.adults && <p className="text-red-400 text-xs pt-1">{errors?.adults}</p>}
+            {errors?.adults && <p className="text-red-400 text-xs pt-1">{errors?.adults[0]}</p>}
             <span className="inline-block w-12 text-center">{adults}</span>
             <Button
               type="button"
