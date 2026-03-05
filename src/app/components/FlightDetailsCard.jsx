@@ -1,15 +1,7 @@
-import { parseISODuration } from "@/lib/flightUtils";
-import { differenceInCalendarDays, format, parseISO } from 'date-fns';
+import { parseISODuration, formatCabinClassName, displayDateDiff } from "@/lib/flightUtils";
+import { format } from 'date-fns';
 
 export default function FlightDetailsCard({ segment }) {
-  const displayDateDiff = () => {
-    const dep = parseISO(segment.departing_at);
-    const arr = parseISO(segment.arriving_at);
-    const dateDiff = differenceInCalendarDays(arr, dep);
-
-    return dateDiff > 0? `+${dateDiff}`: ''
-  }
-
   const displayGateNum = (char) => {
     return !isNaN(char) ? `Terminal ${char}`: `Concourse ${char}` 
   }
@@ -57,7 +49,7 @@ export default function FlightDetailsCard({ segment }) {
             <div>
               <span className="flex items-baseline">
                 <span className="text-lg/5 text-zinc-200">{format(segment.arriving_at, 'h:mm aaaa')}</span>
-                <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff()}</span>
+                <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff(segment)}</span>
               </span>
               <span className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.arriving_at, 'EEE, MMM d')}</span>
@@ -72,7 +64,7 @@ export default function FlightDetailsCard({ segment }) {
           <span className="block">Checked Bags Included</span>
         </div>
         <div className="basis-1/2 text-sm/6 text-right text-xs">
-          <span className="block">{segment.passengers[0].cabin_class.toUpperCase()}</span>
+          <span className="block">{formatCabinClassName(segment.passengers[0].cabin_class)}</span>
           <span className="block">{displayCheckedBagsQuantity()}</span>
         </div>
       </div>
