@@ -1,18 +1,23 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Dialog, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
 import { Button} from '@/components/ui/button';
 import { PlaneTakeoff, PlaneLanding, Luggage } from 'lucide-react';
 import OfferDetailsCard from './OfferDetailsCard';
+import FareDetailsCard from './FareDetailsCard';
 import { getLocationName,
          getDepartureTimeToDestination,
          getArrivalTimeToDestination,
          getLayoverInfo,
          displayStops,
+         displayDateDiff,
          parseISODuration } from '@/lib/flightUtils';
 
 export default function OfferResultsCard({offer}) {
+  const [dialogView, setDialogView] = useState('flight'); // 'flight' | 'fare'
+  const [slideClass, setSlideClass] = useState('');
+
   const {slices} = offer;
-  // something with duration
   const duration = parseISODuration(slices[0].duration);
   const layoverInfo = getLayoverInfo(slices[0].segments);
   const departureTime = getDepartureTimeToDestination(slices);
@@ -20,6 +25,39 @@ export default function OfferResultsCard({offer}) {
   const departureLocationName = slices[0].segments[0].origin.city_name;
   const arrivalLocationName = slices[0].segments[slices[0].segments.length-1]?.destination.city_name;
   const checkedBagsQuantity = slices[0].segments[0].passengers[0].baggages.find(b => b.type === "checked").quantity || 0;
+
+  const getSlideStyle = () => {
+    if (slideClass === 'animate-slide-out-left') return {animation: 'slide-out-left 0.3s ease forwards'};
+    if (slideClass === 'animate-slide-in-right') return {animation: 'slide-in-right 0.3s ease forwards'};
+    if (slideClass === 'animate-slide-out-right') return {animation: 'slide-out-right 0.3s ease forwards'};
+    if (slideClass === 'animate-slide-in-left') return {animation: 'slide-in-left 0.3s ease forwards'};
+  }
+
+  const goToFare = () => {
+    setSlideClass('animate-slide-out-left');
+    
+    setTimeout(() => {
+      setDialogView('fare');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setSlideClass('animate-slide-in-right');
+        });
+      });
+    }, 300);
+  }
+
+  const goBackToFlight = () => {
+    setSlideClass('animate-slide-out-right');
+
+    setTimeout(()=>{
+      setDialogView('flight');
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
+          setSlideClass('animate-slide-in-left');
+        })
+      })
+    },300);
+  }
 
   const displayLuggages = (count) => {
     if (count <= 0) return null;
@@ -59,7 +97,7 @@ export default function OfferResultsCard({offer}) {
               <span className="text-xs">{offer.base_currency} $ </span>
               <span className="text-2xl text-violet-400 font-bold">{offer.total_amount}</span>
             </div>
-            <span className="text-xs block text-right">Roundtrip per traveller</span>
+            <span className="text-xs block text-right">Roundtrip</span>
           </div>
         </div>
       </CardHeader>
@@ -95,7 +133,10 @@ export default function OfferResultsCard({offer}) {
             <div className="flex flex-row">
               <span className="p-1"><PlaneLanding size={16} strokeWidth={1}/></span>
               <div className="px-1 flex flex-col items-start">
-                <div className="block text-xl font-thin">{arrivalTime}</div>
+                <div className="block text-xl font-thin flex items-baseline">
+                  {arrivalTime}
+                  <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff(slices[0].segments[0])}</span>
+                </div>
                 <div className="block text-xs font-thin">{arrivalLocationName}</div>
               </div>
             </div>
@@ -105,11 +146,21 @@ export default function OfferResultsCard({offer}) {
             <div className="text-end">
                 { displayLuggages(checkedBagsQuantity) }
             </div>
-            <Dialog>
+            <Dialog onOpenChange={(open) => { 
+                if (!open) setTimeout(() => {
+                  setDialogView('flight');
+                  setSlideClass(''); }, 300);
+              }}>
               <DialogTrigger asChild>
                 <Button className="border-1 border-violet-400 text-xs px-2 text-violet-400">VIEW DETAILS</Button>
               </DialogTrigger>
-              <OfferDetailsCard offer={offer}/>
+              <DialogContent
+                style={getSlideStyle()}
+                className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-fuchsia-300 md:max-w-3xl"
+                onOpenAutoFocus={(e) => e.preventDefault()}>
+                  {dialogView === 'flight'? <OfferDetailsCard offer={offer} goToFare={goToFare}/> : 
+                  <FareDetailsCard offer={offer} handleViewChange={goBackToFlight}/>}
+              </DialogContent>
             </Dialog>
           </div>
         </div>
