@@ -171,7 +171,9 @@ export default function FareDetailsCard({handleViewChange, offer}) {
           <ArrowLeft size={14} strokeWidth={1.5} className="text-white inline"/>
           BACK TO FLIGHT DETAILS
         </Button>
-        <Button variant="outline" size="sm" className="text-xs mt-3 tracking-tight text-white border-none hover:text-white bg-purple-600 hover:bg-purple-500"><Plane />{`SELECT FARE TO ${offer.slices[0].destination.city_name.toUpperCase()}`}</Button>
+        <Button variant="outline" size="sm" className="text-xs mt-3 tracking-tight text-white border-none hover:text-white bg-purple-600 hover:bg-purple-500">
+          <Plane />{`SELECT FARE TO ${offer.slices[0].destination.city_name.toUpperCase()}`}
+        </Button>
       </DialogFooter>
     </div>
   )

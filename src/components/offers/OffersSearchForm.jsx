@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import AirportSearch from './AirportSearch';
-import DatePicker from './DatePicker';
+import AirportSearch from '../search/AirportSearch';
+import DatePicker from '../search/DatePicker';
 import { isAfter, isBefore, startOfTomorrow, subDays, endOfDay } from 'date-fns';
 
 export default function OffersSearchForm({searchOffers, errors}) {

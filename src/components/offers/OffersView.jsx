@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Spinner } from '@/components/ui/spinner';
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 import OffersSearchForm from './OffersSearchForm';
 import FeaturedOffers from './FeaturedOffers';
 import OfferResultsCard from './OfferResultsCard';
-import { getFlightOffers } from '../actions/flight-search';
+import { getFlightOffers } from '../../app/actions/flight-search';
 import { getLocationName } from '@/lib/flightUtils';
 import LoadingImg from '../../../public/loading-people.svg';
 
@@ -78,7 +78,6 @@ export default function Main() {
           )}
         </div>
       </div>
-      <Toaster position="top-center" toastOptions={{classNames: {toast: '!bg-zinc-800 !text-white !border-zinc-700'}}}/>
     </>
   )
 }

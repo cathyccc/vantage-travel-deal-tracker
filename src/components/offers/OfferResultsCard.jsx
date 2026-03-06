@@ -4,7 +4,7 @@ import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
 import { Button} from '@/components/ui/button';
 import { PlaneTakeoff, PlaneLanding, Luggage } from 'lucide-react';
 import OfferDetailsCard from './OfferDetailsCard';
-import FareDetailsCard from './FareDetailsCard';
+import FareDetailsCard from '../flights/FareDetailsCard';
 import { getLocationName,
          getDepartureTimeToDestination,
          getArrivalTimeToDestination,

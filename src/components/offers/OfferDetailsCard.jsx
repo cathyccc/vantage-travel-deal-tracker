@@ -1,4 +1,4 @@
-import FlightDetailsCard from './FlightDetailsCard'
+import FlightDetailsCard from '../flights/FlightDetailsCard'
 import {
   DialogDescription,
   DialogFooter,
