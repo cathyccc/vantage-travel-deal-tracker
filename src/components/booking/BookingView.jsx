@@ -30,6 +30,7 @@ export default function BookingView ({offer}) {
 
       <div className="col-span-1 md:col-span-2">
         <h3>Booking Details</h3>
+        <div className="text-zinc-500 text-sm">In construction...</div>
       </div>
     </div>
   )
