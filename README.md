@@ -31,8 +31,8 @@ Vantage is a high-performance flight search and deal tracking application design
 - [x] Migrate from Amadeus API (decommissioning in July 2026) to Duffel API for flight offers.
 - [x] Display fare details after "Continue to Fare Details" button.
 - [x] Clean airports JSON data: Remove entries for airports that do not support commercial aviation.
-- [ ] In Progress: Implement offer selection UI: Add functionality to select a specific flight offer from search results, storing the selected offer ID and details in state (e.g., using React Context or Redux).
-- [ ] Create passenger details form: Build a form to collect traveler information (name, DOB, passport details, etc.) required by Duffel API for order creation; include validation for required fields.
+- [x] Implement offer selection UI: Add functionality to select a specific flight offer from search results, storing the selected offer ID and details in URL.
+- [ ] In Progress: Create passenger details form: Build a form to collect traveler information (name, DOB, passport details, etc.) required by Duffel API for order creation; include validation for required fields.
 - [ ] Integrate Duffel API for offer request/creation: Use the selected offer to call Duffel's "Create Offer Request" endpoint if needed, or directly proceed to "Create Order" with passenger data; handle API responses and errors.
 - [ ] Simulate fake payment process: Implement a mock payment gateway UI (e.g., a form with dummy card details) that "processes" payment without real transactions; use Duffel's payment intent simulation if available, or a simple client-side mock with success/failure states.
 - [ ] Handle order creation with Duffel: Submit the order to Duffel API including passenger details and fake payment confirmation; retrieve and display order confirmation details (e.g., booking reference, itinerary).
