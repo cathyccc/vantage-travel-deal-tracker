@@ -2,11 +2,11 @@ import {z} from 'zod';
 import {parseISO, isAfter, endOfToday} from 'date-fns';
 
 export const FlightOffersSearchSchema = z.object({
-  originLocationCode: z.string()
+  originLocationCode: z.string({ message: 'Origin is required' })
     .min(1, "Origin is required")
     .length(3, "Must be a 3-letter IATA code")
     .regex(/^[A-Z]{3}$/, "Invalid airport code format"),
-  destinationLocationCode: z.string()
+  destinationLocationCode: z.string({message: 'Destination is required'})
     .min(1, "Destination is required")
     .length(3, "Must be a 3-letter IATA code")
     .regex(/^[A-Z]{3}$/, "Invalid airport code format"),
