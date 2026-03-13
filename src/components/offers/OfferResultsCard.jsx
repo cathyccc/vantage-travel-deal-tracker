@@ -155,6 +155,7 @@ export default function OfferResultsCard({offer}) {
                 <Button className="border-1 border-violet-400 text-xs px-2 text-violet-400">VIEW DETAILS</Button>
               </DialogTrigger>
               <DialogContent
+                aria-describedby={undefined}
                 style={getSlideStyle()}
                 className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-fuchsia-300 md:max-w-3xl"
                 onOpenAutoFocus={(e) => e.preventDefault()}>

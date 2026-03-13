@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { ChevronDownIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
-export default function DatePicker({label, field, disabledDates, handleDateChange}) {
+export default function DatePicker({label, field, disabledDates, UrlValue, handleDateChange}) {
   const [open, setOpen] = useState(false);
-  const [date, setDate] = useState();
+  const [date, setDate] = useState("");
 
-  const formValue = date ? format(date, 'yyyy-MM-dd') : '';
+  useEffect(()=> {
+    if (UrlValue) {
+      const parsedDate = typeof UrlValue === 'string' ? parseISO(UrlValue) : UrlValue;
+      setDate(parsedDate);
+    }
+  },[UrlValue])
 
   const onDateSelect = (newDate) => {
     setDate(newDate);
@@ -22,7 +27,7 @@ export default function DatePicker({label, field, disabledDates, handleDateChang
       <label htmlFor={field} className="text-sm text-zinc-400 block">
         {label}
       </label>
-      <input type="hidden" name={field} value={formValue}/>
+      <input type="hidden" name={field} value={date}/>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild className="bg-zinc-900 text-zinc-100 mt-1 hover:bg-zinc-900 hover:text-zinc-100">
           <Button

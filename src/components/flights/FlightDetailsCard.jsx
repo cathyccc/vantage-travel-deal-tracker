@@ -1,11 +1,7 @@
-import { parseISODuration, formatCabinClassName, displayDateDiff } from "@/lib/flightUtils";
+import { parseISODuration, formatCabinClassName, displayDateDiff, displayGateNum } from "@/lib/flightUtils";
 import { format } from 'date-fns';
 
 export default function FlightDetailsCard({ segment }) {
-  const displayGateNum = (char) => {
-    return !isNaN(char) ? `Terminal ${char}`: `Concourse ${char}` 
-  }
-
   const displayCheckedBagsQuantity = () => {
     const quantity = segment.passengers[0].baggages.find(b => b.type === "checked").quantity;
     return quantity === 0 ? 'No' : quantity;

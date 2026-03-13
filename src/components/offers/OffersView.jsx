@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Spinner } from '@/components/ui/spinner';
 import { toast } from "sonner"
@@ -10,41 +10,56 @@ import OfferResultsCard from './OfferResultsCard';
 import { getFlightOffers } from '../../app/actions/flight-search';
 import { getLocationName } from '@/lib/flightUtils';
 import LoadingImg from '../../../public/loading-people.svg';
+import { useSearchParams } from 'next/navigation';
 
-export default function Main() {
+export default function OffersView() {
   const [offers, setOffers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState();
-  const [errors, setErrors] = useState()
+  const [errors, setErrors] = useState();
 
-  const searchOffers = async (form) => {
-    setIsLoading(true);
-    setOffers([]);
+  const searchParams = useSearchParams();
 
-    const formObj = Object.fromEntries(form);
-    setFormData(formObj);
+  useEffect(() => {
+    const originLocationCode = searchParams.get('originLocationCode');
+    const destinationLocationCode = searchParams.get('destinationLocationCode');
+    const departureDate = searchParams.get('departureDate');
+    const returnDate = searchParams.get('returnDate');
+    const adults = parseInt(searchParams.get('adults') || "1");
 
-    // temporary delay to test loading state - remove later
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    if (originLocationCode && destinationLocationCode && departureDate && adults) {
+      setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults });
 
-    try {
-      const offerResults = await getFlightOffers(form);
-      if (offerResults.errors) {
-        setErrors(offerResults.errors);
-        if (offerResults.errors?.root) {
-          toast.warning(offerResults.errors.root);
+      const performSearch = async () => {
+        setIsLoading(true);
+        setErrors(null);
+        setOffers([]);
+
+        try {
+          const offerResults = await getFlightOffers({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults });
+
+          if (offerResults.errors) {
+            setErrors(offerResults.errors);
+            if (offerResults.errors?.root) {
+              toast.warning(offerResults.errors.root)
+            }
+          }
+          setOffers(offerResults.data.offers);
+        } catch (err) {
+          console.error("Search failed:", err);
+          setErrors(err.message || "Something went wrong fetching flights.");
+          setOffers([]);
+        } finally {
+          setIsLoading(false);
         }
-        setIsLoading(false)
-        return
-      }
-      setOffers(offerResults.data.offers);
-      setIsLoading(false);
-    } catch (error) {
-      console.error('Error fetching offers:', error);
+      };
+      performSearch();
+    } else {
       setOffers([]);
-      setIsLoading(false);
+      setFormData(null);
+      setErrors(null);
     }
-  }
+  }, [searchParams]);
 
   const listOfferCards = () => {
     return offers.map(offer => <OfferResultsCard key={offer.id} offer={offer}/>)
@@ -55,7 +70,7 @@ export default function Main() {
       <div className="grid md:grid-cols-4 p-8 text-white lg:grid-cols-6">
         <div className="col-span-1 md:col-span-3 lg:col-span-2">
           <div className="text-3xl font-light mb-8">FIND BEST OFFERS</div>
-          <OffersSearchForm searchOffers={searchOffers} errors={errors}/>
+          <OffersSearchForm/>
         </div>
         {/* <FeaturedOffers offers={offers}/> */}
         <div className="col-span-3 md:px-3 md:mt-5 lg:col-span-4">

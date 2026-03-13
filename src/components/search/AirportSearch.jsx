@@ -1,12 +1,29 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Command, CommandInput, CommandList, CommandItem, CommandEmpty, CommandGroup } from '@/components/ui/command';
 import Fuse from "fuse.js";
 import airportData from "../../lib/airports_feb2026.json";
 
-export default function AirportSearch({label, field}) {
+export default function AirportSearch({label, field, UrlValue, handleSelectedAirportCode}) {
   const [open, setOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedAirportCode, setSelectedAirportCode] = useState(null);
+  const [searchQuery, setSearchQuery] = useState(() => {
+    if (!UrlValue) return "";
+    const airport = airportData.find(a => a.iata === UrlValue);
+    return airport ? `${airport.city} (${airport.iata} - ${airport.name}, ${airport.country})` : UrlValue;
+  });
+
+  useEffect(() => {
+    if (!UrlValue) {
+      setSearchQuery("");
+      return;
+    }
+
+    const airport = airportData.find(a => a.iata === UrlValue);
+    const displayValue = airport
+      ? `${airport.city} (${airport.iata} - ${airport.name}, ${airport.country})`
+      : UrlValue;
+
+    setSearchQuery(displayValue);
+  }, [UrlValue]);
 
   const fuse = useMemo(() => {
     return new Fuse (airportData, {
@@ -28,12 +45,17 @@ export default function AirportSearch({label, field}) {
   }, [searchQuery, fuse]);
 
   const handleSearch = (value) => {
-    if (searchQuery.length > 0) setOpen(true);
+    if (value.length > 0) setOpen(true);
     setSearchQuery(value);
+
+    if (value === '') {
+      handleSelectedAirportCode(field, '');
+      setOpen(false);
+    }
   }
 
   const handleSelect = ({displayName, iataCode}) => {
-    setSelectedAirportCode(iataCode);
+    handleSelectedAirportCode(field, iataCode);
     setOpen(false);
     setSearchQuery(displayName);
   }
@@ -49,14 +71,13 @@ export default function AirportSearch({label, field}) {
           <span>{`${airport.city} (${airport.iata} - ${airport.name}, ${airport.country})`}</span>
         </CommandItem>
       )
-    }
-    )
+    })
   }
 
   return (
     <div className="relative">
       <label htmlFor={field} className="text-sm text-zinc-400">{label}</label>
-      <input type="hidden" name={field} value={selectedAirportCode || ''} />
+      <input type="hidden" name={field} value={UrlValue || ''}/>
       <Command className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-2xl mt-1 overflow-visible">
         <div className="[&_div]:!border-b-0 [&_div]:!border-none">
           <CommandInput

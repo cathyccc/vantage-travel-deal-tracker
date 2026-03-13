@@ -1,11 +1,10 @@
 "use server";
 
-import { FlightOffersSearchSchema } from "../../lib/schema";
+import { FlightOffersSearchSchema } from "../../lib/schemas/flight-search";
+import { searchOffers } from "@/lib/api/flights";
 
 export async function getFlightOffers(formData) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const rawData = Object.fromEntries(formData);
-  const validatedData = FlightOffersSearchSchema.safeParse(rawData);
+  const validatedData = FlightOffersSearchSchema.safeParse(formData);
 
   if (!validatedData.success) {
     return {
@@ -16,31 +15,9 @@ export async function getFlightOffers(formData) {
   }
   
   try {
-    const {originLocationCode, destinationLocationCode, departureDate, returnDate, adults} = validatedData.data;
-    const queryString = new URLSearchParams({originLocationCode, destinationLocationCode, departureDate, returnDate, adults}).toString();
-    const response = await fetch(`${baseUrl}/api/flight-offers-search?${queryString}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Duffel-Version': 'v2',
-          'Accept': 'application/json',
-          'Accept-Encoding': 'gzip'
-        },
-      });
-
-    if(!response.ok) {
-      const errorData = await response.json();
-      return {
-        success: false,
-        code: errorData.errorCode,
-        errors: {'root': errorData.message},
-      };
-    }
-
-    const data = await response.json();
-
+    const data = await searchOffers(validatedData.data);
     return {
-      data: data || [], 
+      data,
       success: true,
       errors: null
     };
@@ -48,7 +25,7 @@ export async function getFlightOffers(formData) {
     return {
       data:[],
       success: false,
-      errors: { root: [error.messages]}
+      errors: { root: error.message }
     };
   }
 }

@@ -115,10 +115,10 @@ export function fullFlightAmenities(slices) {
   slices.forEach(slice => {
     slice.segments.forEach(seg => {
       const { amenities: am } = seg.passengers[0].cabin;
-      const powerAvailability = am.power.available;
-      const hasExtraLegroom = am.seat.legroom === 'more';
-      const wifiAvailable = am.wifi.available;
-      const wifiHasFee = am.wifi.cost === 'paid';
+      const powerAvailability = am?.power.available || false;
+      const hasExtraLegroom = am?.seat.legroom === 'more' || false;
+      const wifiAvailable = am?.wifi.available || false;
+      const wifiHasFee = am?.wifi.cost === 'paid' || false;
 
       amenities.power.push(powerAvailability);
       amenities.extraLegroom.push(hasExtraLegroom);
@@ -152,5 +152,9 @@ export function getCarrierNames(slice) {
   const uniqueCarriers = [...new Set(carriers)];;
   if (uniqueCarriers.length === 0) return "Unknown Airline";
   if (uniqueCarriers.length === 1) return uniqueCarriers[0];
-  if (uniqueCarriers.length === 2) return uniqueCarriers.join(' & ');
+  if (uniqueCarriers.length === 2) return "Multiple Airlines";
+}
+
+export const displayGateNum = (char) => {
+  return !isNaN(char) ? `Terminal ${char}`: `Concourse ${char}`;
 }

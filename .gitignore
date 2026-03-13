@@ -12,7 +12,7 @@
 
 # testing
 **/coverage/
-src/app/api/mock-data/**
+**/mock-data/**
 
 # next.js
 **/.next/
