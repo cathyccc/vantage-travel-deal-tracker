@@ -34,6 +34,7 @@ export default function DatePicker({label, field, disabledDates, UrlValue, handl
             id={field}
             variant="outline"
             data-empty={!date}
+            aria-label={`Select ${label} date`}
             className="px-4 py-3 border border-zinc-800"
           >
             {date ? format(date, "PP") : <span className="text-zinc-500 text-sm">Select date</span>}
@@ -44,6 +45,7 @@ export default function DatePicker({label, field, disabledDates, UrlValue, handl
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
             mode="single"
+            aria-label="calendar"
             onSelect={onDateSelect}
             defaultMonth={new Date()}
             disabled={disabledDates()}
