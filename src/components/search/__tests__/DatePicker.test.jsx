@@ -12,6 +12,10 @@ const mockProps = {
 }
 
 describe ('DatePicker', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it('renders the label', () => {
     render(<DatePicker {...mockProps}/>);
     expect(screen.getByLabelText('Departure')).toBeInTheDocument();
