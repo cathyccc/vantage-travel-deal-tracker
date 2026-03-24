@@ -5,8 +5,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button'
 import AirportSearch from '../search/AirportSearch';
 import DatePicker from '../search/DatePicker';
+import PassengerCounter from '../search/PassengerCounter';
 import { FlightOffersSearchSchema } from '@/lib/schemas/flight-search';
-import { format, isAfter, isBefore, startOfTomorrow, subDays, endOfDay, parseISO } from 'date-fns';
+import { format, isAfter, isBefore, startOfTomorrow, parseISO } from 'date-fns';
 
 export default function OffersSearchForm() {  
   const router = useRouter();
@@ -15,17 +16,9 @@ export default function OffersSearchForm() {
   const [origin, setOrigin] = useState(searchParams.get('originLocationCode') ?? null);
   const [destination, setDestination] = useState(searchParams.get('destinationLocationCode') ?? null);
   const [adults, setAdults] = useState(Number(searchParams.get('adults')) || 1);
+  const [children, setChildren] = useState(Number(searchParams.get('children')) || 0);
   const [departureDate, setDepartureDate] = useState(searchParams.get('departureDate') ?? null);
   const [returnDate, setReturnDate] = useState(searchParams.get('returnDate') ?? null);
-  
-  const minusAdult = () => {
-    setAdults(prevAdults => prevAdults > 1 ? prevAdults-1 : 1);
-  }
-
-  const addAdult = () => {
-    if (adults === 9) return setAdultError('Max adult passenger reached.')
-    setAdults(prevAdults => prevAdults < 10 ? prevAdults+1 : 9);
-  }
 
   const searchFlightOffers = (e) => {
     e.preventDefault();
@@ -34,7 +27,8 @@ export default function OffersSearchForm() {
       destinationLocationCode: destination,
       departureDate,
       returnDate,
-      adults
+      adults,
+      children
     });
 
     if (!result.success){
@@ -49,6 +43,7 @@ export default function OffersSearchForm() {
       departureDate: departureDate ?? '',
       returnDate: returnDate ?? '',
       adults,
+      children
     });
     router.push(`/?${params.toString()}`);
   }
@@ -73,6 +68,9 @@ export default function OffersSearchForm() {
     if (field === 'originLocationCode') return setOrigin(iataCode);
     if (field === 'destinationLocationCode') return setDestination(iataCode);
   }
+
+  const handleAdultsCount = (num) => setAdults(num);
+  const handleChildrenCount = (num) => setChildren(num);
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8">
@@ -109,29 +107,24 @@ export default function OffersSearchForm() {
           {errors?.returnDate && <p className="text-red-400 text-xs pt-1">{errors?.returnDate[0]}</p>}
         </div>
 
-       <div className="pb-4 flex justify-between items-center">
-          <label htmlFor="adults" className="text-sm text-zinc-400">Adults</label>
-          <div className="flex items-center justify-center gap-2">
-            <Button
-              type="button"
-              disabled={adults <= 1}
-              onClick={minusAdult}
-              className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-                -
-            </Button>
-            <input type="hidden" name="adults" value={adults} />
-            {errors?.adults && <p className="text-red-400 text-xs pt-1">{errors?.adults[0]}</p>}
-            <span className="inline-block w-12 text-center">{adults}</span>
-            <Button
-              type="button"
-              disabled={adults >= 9}
-              onClick={addAdult}
-              className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-                +
-            </Button>
-          </div>
+        <div className="pb-4">
+          <PassengerCounter
+            label="Adults"
+            field="adults"
+            value={adults}
+            onChange={handleAdultsCount}
+            errors
+          />
+        </div>
+
+        <div className="pb-4">
+          <PassengerCounter
+            label="Children"
+            field="children"
+            value={children}
+            onChange={handleChildrenCount}
+            errors
+          />
         </div>
 
         <Button

@@ -19,6 +19,9 @@ export const FlightOffersSearchSchema = z.object({
   adults: z.coerce.number({ message: 'The number of adults is required' })
     .min(1, "At least 1 adult")
     .max(9, "Max 9 adults"),
+  children: z.coerce.number()
+    .min(0)
+    .max(9, "Max 9 children"),
 }).refine(data => data.originLocationCode !== data.destinationLocationCode, {
   message: "Origin and destination cannot be the same",
   path: ["destinationLocationCode"]

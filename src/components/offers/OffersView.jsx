@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Spinner } from '@/components/ui/spinner';
 import { toast } from "sonner"
-import OffersSearchForm from './OffersSearchForm';
+import OffersSearchForm from '../search/OffersSearchForm';
 import FeaturedOffers from './FeaturedOffers';
 import OfferResultsCard from './OfferResultsCard';
 import { getFlightOffers } from '../../app/actions/flight-search';
@@ -26,9 +26,10 @@ export default function OffersView() {
     const departureDate = searchParams.get('departureDate');
     const returnDate = searchParams.get('returnDate');
     const adults = parseInt(searchParams.get('adults') || "1");
+    const children = parseInt(searchParams.get('children')|| "0");
 
     if (originLocationCode && destinationLocationCode && departureDate && adults) {
-      setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults });
+      setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults, children });
 
       const performSearch = async () => {
         setIsLoading(true);
@@ -36,7 +37,14 @@ export default function OffersView() {
         setOffers([]);
 
         try {
-          const offerResults = await getFlightOffers({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults });
+          const offerResults = await getFlightOffers({
+            originLocationCode,
+            destinationLocationCode,
+            departureDate,
+            returnDate,
+            adults,
+            children
+          });
 
           if (offerResults.errors) {
             setErrors(offerResults.errors);

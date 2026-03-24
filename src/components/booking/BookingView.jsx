@@ -11,6 +11,7 @@ export default function BookingView ({offer}) {
   const departureDate = searchParams.get('departureDate');
   const returnDate = searchParams.get('returnDate');
   const adults = searchParams.get('adults');
+  const children = searchParams.get('children');
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-6 p-8 text-white gap-5">
@@ -18,7 +19,7 @@ export default function BookingView ({offer}) {
         <div className="text-3xl font-light mb-8">Offer for</div>
         <div className="bg-zinc-900 rounded-lg px-6 py-4 text-white max-w-[400px]">
           <CollapsibleSearch
-            defaultValues={{ originLocationCode, destinationLocationCode, departureDate, returnDate, adults }}
+            defaultValues={{ originLocationCode, destinationLocationCode, departureDate, returnDate, adults, children }}
             />
         </div>
       </div>

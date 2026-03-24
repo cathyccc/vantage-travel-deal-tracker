@@ -89,19 +89,19 @@ export default function FareDetailsCard({handleViewChange, offer}) {
               <>
                 <span className="font-bold">Flexibility</span>
 
-                {!conditions.refund_before_departure.allowed &&
+                {!conditions.refund_before_departure?.allowed &&
                   <div className="pt-1">
                     <X strokeWidth={2.5} size={16} className="inline"/>
                     <span className="font-extralight text-xs pl-3">Non-refundable</span>
                   </div>}
 
-                {conditions.refund_before_departure.penalty_amount && 
+                {conditions.refund_before_departure?.penalty_amount && 
                   <div className="pt-1">
                     <HandCoins strokeWidth={2} size={16} className="text-purple-400 inline"/>
                     <span className="font-extralight text-xs pl-3">Refundable, fees applies</span>
                   </div>}
 
-                {conditions.change_before_departure.allowed && 
+                {conditions.change_before_departure?.allowed && 
                   <div className="pt-1">
                     <HandCoins strokeWidth={2} size={16} className="text-purple-400 inline"/>
                     <span className="font-extralight text-xs pl-3">Changeable, fees applies</span>

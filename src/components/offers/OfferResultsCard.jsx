@@ -24,7 +24,7 @@ export default function OfferResultsCard({offer}) {
   const arrivalTime = getArrivalTimeToDestination(slices);
   const departureLocationName = slices[0].segments[0].origin.city_name;
   const arrivalLocationName = slices[0].segments[slices[0].segments.length-1]?.destination.city_name;
-  const checkedBagsQuantity = slices[0].segments[0].passengers[0].baggages.find(b => b.type === "checked").quantity || 0;
+  const checkedBagsQuantity = slices[0].segments[0].passengers[0].baggages.find(b => b.type === "checked")?.quantity || 0;
 
   const getSlideStyle = () => {
     if (slideClass === 'animate-slide-out-left') return {animation: 'slide-out-left 0.3s ease forwards'};
