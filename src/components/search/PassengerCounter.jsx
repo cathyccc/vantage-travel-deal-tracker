@@ -17,6 +17,7 @@ export default function PassengerCounter({label, field, value, onChange, errors}
       <div className="flex items-center justify-center gap-2">
         <Button
           type="button"
+          data-testid={`${field}-minus`}
           disabled={value === min}
           onClick={minusPassenger}
           aria-label={`Remove ${label} passenger`}
@@ -26,9 +27,10 @@ export default function PassengerCounter({label, field, value, onChange, errors}
         </Button>
         <input type="hidden" name={field} value={value} />
         {errors?.[field] && <p className="text-red-400 text-xs pt-1">{errors?.[field][0]}</p>}
-        <span className="inline-block w-12 text-center">{value}</span>
+        <span data-testid={`${field}-count`} className="inline-block w-12 text-center">{value}</span>
         <Button
           type="button"
+          data-testid={`${field}-add`}
           disabled={value >= 9}
           onClick={addPassenger}
           aria-label={`Add ${label} passenger`}

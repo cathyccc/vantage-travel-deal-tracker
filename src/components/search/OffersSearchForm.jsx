@@ -36,6 +36,7 @@ export default function OffersSearchForm() {
       return;
     }
 
+
     setErrors({});
     const params = new URLSearchParams({
       originLocationCode: origin,
@@ -65,8 +66,22 @@ export default function OffersSearchForm() {
   }
 
   const handleSelectedAirportCode = (field, iataCode) => {
-    if (field === 'originLocationCode') return setOrigin(iataCode);
-    if (field === 'destinationLocationCode') return setDestination(iataCode);
+    if (field === 'originLocationCode') {
+      if (destination !== null && destination === iataCode){
+        setOrigin(iataCode);
+        return setErrors({...errors, originLocationCode: ["Origin and destination cannot be the same"]})
+      }
+      setErrors({...errors, originLocationCode: null});
+      return setOrigin(iataCode);
+    }
+    if (field === 'destinationLocationCode') {
+      if (origin !== null && origin === iataCode){
+        setDestination(iataCode);
+        return setErrors({...errors, destinationLocationCode: ["Origin and destination cannot be the same"]})
+      }
+      setErrors({...errors, destinationLocationCode: null});
+      return setDestination(iataCode);
+    }
   }
 
   const handleAdultsCount = (num) => setAdults(num);

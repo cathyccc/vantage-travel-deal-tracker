@@ -3,10 +3,10 @@ import { Duffel } from '@duffel/api';
 const duffel = new Duffel ({token: process.env.DUFFEL_ACCESS_TOKEN})
 
 // Toggle for testing
-const USE_MOCK_DATA = process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
+const isMock = () => process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
 
-export async function searchOffers({originLocationCode, destinationLocationCode, adults, departureDate, returnDate}) {
-  if (USE_MOCK_DATA) {
+export async function searchOffers({originLocationCode, destinationLocationCode, adults, children, departureDate, returnDate}) {
+  if (isMock()) {
     const mockModule = await import('./mock-data/duffel-api-results.json');
     return mockModule.default.data;
   }
@@ -22,7 +22,9 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
       departure_date: returnDate
     }
   ];
-  const passengers = Array.from({ length: adults }, () => ({ type: "adult" }));
+  const adultPassengers = Array.from({ length: adults }, () => ({ type: "adult" }));
+  const childrenPassengers = Array.from({ length: children}, () => ({ age: 10 }));
+  const passengers = [...adultPassengers, ...childrenPassengers];
 
   const offerRequest =  await duffel.offerRequests.create({
     slices,
@@ -33,8 +35,7 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
 
   const offers = await duffel.offers.list({
     offer_request_id: offerRequest.data.id,
-    sort: 'total_amount',
-    currency: 'CAD'
+    sort: 'total_amount'
   })
 
   return {
@@ -44,7 +45,7 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
 }
 
 export async function getOffer(offerId) {
-  if (USE_MOCK_DATA) {
+  if (isMock()) {
     const mockModule = await import('./mock-data/duffel-api-results.json');
     const mockOffer = mockModule.default.data.offers.find(o => o.id === offerId);
     if (!mockOffer) throw new Error("Mock offer not found");
