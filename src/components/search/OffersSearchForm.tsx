@@ -1,26 +1,31 @@
 "use client"
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button'
-import AirportSearch from '../search/AirportSearch';
-import DatePicker from '../search/DatePicker';
-import PassengerCounter from '../search/PassengerCounter';
+import AirportSearch from './AirportSearch';
+import DatePicker from './DatePicker';
+import PassengerCounter from './PassengerCounter';
 import { FlightOffersSearchSchema } from '@/lib/schemas/flight-search';
 import { format, isAfter, isBefore, startOfTomorrow, parseISO } from 'date-fns';
 
-export default function OffersSearchForm() {  
+type AirportFields = "originLocationCode" | "destinationLocationCode"
+type DateFields = "departureDate" | "returnDate"
+type FormFields = AirportFields | DateFields | "adults" | "children"
+type FormErrors = Partial<Record<FormFields, string[]>>
+
+export default function OffersSearchForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [errors, setErrors] = useState({});
-  const [origin, setOrigin] = useState(searchParams.get('originLocationCode') ?? null);
-  const [destination, setDestination] = useState(searchParams.get('destinationLocationCode') ?? null);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [origin, setOrigin] = useState<string | null>(searchParams.get('originLocationCode') ?? null);
+  const [destination, setDestination] = useState<string | null>(searchParams.get('destinationLocationCode') ?? null);
   const [adults, setAdults] = useState(Number(searchParams.get('adults')) || 1);
   const [children, setChildren] = useState(Number(searchParams.get('children')) || 0);
-  const [departureDate, setDepartureDate] = useState(searchParams.get('departureDate') ?? null);
-  const [returnDate, setReturnDate] = useState(searchParams.get('returnDate') ?? null);
+  const [departureDate, setDepartureDate] = useState<string | undefined>(searchParams.get('departureDate') ?? undefined);
+  const [returnDate, setReturnDate] = useState<string | undefined>(searchParams.get('returnDate') ?? undefined);
 
-  const searchFlightOffers = (e) => {
+  const searchFlightOffers = (e: FormEvent) => {
     e.preventDefault();
     const result = FlightOffersSearchSchema.safeParse({
       originLocationCode: origin,
@@ -31,76 +36,73 @@ export default function OffersSearchForm() {
       children
     });
 
-    if (!result.success){
+    if (!result.success) {
       setErrors(result.error.flatten().fieldErrors)
       return;
     }
 
-
     setErrors({});
     const params = new URLSearchParams({
-      originLocationCode: origin,
-      destinationLocationCode: destination,
+      originLocationCode: origin ?? '',
+      destinationLocationCode: destination ?? '',
       departureDate: departureDate ?? '',
       returnDate: returnDate ?? '',
-      adults,
-      children
+      adults: adults.toString(),
+      children: children.toString()
     });
     router.push(`/?${params.toString()}`);
   }
 
-  const departureDisabledDates = () => {
-    if (!returnDate) return (date) => isBefore(date, startOfTomorrow());
-    if (returnDate) return (date) => isBefore(date, startOfTomorrow()) || !isBefore(date, parseISO(returnDate));
+  const departureDisabledDates = (date: Date): boolean => {
+    const isPast: boolean = isBefore(date, startOfTomorrow());
+    if (!returnDate) return isPast;
+    return isPast || !isBefore(date, parseISO(returnDate));
   }
 
-  const returnDisabledDates = () => {
-    if (!departureDate) return (date) => isBefore(date, startOfTomorrow());
-    if (departureDate) return (date) => !isAfter(date, parseISO(departureDate));
+  const returnDisabledDates = (date: Date): boolean => {
+    const isPast: boolean = isBefore(date, startOfTomorrow());
+    if (!departureDate) return isPast;
+    return isPast || !isAfter(date, parseISO(departureDate));
   }
 
-  const handleDateChange = (field, selectedDate) => {
+  const handleDateChange = (field: DateFields, selectedDate: Date | undefined) => {
+    if (!selectedDate) return;
     const formattedDate = format(selectedDate, 'yyyy-MM-dd');
     if (field === 'departureDate') return setDepartureDate(formattedDate);
     if (field === 'returnDate') return setReturnDate(formattedDate);
   }
 
-  const handleSelectedAirportCode = (field, iataCode) => {
-    if (field === 'originLocationCode') {
-      if (destination !== null && destination === iataCode){
-        setOrigin(iataCode);
-        return setErrors({...errors, originLocationCode: ["Origin and destination cannot be the same"]})
-      }
-      setErrors({...errors, originLocationCode: null});
-      return setOrigin(iataCode);
+  const handleSelectedAirportCode = (field: AirportFields, iataCode: string) => {
+    const otherField = field === 'originLocationCode' ? destination : origin;
+    if (otherField === iataCode) {
+      setErrors(prev => ({
+        ...prev,
+        [field]: ["Origin and destination cannot be the same"]
+      }));
+    } else {
+      setErrors(prev => ({ ...prev, [field]: [] }));
     }
-    if (field === 'destinationLocationCode') {
-      if (origin !== null && origin === iataCode){
-        setDestination(iataCode);
-        return setErrors({...errors, destinationLocationCode: ["Origin and destination cannot be the same"]})
-      }
-      setErrors({...errors, destinationLocationCode: null});
-      return setDestination(iataCode);
-    }
+    if (field === 'originLocationCode') setOrigin(iataCode);
+    else setDestination(iataCode);
   }
 
-  const handleAdultsCount = (num) => setAdults(num);
-  const handleChildrenCount = (num) => setChildren(num);
+  const handleAdultsCount = (num: number) => setAdults(num);
+  const handleChildrenCount = (num: number) => setChildren(num);
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8">
       <form onSubmit={searchFlightOffers}>
         <div className="pb-4">
-          <AirportSearch label="Origin" field="originLocationCode" UrlValue={origin} handleSelectedAirportCode={handleSelectedAirportCode}/>
+          <AirportSearch label="Origin" field="originLocationCode" UrlValue={origin} handleSelectedAirportCode={handleSelectedAirportCode} />
           {errors?.originLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.originLocationCode[0]}</p>}
         </div>
 
         <div className="pb-4">
-          <AirportSearch label="Destination" field="destinationLocationCode" UrlValue={destination} handleSelectedAirportCode={handleSelectedAirportCode}/>
+          <AirportSearch label="Destination" field="destinationLocationCode" UrlValue={destination} handleSelectedAirportCode={handleSelectedAirportCode} />
           {errors?.destinationLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.destinationLocationCode[0]}</p>}
         </div>
 
-       <div className="pb-4">
+        <div className="pb-4">
           <DatePicker
             label="Departure"
             field="departureDate"
@@ -128,7 +130,7 @@ export default function OffersSearchForm() {
             field="adults"
             value={adults}
             onChange={handleAdultsCount}
-            errors
+            errors={errors}
           />
         </div>
 
@@ -138,7 +140,7 @@ export default function OffersSearchForm() {
             field="children"
             value={children}
             onChange={handleChildrenCount}
-            errors
+            errors={errors}
           />
         </div>
 

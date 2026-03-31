@@ -8,7 +8,7 @@ type FieldTypes = 'originLocationCode' | 'destinationLocationCode'
 type AirportSearchProps = {
   label: 'Origin' | 'Destination',
   field: FieldTypes,
-  UrlValue: string,
+  UrlValue: string | null,
   handleSelectedAirportCode: (field: FieldTypes, iataCode: string) => void
 }
 
