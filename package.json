@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "test": "vitest run"
   },
   "dependencies": {
     "@duffel/api": "^4.21.5",
