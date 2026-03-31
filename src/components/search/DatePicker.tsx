@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { format, parseISO } from "date-fns";
 
 type FieldTypes = "departureDate" | "returnDate";
-type DatePickerProps = {
+export type DatePickerProps = {
   label: "Departure" | "Return",
   field: FieldTypes,
   disabledDates: (date: Date) => boolean,
@@ -41,7 +41,7 @@ export default function DatePicker({ label, field, disabledDates, UrlValue, hand
 
   return (
     <div className="flex flex-col">
-      <label htmlFor={field} className="text-sm text-zinc-400 block">
+      <label htmlFor={`${field}-trigger`} className="text-sm text-zinc-400 block">
         {label}
       </label>
       <input type="hidden" name={field} value={hiddenValue} />
