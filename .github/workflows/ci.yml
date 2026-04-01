@@ -18,8 +18,22 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      # 1. Install Playwright Browsers + Linux System Deps
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
-      - name: Run tests
+      # 2. Run Vitest (Your current 'npm run test')
+      - name: Run Unit Tests
         run: npm run test
+
+      # 3. Run Playwright (The new TS tests)
+      - name: Run E2E Tests
+        run: npx playwright test
+
+      # 4. Save the "Black Box" (Traces/Screenshots) if things fail
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
