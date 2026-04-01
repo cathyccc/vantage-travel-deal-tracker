@@ -29,3 +29,6 @@ jobs:
 
       - name: Run E2E Tests
         run: npx playwright test
+        env:
+          USE_MOCK: 'true'
+          NODE_ENV: development
