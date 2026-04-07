@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Command, CommandInput, CommandList, CommandItem, CommandEmpty, CommandGroup } from '@/components/ui/command';
 import Fuse from "fuse.js";
 import airportData from "../../lib/airports_feb2026.json";
+import { Airport } from '../../lib/local.types'
 
 type FieldTypes = 'originLocationCode' | 'destinationLocationCode'
 
@@ -10,16 +11,6 @@ type AirportSearchProps = {
   field: FieldTypes,
   UrlValue: string | null,
   handleSelectedAirportCode: (field: FieldTypes, iataCode: string) => void
-}
-
-interface Airport {
-  "iata": string,
-  "name": string,
-  "city": string,
-  "country": string,
-  "region": string,
-  "timezone": string,
-  "is_major_hub": boolean
 }
 
 const airports = airportData as Airport[];

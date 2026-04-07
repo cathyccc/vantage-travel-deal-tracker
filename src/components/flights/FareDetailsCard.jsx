@@ -22,7 +22,7 @@ export default function FareDetailsCard({handleViewChange, offer}) {
   const isFlexible = Object.hasOwn(conditions, "refund_before_departure") ||
                      Object.hasOwn(conditions, "change_before_departure");
   const hasSeatOptions = departureSliceCondition?.advance_seat_selection
-  const cabinClass = offer.slices[0].fare_brand_name;
+  const cabinClass = offer.slices[0].fare_brand_name || 'Economy';
   const amenitiesForFullFlight = fullFlightAmenities(offer.slices);
   const hasNoAmenities = () => {
     const amenitiesSet = [...new Set (Object.values(amenitiesForFullFlight))];

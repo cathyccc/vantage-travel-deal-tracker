@@ -1,0 +1,52 @@
+export interface DuffelSlice {
+  id: string;
+  duration: string;
+  segments: DuffelSegment[];
+  origin: DuffelLocation;
+  destination: DuffelLocation;
+  fare_brand_name?: string | null;
+  marketing_carrier_flight_number: string | null;
+}
+
+export interface DuffelSegment {
+  origin_terminal: string;
+  destination_terminal: string;
+  aircraft: string | null;
+  departing_at: string;
+  arriving_at: string;
+  operating_carrier: DuffelCarrier;
+  marketing_carrier: DuffelCarrier;
+  passengers: DuffelPassenger[];
+  duration: string;
+  destination: DuffelLocation;
+  origin: DuffelLocation;
+}
+
+export interface DuffelCarrier {
+  name: string;
+  id: string;
+  logo_symbol_url: string;
+}
+
+export interface DuffelPassenger {
+  passenger_id: string;
+  baggages: Array<{ type: "checked" | "carry_on", quantity: number }>;
+  cabin_class_marketing_name: string;
+  cabin: {
+    amenities: DuffelAmenities,
+    cabin_class: "business" | "economy"
+  };
+}
+
+export interface DuffelAmenities {
+  wifi: { cost: "paid" | "free" | "n/a", available: boolean },
+  seat: { type: string, legroom: "standard" | "more" | "n/a" },
+  power: { available: boolean }
+}
+
+export interface DuffelLocation {
+  city_name: string;
+  time_zone: string;
+  name: string;
+  iata_code: string;
+}
