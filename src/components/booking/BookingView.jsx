@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import CollapsibleSearch from "../search/CollapsibleSearch";
 import FlightSummaryCard from '../flights/FlightSummaryCard';
+import Stepper from '../layout/Stepper';
 
 export default function BookingView ({offer}) {
   const searchParams = useSearchParams();
@@ -31,7 +32,10 @@ export default function BookingView ({offer}) {
 
       <div className="col-span-1 md:col-span-2">
         <h3>Booking Details</h3>
-        <div className="text-zinc-500 text-sm">In construction...</div>
+        <div className="text-zinc-500 text-sm">
+          <Stepper currentStep={1}/>
+          In construction...
+        </div>
       </div>
     </div>
   )
