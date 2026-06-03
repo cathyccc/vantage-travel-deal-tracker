@@ -19,9 +19,13 @@ const fuse = new Fuse(loyaltyPrograms, {
 });
 
 export default function LoyaltyProgramSearch() {
-  const { setValue } = useFormContext();
+  const { setValue, getValues } = useFormContext();
   const [open, setOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(() => {
+    const initialValue = getValues("loyaltyProgram");
+    const program = loyaltyPrograms.find(p => p.airline_iata_code === initialValue);
+    return program ? program.loyalty_program_name : "";
+  });
   const [dropdownStyle, setDropdownStyle] = useState({});
   const inputWrapperRef = useRef<HTMLDivElement>(null);
 
