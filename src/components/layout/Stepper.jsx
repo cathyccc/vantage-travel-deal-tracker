@@ -1,4 +1,5 @@
 import { Check } from "lucide-react"
+import { Fragment } from "react";
 
 const STEPS = ["Choose Flight", "Your Details", "Confirmation"]
 
@@ -14,8 +15,9 @@ export default function Stepper({ currentStep = 1 }) {
           const isLast = i === STEPS.length - 1;
 
           return (
-            <>
-              <div key={i} className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0
+            <Fragment key={i}>
+              <div className={
+                `w-6 h-6 rounded-full flex items-center justify-center shrink-0
                 ${completed ? "bg-white border-2 border-white" : ""}
                 ${active ? "border-2 border-white" : ""}
                 ${!completed && !active ? "border-[2.5px] border-neutral-600" : ""}
@@ -27,7 +29,7 @@ export default function Stepper({ currentStep = 1 }) {
               {!isLast && (
                 <div className={`flex-1 h-[3px] ${completed ? "bg-white" : "bg-neutral-700"}`} />
               )}
-            </>
+            </Fragment>
           );
         })}
       </div>

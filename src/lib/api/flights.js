@@ -63,3 +63,22 @@ export async function getOffer(offerId) {
     throw new Error(duffelMessage ?? `Failed to load offer (status: ${status ?? 'unknown'})`);
   }
 }
+
+export async function createDuffelOrder({ offerId, passengers, payment }) {
+  try {
+    const order = await duffel.orders.create({
+      selected_offers: [offerId],
+      type: "instant",
+      passengers,
+      payments: [payment],
+    });
+  
+    return order.data;
+  } catch (error) {
+    console.error('createDuffelOrder failed:', error);
+    const duffelMessage = error?.errors?.[0]?.message;
+    const status = error?.meta?.status;
+
+    throw new Error(duffelMessage ?? `Failed to create order (status: ${status ?? 'unknown'})`);
+  }
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "airline_iata_code": "DL",
+    "airline_name": "Delta Air Lines",
+    "loyalty_program_name": "SkyMiles"
+  },
+  {
+    "airline_iata_code": "AA",
+    "airline_name": "American Airlines",
+    "loyalty_program_name": "AAdvantage"
+  },
+  {
+    "airline_iata_code": "UA",
+    "airline_name": "United Airlines",
+    "loyalty_program_name": "MileagePlus"
+  },
+  {
+    "airline_iata_code": "BA",
+    "airline_name": "British Airways",
+    "loyalty_program_name": "Executive Club"
+  },
+  {
+    "airline_iata_code": "WN",
+    "airline_name": "Southwest Airlines",
+    "loyalty_program_name": "Rapid Rewards"
+  },
+  {
+    "airline_iata_code": "LH",
+    "airline_name": "Lufthansa",
+    "loyalty_program_name": "Miles & More"
+  },
+  {
+    "airline_iata_code": "AF",
+    "airline_name": "Air France",
+    "loyalty_program_name": "Flying Blue"
+  },
+  {
+    "airline_iata_code": "AC",
+    "airline_name": "Air Canada",
+    "loyalty_program_name": "Aeroplan"
+  },
+  {
+    "airline_iata_code": "QF",
+    "airline_name": "Qantas",
+    "loyalty_program_name": "Frequent Flyer"
+  },
+  {
+    "airline_iata_code": "CA",
+    "airline_name": "Air China",
+    "loyalty_program_name": "PhoenixMiles"
+  },
+  {
+    "airline_iata_code": "EK",
+    "airline_name": "Emirates",
+    "loyalty_program_name": "Skywards"
+  },
+  {
+    "airline_iata_code": "QR",
+    "airline_name": "Qatar Airways",
+    "loyalty_program_name": "Privilege Club"
+  },
+  {
+    "airline_iata_code": "SQ",
+    "airline_name": "Singapore Airlines",
+    "loyalty_program_name": "KrisFlyer"
+  },
+  {
+    "airline_iata_code": "NH",
+    "airline_name": "All Nippon Airways",
+    "loyalty_program_name": "Mileage Club"
+  },
+  {
+    "airline_iata_code": "JL",
+    "airline_name": "Japan Airlines",
+    "loyalty_program_name": "JAL Mileage Bank"
+  },
+  {
+    "airline_iata_code": "IB",
+    "airline_name": "Iberia",
+    "loyalty_program_name": "Iberia Plus"
+  },
+  {
+    "airline_iata_code": "KL",
+    "airline_name": "KLM",
+    "loyalty_program_name": "Flying Blue"
+  },
+  {
+    "airline_iata_code": "CX",
+    "airline_name": "Cathay Pacific",
+    "loyalty_program_name": "Asia Miles"
+  },
+  {
+    "airline_iata_code": "TK",
+    "airline_name": "Turkish Airlines",
+    "loyalty_program_name": "Miles&Smiles"
+  },
+  {
+    "airline_iata_code": "AS",
+    "airline_name": "Alaska Airlines",
+    "loyalty_program_name": "Mileage Plan"
+  },
+  {
+    "airline_iata_code": "B6",
+    "airline_name": "JetBlue",
+    "loyalty_program_name": "TrueBlue"
+  },
+  {
+    "airline_iata_code": "VS",
+    "airline_name": "Virgin Atlantic",
+    "loyalty_program_name": "Flying Club"
+  },
+  {
+    "airline_iata_code": "EY",
+    "airline_name": "Etihad Airways",
+    "loyalty_program_name": "Etihad Guest"
+  },
+  {
+    "airline_iata_code": "KE",
+    "airline_name": "Korean Air",
+    "loyalty_program_name": "SKYPASS"
+  },
+  {
+    "airline_iata_code": "TG",
+    "airline_name": "Thai Airways",
+    "loyalty_program_name": "Royal Orchid Plus"
+  },
+  {
+    "airline_iata_code": "LX",
+    "airline_name": "Swiss International Air Lines",
+    "loyalty_program_name": "Miles & More"
+  },
+  {
+    "airline_iata_code": "SK",
+    "airline_name": "SAS",
+    "loyalty_program_name": "SAS EuroBonus"
+  },
+  {
+    "airline_iata_code": "NZ",
+    "airline_name": "Air New Zealand",
+    "loyalty_program_name": "Airpoints"
+  },
+  {
+    "airline_iata_code": "LA",
+    "airline_name": "LATAM Airlines",
+    "loyalty_program_name": "LATAM Pass"
+  },
+  {
+    "airline_iata_code": "AV",
+    "airline_name": "Avianca",
+    "loyalty_program_name": "LifeMiles"
+  }
+]

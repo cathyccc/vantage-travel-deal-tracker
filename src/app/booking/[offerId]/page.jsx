@@ -11,7 +11,7 @@ export default async function BookingPage({params, searchParams}) {
     <main className="relative min-h-screen w-full bg-zinc-950 overflow-hidden">
       <div className="relative z-10 flex flex-col min-h-screen text-white">
         <Header />
-        <BookingView offer={offer} searchParams={resolvedSearchParams}/>
+        <BookingView offer={offer} searchParams={resolvedSearchParams} offerId={offerId} />
       </div>
     </main>
   )

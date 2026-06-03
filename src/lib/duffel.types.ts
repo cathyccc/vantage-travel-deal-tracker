@@ -50,3 +50,17 @@ export interface DuffelLocation {
   name: string;
   iata_code: string;
 }
+
+export interface DuffelOffer {
+  id: string;
+  total_amount: string;
+  total_currency: string;
+  slices: DuffelSlice[];
+  cabin_class_marketing_name: string;
+  cabin_class_marketing_name_long: string;
+  booking_conditions: {
+    refundable: boolean;
+    change_penalties: boolean;
+    cancellation_penalties: boolean;
+  }
+}
