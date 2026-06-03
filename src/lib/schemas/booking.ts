@@ -8,6 +8,7 @@ export const BookingSchema = z.object({
   dob: z.string().min(1, "Date of birth is required"),
   gender: z.string({ error: "Gender is required" }).min(1, "Please select a gender"),
   loyaltyProgram: z.string().optional(),
+  frequentFlyerNumber: z.string().optional(),
   knownTravellerId: z.string().optional(),
 
   // contact details
@@ -34,6 +35,14 @@ export const BookingSchema = z.object({
   country: z.string().min(1, "Country is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(7, "Phone number is required").max(15, "Phone number is too long"),
+}).superRefine((data, ctx) => {
+  if (data.loyaltyProgram && !data.frequentFlyerNumber) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Frequent flyer number is required when a loyalty program is selected",
+      path: ["frequentFlyerNumber"]
+    });
+  }
 })
 
 export type BookingFormFields = z.infer<typeof BookingSchema>;

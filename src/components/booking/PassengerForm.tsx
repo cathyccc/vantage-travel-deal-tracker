@@ -93,12 +93,26 @@ export default function PassengerForm() {
         <div className="col-span-full">
           <LoyaltyProgramSearch />
         </div>
+
+        <div className="col-span-full">
+          <label htmlFor="frequentFlyerNumber" className="block font-medium text-xs text-gray-300 mb-1">
+            Frequent Flyer Number
+          </label>
+          <Input
+            {...register("frequentFlyerNumber")}
+            type="text"
+            id="frequentFlyerNumber"
+            name="frequentFlyerNumber"
+            className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
+          />
+          {errors.frequentFlyerNumber && <p className="text-red-400 text-xs">{errors.frequentFlyerNumber.message as string}</p>}
+        </div>
       </div>
 
       <FieldSeparator className="border-zinc-700 mb-2" />
-      <div className="font-white text-xs mb-1">Known Traveller Details & Frequent Flyer Number</div>
+      <div className="font-white text-xs mb-1">Known Traveller Details </div>
       <Input type="text" id="knownTravellerId" name="knownTravellerId" className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
-        placeholder="Known Traveller ID" />
+        placeholder="Global Entry, NEXUS or SENTRI" />
     </div>
   )
 }

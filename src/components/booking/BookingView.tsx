@@ -51,7 +51,7 @@ export default function BookingView({ offer, offerId }: { offer: DuffelOffer; of
   const returnDate = searchParams.get('returnDate');
   const adults = searchParams.get('adults');
   const children = searchParams.get('children');
-  const isPassengerError = errors.firstName || errors.lastName || errors.dob || errors.gender;
+  const isPassengerError = errors.firstName || errors.lastName || errors.dob || errors.gender || errors.frequentFlyerNumber;
   const isPaymentError = errors.cardNumber || errors.cardHolderName || errors.expiryYYYY || errors.expiryMM || errors.cvv;
   const isContactError = errors.contactEmail || errors.contactPhone;
 
