@@ -2,30 +2,34 @@
 
 import { FieldSeparator } from "@/components/ui/field";
 import { Input } from "../ui/input";
-
+import { BookingFormFields } from "@/lib/schemas/booking";
 import { Select, SelectContent, SelectTrigger, SelectItem, SelectValue } from "../ui/select";
-import { useFormContext, Controller } from "react-hook-form";
+import { useFormContext, Controller, type Path } from "react-hook-form";
 import LoyaltyProgramSearch from "../search/LoyaltyProgramSearch";
 
-export default function PassengerForm() {
-  const { register, control, formState: { errors } } = useFormContext();
+export default function PassengerForm({ index }: { index: number }) {
+  const { register, control, formState: { errors } } = useFormContext<BookingFormFields>();
+  const path = `passengers.${index}`;
+  const getError = (fieldName: keyof BookingFormFields['passengers'][number]) => {
+    const error = errors?.passengers?.[index]?.[fieldName];
+    return error ? (error.message as string) : null;
+  };
 
   return (
     <div className="px-6 py-5 text-xs">
-      <p className="text-xs font-medium text-white mb-6">Traveller 1</p>
+      <p className="text-xs font-medium text-white mb-6">Traveller {index + 1}</p>
       <div className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
           <label htmlFor="firstName" className="block font-medium text-xs text-gray-300 mb-1">
             First Name*
           </label>
           <Input
-            {...register("firstName")}
+            {...register(`${path}.firstName` as Path<BookingFormFields>)}
             id="firstName"
             type="text"
-            name="firstName"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
           />
-          {errors.firstName && <p className="text-red-400 text-xs">{errors.firstName.message as string}</p>}
+          {getError("firstName") && <p className="text-red-400 text-xs">{getError("firstName")}</p>}
         </div>
 
         <div>
@@ -33,12 +37,12 @@ export default function PassengerForm() {
             Middle Name
           </label>
           <Input
-            {...register("middleName")}
+            {...register(`${path}.middleName` as Path<BookingFormFields>)}
             type="text"
             id="middleName"
-            name="middleName"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
           />
+          {getError("middleName") && <p className="text-red-400 text-xs">{getError("middleName")}</p>}
         </div>
 
         <div className="col-span-full">
@@ -46,13 +50,12 @@ export default function PassengerForm() {
             Last Name*
           </label>
           <Input
-            {...register("lastName")}
+            {...register(`${path}.lastName` as Path<BookingFormFields>)}
             type="text"
             id="lastName"
-            name="lastName"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
           />
-          {errors.lastName && <p className="text-red-400 text-xs">{errors.lastName.message as string}</p>}
+          {getError("lastName") && <p className="text-red-400 text-xs">{getError("lastName")}</p>}
         </div>
 
         <div>
@@ -60,22 +63,21 @@ export default function PassengerForm() {
             Date of Birth*
           </label>
           <Input
-            {...register("dob")}
+            {...register(`${path}.dob` as Path<BookingFormFields>)}
             type="date"
             id="dob"
-            name="dob"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
           />
-          {errors.dob && <p className="text-red-400 text-xs">{errors.dob.message as string}</p>}
+          {getError("dob") && <p className="text-red-400 text-xs">{getError("dob")}</p>}
         </div>
 
         <Controller
-          name="gender"
+          name={`passengers.${index}.gender` as const}
           control={control}
-          render={({ field }) => (
+          render={({ field: { onChange, value } }) => (
             <div>
               <label htmlFor="gender" className="block font-medium text-xs text-gray-300 mb-1">Gender*</label>
-              <Select onValueChange={field.onChange} value={field.value}>
+              <Select onValueChange={onChange} value={value ?? ""}>
                 <SelectTrigger className="w-full border-zinc-700">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
@@ -85,13 +87,13 @@ export default function PassengerForm() {
                   <SelectItem className="p-1 hover:bg-zinc-600" value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.gender && <p className="text-red-400 text-xs">{errors.gender.message as string}</p>}
+              {getError("gender") && <p className="text-red-400 text-xs">{getError("gender")}</p>}
             </div>
           )}
         />
 
         <div className="col-span-full">
-          <LoyaltyProgramSearch />
+          <LoyaltyProgramSearch path={`passengers.${index}.loyaltyProgram` as Path<BookingFormFields>} />
         </div>
 
         <div className="col-span-full">
@@ -99,19 +101,22 @@ export default function PassengerForm() {
             Frequent Flyer Number
           </label>
           <Input
-            {...register("frequentFlyerNumber")}
+            {...register(`${path}.frequentFlyerNumber` as Path<BookingFormFields>)}
             type="text"
             id="frequentFlyerNumber"
-            name="frequentFlyerNumber"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
           />
-          {errors.frequentFlyerNumber && <p className="text-red-400 text-xs">{errors.frequentFlyerNumber.message as string}</p>}
+          {getError("frequentFlyerNumber") && <p className="text-red-400 text-xs">{getError("frequentFlyerNumber")}</p>}
         </div>
       </div>
 
       <FieldSeparator className="border-zinc-700 mb-2" />
       <div className="font-white text-xs mb-1">Known Traveller Details </div>
-      <Input type="text" id="knownTravellerId" name="knownTravellerId" className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
+      <Input
+        {...register(`${path}.knownTravellerId` as Path<BookingFormFields>)}
+        type="text"
+        id="knownTravellerId"
+        className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
         placeholder="Global Entry, NEXUS or SENTRI" />
     </div>
   )

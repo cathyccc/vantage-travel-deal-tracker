@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { zodResolver } from "@hookform/resolvers/zod";
 import CollapsibleSearch from "../search/CollapsibleSearch";
 import FlightSummaryCard from '../flights/FlightSummaryCard';
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm, FormProvider, useFieldArray, type Resolver } from "react-hook-form";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import PassengerForm from './PassengerForm';
 import PaymentForm from './PaymentForm';
@@ -15,19 +15,29 @@ import { type DuffelOffer } from '@/lib/duffel.types';
 import { Button } from '../ui/button';
 import { CircleAlert } from 'lucide-react';
 
-
 export default function BookingView({ offer, offerId }: { offer: DuffelOffer; offerId: string }) {
+  const searchParams = useSearchParams();
+  const originLocationCode = searchParams.get('originLocationCode');
+  const destinationLocationCode = searchParams.get('destinationLocationCode');
+  const departureDate = searchParams.get('departureDate');
+  const returnDate = searchParams.get('returnDate');
+  const adults = searchParams.get('adults');
+  const children = searchParams.get('children');
+  const totalPassengers = parseInt(adults || "1") + parseInt(children || "0");
+
   const methods = useForm<BookingFormFields>({
-    resolver: zodResolver(BookingSchema),
+    resolver: zodResolver(BookingSchema) as Resolver<BookingFormFields>,
     reValidateMode: "onChange",
     defaultValues: {
-      firstName: "",
-      middleName: "",
-      lastName: "",
-      dob: "",
-      gender: "",
-      loyaltyProgram: "",
-      knownTravellerId: "",
+      passengers: Array.from({ length: totalPassengers }, () => ({
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        dob: "",
+        gender: "",
+        loyaltyProgram: "",
+        knownTravellerId: "",
+      })),
       contactEmail: "",
       contactPhone: "",
       cardNumber: "",
@@ -43,15 +53,9 @@ export default function BookingView({ offer, offerId }: { offer: DuffelOffer; of
       phone: "",
     }
   });
+  const { fields } = useFieldArray({ control: methods.control, name: "passengers" });
   const { formState: { errors } } = methods;
-  const searchParams = useSearchParams();
-  const originLocationCode = searchParams.get('originLocationCode');
-  const destinationLocationCode = searchParams.get('destinationLocationCode');
-  const departureDate = searchParams.get('departureDate');
-  const returnDate = searchParams.get('returnDate');
-  const adults = searchParams.get('adults');
-  const children = searchParams.get('children');
-  const isPassengerError = errors.firstName || errors.lastName || errors.dob || errors.gender || errors.frequentFlyerNumber;
+  const isPassengerError = !!errors.passengers;
   const isPaymentError = errors.cardNumber || errors.cardHolderName || errors.expiryYYYY || errors.expiryMM || errors.cvv;
   const isContactError = errors.contactEmail || errors.contactPhone;
 
@@ -76,7 +80,7 @@ export default function BookingView({ offer, offerId }: { offer: DuffelOffer; of
         <div className="text-zinc-500 text-sm">
           <Stepper currentStep={1} />
           <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit((data) => console.log(data), (errors) => console.log(errors))}>
+            <form onSubmit={methods.handleSubmit((data) => console.log('submitted:', data), (errors) => console.log(errors))}>
               <Accordion type="single" defaultValue="passengerDetails" collapsible className="rounded-lg border border-zinc-700 overflow-visible text-xs text-white mb-4">
                 <AccordionItem value="passengerDetails">
                   <AccordionTrigger className="rounded-none bg-zinc-800 py-3 px-6 text-sm font-medium hover:no-underline">
@@ -86,7 +90,11 @@ export default function BookingView({ offer, offerId }: { offer: DuffelOffer; of
                     </span>
                   </AccordionTrigger>
                   <AccordionContent className="overflow-visible">
-                    <PassengerForm />
+                    {fields.map((field, index) => (
+                      <div key={field.id} className="border-b border-zinc-700 last:border-0">
+                        <PassengerForm index={index} />
+                      </div>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
 
@@ -117,7 +125,6 @@ export default function BookingView({ offer, offerId }: { offer: DuffelOffer; of
 
               <Button
                 type="submit"
-                onClick={() => methods.trigger()}
                 className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded"
               >
                 BOOK & PAY

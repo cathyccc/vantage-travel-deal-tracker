@@ -20,7 +20,6 @@ export default function PaymentForm() {
             type="text"
             inputMode="numeric"
             id="cardNumber"
-            name="cardNumber"
             placeholder="1234 5678 9012 3456"
             maxLength={16}
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
@@ -36,7 +35,6 @@ export default function PaymentForm() {
             {...register("cardHolderName")}
             type="text"
             id="cardHolderName"
-            name="cardHolderName"
             placeholder="John Doe"
             className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
           />
@@ -53,7 +51,6 @@ export default function PaymentForm() {
               type="text"
               inputMode="numeric"
               id="expiryMM"
-              name="expiryMM"
               placeholder="MM"
               maxLength={2}
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
@@ -107,7 +104,6 @@ export default function PaymentForm() {
               {...register("streetAddress")}
               id="streetAddress"
               type="text"
-              name="streetAddress"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
             />
             {errors.streetAddress && <p className="text-red-400 text-xs">{errors.streetAddress.message as string}</p>}
@@ -121,7 +117,6 @@ export default function PaymentForm() {
               {...register("city")}
               id="city"
               type="text"
-              name="city"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.city && <p className="text-red-400 text-xs">{errors.city.message as string}</p>}
@@ -135,7 +130,6 @@ export default function PaymentForm() {
               {...register("stateOrProvince")}
               id="stateOrProvince"
               type="text"
-              name="stateOrProvince"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.stateOrProvince && <p className="text-red-400 text-xs">{errors.stateOrProvince.message as string}</p>}
@@ -149,7 +143,6 @@ export default function PaymentForm() {
               {...register("country")}
               id="country"
               type="text"
-              name="country"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.country && <p className="text-red-400 text-xs">{errors.country.message as string}</p>}
@@ -163,7 +156,6 @@ export default function PaymentForm() {
               {...register("postalCodeOrZip")}
               id="postalCodeOrZip"
               type="text"
-              name="postalCodeOrZip"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.postalCodeOrZip && <p className="text-red-400 text-xs">{errors.postalCodeOrZip.message as string}</p>}
@@ -177,7 +169,6 @@ export default function PaymentForm() {
               {...register("email")}
               id="email"
               type="email"
-              name="email"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.email && <p className="text-red-400 text-xs">{errors.email.message as string}</p>}
@@ -191,7 +182,6 @@ export default function PaymentForm() {
               {...register("phone")}
               id="phone"
               type="tel"
-              name="phone"
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.phone && <p className="text-red-400 text-xs">{errors.phone.message as string}</p>}

@@ -14,7 +14,6 @@ export default function ContactForm() {
             {...register("contactEmail")}
             type="email"
             id="contactEmail"
-            name="contactEmail"
             placeholder="Email*"
             className="w-full border-b border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
           />
@@ -26,7 +25,6 @@ export default function ContactForm() {
             {...register("contactPhone")}
             type="tel"
             id="contactPhone"
-            name="contactPhone"
             placeholder="Phone Number*"
             className="w-full border-b border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
           />

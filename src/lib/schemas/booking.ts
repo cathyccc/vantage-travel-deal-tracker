@@ -1,15 +1,20 @@
+import PassengerCounter from "@/components/search/PassengerCounter";
 import { z } from "zod";
 
 export const BookingSchema = z.object({
   // passenger
-  firstName: z.string().min(1, "First name is required"),
-  middleName: z.string().optional(),
-  lastName: z.string().min(1, "Last name is required"),
-  dob: z.string().min(1, "Date of birth is required"),
-  gender: z.string({ error: "Gender is required" }).min(1, "Please select a gender"),
-  loyaltyProgram: z.string().optional(),
-  frequentFlyerNumber: z.string().optional(),
-  knownTravellerId: z.string().optional(),
+  passengers: z.array(
+    z.object({
+      firstName: z.string().min(1, "First name is required"),
+      middleName: z.string().optional(),
+      lastName: z.string().min(1, "Last name is required"),
+      dob: z.string().min(1, "Date of birth is required"),
+      gender: z.string({ error: "Gender is required" }).min(1, "Please select a gender"),
+      loyaltyProgram: z.string().optional(),
+      frequentFlyerNumber: z.string().optional(),
+      knownTravellerId: z.string().optional(),
+    })
+  ).min(1, "At least one passenger is required"),
 
   // contact details
   contactEmail: z.string().email("Invalid email address"),
@@ -36,13 +41,15 @@ export const BookingSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(7, "Phone number is required").max(15, "Phone number is too long"),
 }).superRefine((data, ctx) => {
-  if (data.loyaltyProgram && !data.frequentFlyerNumber) {
-    ctx.addIssue({
-      code: z.ZodIssueCode.custom,
-      message: "Frequent flyer number is required when a loyalty program is selected",
-      path: ["frequentFlyerNumber"]
-    });
-  }
+  data.passengers.forEach((passenger, index) => {
+    if (passenger.loyaltyProgram && !passenger.frequentFlyerNumber) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Frequent flyer number is required when a loyalty program is selected",
+        path: [`passengers.${index}.frequentFlyerNumber`]
+      });
+    }
+  });
 })
 
 export type BookingFormFields = z.infer<typeof BookingSchema>;

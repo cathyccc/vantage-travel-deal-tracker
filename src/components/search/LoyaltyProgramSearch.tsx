@@ -18,11 +18,11 @@ const fuse = new Fuse(loyaltyPrograms, {
   threshold: 0.3
 });
 
-export default function LoyaltyProgramSearch() {
-  const { setValue, getValues } = useFormContext();
+export default function LoyaltyProgramSearch({ path }: { path: string }) {
+  const { register, setValue, getValues } = useFormContext();
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState(() => {
-    const initialValue = getValues("loyaltyProgram");
+    const initialValue = getValues(path);
     const program = loyaltyPrograms.find(p => p.airline_iata_code === initialValue);
     return program ? program.loyalty_program_name : "";
   });
@@ -53,14 +53,14 @@ export default function LoyaltyProgramSearch() {
       updateDropdownPosition();
       setOpen(true);
     } else {
-      setValue("loyaltyProgram", '', { shouldValidate: true });
+      setValue(path, '', { shouldValidate: true });
       setOpen(false);
     }
   }
 
   const handleSelect = ({ displayName, iataCode }: { displayName: string, iataCode: string }) => {
     setSearchQuery(displayName);
-    setValue("loyaltyProgram", iataCode, { shouldValidate: true });
+    setValue(path, iataCode, { shouldValidate: true });
     setOpen(false);
   }
 
@@ -70,7 +70,9 @@ export default function LoyaltyProgramSearch() {
         <CommandItem
           key={loyaltyProgram.airline_iata_code}
           value={loyaltyProgram.loyalty_program_name}
-          onSelect={(e) => handleSelect({ displayName: e, iataCode: loyaltyProgram.airline_iata_code })}
+          onSelect={() => handleSelect({
+            displayName: loyaltyProgram.loyalty_program_name, iataCode: loyaltyProgram.airline_iata_code
+          })}
         >
           <span>{loyaltyProgram.loyalty_program_name}</span>
         </CommandItem>
@@ -81,7 +83,7 @@ export default function LoyaltyProgramSearch() {
   return (
     <div className="relative">
       <label htmlFor="loyaltyProgram" className="block mb-1 font-medium text-xs text-gray-300 grid">Loyalty Program</label>
-      <input type="hidden" name="loyaltyProgram" />
+      <input type="hidden" {...register(path)} />
       <div ref={inputWrapperRef}>
         <Command className="bg-zinc-900 text-zinc-100 border border-zinc-800 shadow-2xl mt-1 overflow-visible" shouldFilter={false}>
           <div className="[&_div]:!border-b-0 [&_div]:!border-none">
