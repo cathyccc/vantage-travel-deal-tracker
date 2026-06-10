@@ -28,6 +28,7 @@ test('search form has all required fields and submit button @smoke', async ({ pa
   await expect(page.getByText("Return")).toBeVisible();
   await expect(page.getByText("Adults")).toBeVisible();
   await expect(page.getByText("Children")).toBeVisible();
+  await expect(page.getByText("Infants")).toBeVisible();
   await expect(page.getByRole('button', { name: "SEARCH OFFERS" })).toBeVisible();
 });
 
@@ -190,6 +191,20 @@ test('children passenger count cannot be less than 0 @regression', async ({ page
   await expect(page.getByTestId('children-minus')).toBeDisabled();
 });
 
+test('infants passenger count cannot be less than 0 @regression', async ({ page }) => {
+  await page.goto('/');
+  const counter = page.getByTestId('infants-count');
+  await expect(counter).toHaveText('0')
+
+  await page.getByTestId('infants-add').click();
+  await expect(counter).toHaveText('1');
+  await expect(page.getByTestId('infants-minus')).toBeEnabled();
+
+  await page.getByTestId('infants-minus').click();
+  await expect(counter).toHaveText('0');
+  await expect(page.getByTestId('infants-minus')).toBeDisabled();
+});
+
 test('user can adjust number of children passenger details @regression', async ({ page }) => {
   await page.goto('/');
   const counter = page.getByTestId('children-count');
@@ -200,6 +215,18 @@ test('user can adjust number of children passenger details @regression', async (
   await page.getByTestId('children-minus').click();
   await expect(counter).toHaveText('0');
   await expect(page.locator('input[name="children"]')).toHaveValue('0');
+})
+
+test('user can adjust number of infants passenger details @regression', async ({ page }) => {
+  await page.goto('/');
+  const counter = page.getByTestId('infants-count');
+  await expect(counter).toHaveText('0')
+  await page.getByTestId('infants-add').click();
+  await expect(counter).toHaveText('1');
+  await expect(page.locator('input[name="infants"]')).toHaveValue('1');
+  await page.getByTestId('infants-minus').click();
+  await expect(counter).toHaveText('0');
+  await expect(page.locator('input[name="infants"]')).toHaveValue('0');
 })
 
 test('valid search updates URL with all expected params @e2e @smoke @regression', async ({ page }) => {

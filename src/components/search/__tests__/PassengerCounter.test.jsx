@@ -87,7 +87,12 @@ describe('PassengerCounter', () => {
   });
 
   it("should render the error message when field is children", () => {
-    render(<PassengerCounter {...mockProps} field="children" errors={{ children: ["Max 9 children"] }}/>);
-    expect(screen.getByText("Max 9 children")).toBeInTheDocument();
+    render(<PassengerCounter {...mockProps} field="children" errors={{ children: ["Max 8 children"] }}/>);
+    expect(screen.getByText("Max 8 children")).toBeInTheDocument();
+  });
+
+  it("should render the error message when field is infants", () => {
+    render(<PassengerCounter {...mockProps} field="infants" errors={{ infants: ["Max 8 infants"] }}/>);
+    expect(screen.getByText("Max 8 infants")).toBeInTheDocument();
   });
 })

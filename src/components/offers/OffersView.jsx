@@ -27,9 +27,16 @@ export default function OffersView() {
     const returnDate = searchParams.get('returnDate');
     const adults = parseInt(searchParams.get('adults') || "1");
     const children = parseInt(searchParams.get('children')|| "0");
+    const infants = parseInt(searchParams.get('infants') || "0");
+    const parseAges = (param) => {
+      if (!param) return [];
+      return param.split(',').map(Number).filter(n => !isNaN(n));  // don't filter 0
+    };
+    const childAges = parseAges(searchParams.get('childAges'));
+    const infantAges = parseAges(searchParams.get('infantAges')?.split(','));
 
     if (originLocationCode && destinationLocationCode && departureDate && adults) {
-      setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults, children });
+      setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults, children, childAges, infantAges, infants });
 
       const performSearch = async () => {
         setIsLoading(true);
@@ -43,7 +50,10 @@ export default function OffersView() {
             departureDate,
             returnDate,
             adults,
-            children
+            children,
+            childAges,
+            infants,
+            infantAges
           });
 
           if (offerResults.errors) {

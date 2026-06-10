@@ -1,10 +1,12 @@
 "use client";
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext, Controller } from "react-hook-form";
+import PhoneInput from "react-phone-number-input";
 import { Input } from "../ui/input";
+import 'react-phone-number-input/style.css';
 
 export default function PaymentForm() {
-  const { register, formState: { errors } } = useFormContext();
+  const { register, control, formState: { errors, touchedFields } } = useFormContext();
 
   return (
     <div className="px-6 py-5 text-xs">
@@ -178,11 +180,22 @@ export default function PaymentForm() {
             <label htmlFor="phone" className="block font-medium text-gray-300 mb-1 text-xs">
               Phone*
             </label>
-            <Input
-              {...register("phone")}
-              id="phone"
-              type="tel"
-              className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
+            <Controller
+              name="phone"
+              control={control}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <PhoneInput
+                    international
+                    defaultCountry="CA"
+                    id="phone"
+                    type="tel"
+                    value={value || undefined}
+                    onChange={(val) => onChange(val ?? "")}
+                    className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white"
+                  />
+                )
+              }}
             />
             {errors.phone && <p className="text-red-400 text-xs">{errors.phone.message as string}</p>}
           </div>

@@ -22,6 +22,13 @@ export default function OffersSearchForm() {
   const [destination, setDestination] = useState<string | null>(searchParams.get('destinationLocationCode') ?? null);
   const [adults, setAdults] = useState(Number(searchParams.get('adults')) || 1);
   const [children, setChildren] = useState(Number(searchParams.get('children')) || 0);
+  const [childAges, setChildAges] = useState<number[]>(
+    searchParams.get('childAges')?.split(',').map(Number) ?? []
+  )
+  const [infants, setInfants] = useState(Number(searchParams.get('infants')) || 0);
+  const [infantAges, setInfantAges] = useState<number[]>(
+    searchParams.get('infantAges')?.split(',').map(Number) ?? []
+  )
   const [departureDate, setDepartureDate] = useState<string | undefined>(searchParams.get('departureDate') ?? undefined);
   const [returnDate, setReturnDate] = useState<string | undefined>(searchParams.get('returnDate') ?? undefined);
 
@@ -33,7 +40,10 @@ export default function OffersSearchForm() {
       departureDate,
       returnDate,
       adults,
-      children
+      children,
+      childAges,
+      infants,
+      infantAges
     });
 
     if (!result.success) {
@@ -48,8 +58,11 @@ export default function OffersSearchForm() {
       departureDate: departureDate ?? '',
       returnDate: returnDate ?? '',
       adults: adults.toString(),
-      children: children.toString()
+      children: children.toString(),
+      infants: infants.toString(),
     });
+    if (children > 0) params.set('childAges', childAges.join(','));
+    if (infants > 0) params.set('infantAges', infantAges.join(','));
     router.push(`/?${params.toString()}`);
   }
 
@@ -87,7 +100,42 @@ export default function OffersSearchForm() {
   }
 
   const handleAdultsCount = (num: number) => setAdults(num);
-  const handleChildrenCount = (num: number) => setChildren(num);
+
+  const handleChildrenCount = (num: number) => {
+    setChildren(num);
+    setChildAges(prev => {
+      if (num > prev.length) {
+        return Array.from({ length: num }, (_, i) => prev[i] ?? 2);
+      }
+      return prev.slice(0, num);
+    })
+  }
+
+  const handleInfantsCount = (num: number) => {
+    setInfants(num);
+    setInfantAges(prev => {
+      if (num > prev.length) {
+        return Array.from({ length: num }, (_, i) => prev[i] ?? 0);
+      }
+      return prev.slice(0, num);
+    })
+  }
+
+  const handleChildAgeChange = (index: number, age: number) => {
+    setChildAges(prev => {
+      const updated = [...prev];
+      updated[index] = age;
+      return updated;
+    });
+  }
+
+  const handleInfantAgeChange = (index: number, age: number) => {
+    setInfantAges(prev => {
+      const updated = [...prev];
+      updated[index] = age;
+      return updated;
+    });
+  }
 
   return (
     <div className="bg-zinc-900 rounded-2xl p-5 md:p-8">
@@ -142,6 +190,52 @@ export default function OffersSearchForm() {
             onChange={handleChildrenCount}
             errors={errors}
           />
+          {children > 0 && (
+            <div className="mt-2 space-y-2">
+              {Array.from({ length: children }, (_, i) => (
+                <div key={i} className="flex justify-between items-center">
+                  <label className="text-sm text-zinc-400">Child {i + 1} age</label>
+                  <select
+                    className="bg-zinc-800 text-zinc-100 rounded-sm px-2 py-1 text-sm"
+                    value={childAges[i]}
+                    onChange={(e) => handleChildAgeChange(i, Number(e.target.value))}
+                  >
+                    {Array.from({ length: 11 }, (_, i) => i + 2).map(age => (
+                      <option key={age} value={age}>{age} years</option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="pb-4">
+          <PassengerCounter
+            label="Infants"
+            field="infants"
+            value={infants}
+            onChange={handleInfantsCount}
+            errors={errors}
+          />
+          {infants > 0 && (
+            <div className="mt-2 space-y-2">
+              {Array.from({ length: infants }, (_, i) => (
+                <div key={i} className="flex justify-between items-center">
+                  <label className="text-sm text-zinc-400">Infant {i + 1} age</label>
+                  <select
+                    className="bg-zinc-800 text-zinc-100 rounded-sm px-2 py-1 text-sm"
+                    value={infantAges[i]}
+                    onChange={(e) => handleInfantAgeChange(i, Number(e.target.value))}
+                  >
+                    {[0, 1].map(age => (
+                      <option key={age} value={age}>{age === 0 ? 'Under 1' : '1 year'}</option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <Button

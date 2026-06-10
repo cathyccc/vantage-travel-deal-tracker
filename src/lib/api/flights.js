@@ -5,7 +5,7 @@ const duffel = new Duffel ({token: process.env.DUFFEL_ACCESS_TOKEN})
 // Toggle for testing
 const isMock = () => process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
 
-export async function searchOffers({originLocationCode, destinationLocationCode, adults, children, departureDate, returnDate}) {
+export async function searchOffers({originLocationCode, destinationLocationCode, adults, children, infants, childAges=[], infantAges=[], departureDate, returnDate}) {
   if (isMock()) {
     const mockModule = await import('./mock-data/duffel-api-results.json');
     return mockModule.default.data;
@@ -23,8 +23,13 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
     }
   ];
   const adultPassengers = Array.from({ length: adults }, () => ({ type: "adult" }));
-  const childrenPassengers = Array.from({ length: children}, () => ({ age: 10 }));
-  const passengers = [...adultPassengers, ...childrenPassengers];
+  const childrenPassengers = Array.from({ length: children }, (_, i) => ({ 
+    age: childAges[i]
+  }));
+  const infantsPassengers = Array.from({ length: infants }, (_, i) => ({ 
+    age: infantAges[i]
+  }));
+  const passengers = [...adultPassengers, ...childrenPassengers, ...infantsPassengers];
 
   const offerRequest =  await duffel.offerRequests.create({
     slices,
@@ -64,7 +69,7 @@ export async function getOffer(offerId) {
   }
 }
 
-export async function createDuffelOrder({ offerId, passengers, payment }) {
+export async function createDuffelOrder(offerId, passengers, payment) {
   try {
     const order = await duffel.orders.create({
       selected_offers: [offerId],

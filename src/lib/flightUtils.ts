@@ -3,7 +3,8 @@ import {
   format,
   parseISO,
   differenceInCalendarDays,
-  intervalToDuration
+  intervalToDuration,
+  differenceInYears
 } from 'date-fns';
 import { DuffelSegment, DuffelSlice } from './duffel.types';
 
@@ -116,6 +117,15 @@ export function formatCabinClassName(cabin: 'economy' | 'business'): string {
   )
     .join(' ');
 }
+
+export function formatPassengerType(type: "adult" | "child" | "infant_without_seat"): string {
+  return type.split('_').map(word =>
+    word.charAt(0).toUpperCase() +
+    word.slice(1).toLowerCase()
+  )
+    .join(' ');
+}
+
 export function displayDateDiff(segment: DuffelSegment): string {
   const dep = parseISO(segment.departing_at);
   const arr = parseISO(segment.arriving_at);
@@ -187,4 +197,8 @@ export const displayGateNum = (gate: number | string | null): string => {
   if (!gate) return "";
   const isNumeric = !isNaN(Number(gate));
   return isNumeric ? `Terminal ${gate}` : `Concourse ${gate}`;
+}
+
+export const calculateAge = (dob: string): number => {
+  return differenceInYears(new Date(), new Date(dob))
 }

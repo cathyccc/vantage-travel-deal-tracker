@@ -29,7 +29,8 @@ export interface DuffelCarrier {
 }
 
 export interface DuffelPassenger {
-  passenger_id: string;
+  id: string;
+  type: "adult" | "child" | "infant_without_seat";
   baggages: Array<{ type: "checked" | "carry_on", quantity: number }>;
   cabin_class_marketing_name: string;
   cabin: {
@@ -63,4 +64,5 @@ export interface DuffelOffer {
     change_penalties: boolean;
     cancellation_penalties: boolean;
   }
+  passengers: DuffelPassenger[];
 }

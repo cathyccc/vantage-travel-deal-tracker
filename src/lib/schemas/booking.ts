@@ -1,10 +1,18 @@
-import PassengerCounter from "@/components/search/PassengerCounter";
 import { z } from "zod";
+import { isValidPhoneNumber } from "libphonenumber-js";
+
+const phoneSchema = z.string()
+  .min(1, "Phone number is required")
+  .refine((val) => isValidPhoneNumber(val), {
+    message: "Invalid phone number format",
+  });
 
 export const BookingSchema = z.object({
   // passenger
   passengers: z.array(
     z.object({
+      passengerId: z.string(),
+      passengerType: z.enum(["adult", "child", "infant_without_seat"]),
       firstName: z.string().min(1, "First name is required"),
       middleName: z.string().optional(),
       lastName: z.string().min(1, "Last name is required"),
@@ -18,7 +26,7 @@ export const BookingSchema = z.object({
 
   // contact details
   contactEmail: z.string().email("Invalid email address"),
-  contactPhone: z.string().min(7, "Phone number is required").max(15, "Phone number is too long"),
+  contactPhone: phoneSchema,
 
   // payment details  
   cardNumber: z.string().length(16, "Card number must be 16 digits"),
@@ -39,7 +47,7 @@ export const BookingSchema = z.object({
   stateOrProvince: z.string().min(1, "State/Province is required"),
   country: z.string().min(1, "Country is required"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().min(7, "Phone number is required").max(15, "Phone number is too long"),
+  phone: phoneSchema,
 }).superRefine((data, ctx) => {
   data.passengers.forEach((passenger, index) => {
     if (passenger.loyaltyProgram && !passenger.frequentFlyerNumber) {

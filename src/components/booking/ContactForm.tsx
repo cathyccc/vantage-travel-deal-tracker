@@ -1,9 +1,10 @@
 "use client";
 import { Input } from "../ui/input";
-import { useFormContext } from "react-hook-form";
+import PhoneInput from "react-phone-number-input";
+import { useFormContext, Controller } from "react-hook-form";
 
 export default function ContactForm() {
-  const { register, formState: { errors } } = useFormContext();
+  const { register, control, formState: { errors, touchedFields, isSubmitted } } = useFormContext();
 
   return (
     <div className="px-6 py-5 text-xs">
@@ -21,12 +22,23 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <Input
-            {...register("contactPhone")}
-            type="tel"
-            id="contactPhone"
-            placeholder="Phone Number*"
-            className="w-full border-b border-zinc-700 bg-zinc-900 px-3 py-2 text-white focus:border-transparent"
+          <Controller
+            name="contactPhone"
+            control={control}
+            render={({ field: { onChange, value } }) => {
+              return (
+                <PhoneInput
+                  international
+                  defaultCountry="CA"
+                  id="contactPhone"
+                  type="tel"
+                  placeholder="+1 123 456 7890"
+                  onChange={(val) => onChange(val ?? "")}
+                  value={value || undefined}
+                  className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white"
+                />
+              )
+            }}
           />
           {errors.contactPhone && <p className="text-red-400 text-xs">{errors.contactPhone.message as string}</p>}
         </div>

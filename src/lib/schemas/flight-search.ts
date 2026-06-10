@@ -1,12 +1,12 @@
-import {z} from 'zod';
-import {parseISO, isAfter, endOfToday} from 'date-fns';
+import { z } from 'zod';
+import { parseISO, isAfter, endOfToday } from 'date-fns';
 
 export const FlightOffersSearchSchema = z.object({
   originLocationCode: z.string({ message: 'Origin is required' })
     .min(1, "Origin is required")
     .length(3, "Must be a 3-letter IATA code")
     .regex(/^[A-Z]{3}$/, "Invalid airport code format"),
-  destinationLocationCode: z.string({message: 'Destination is required'})
+  destinationLocationCode: z.string({ message: 'Destination is required' })
     .min(1, "Destination is required")
     .length(3, "Must be a 3-letter IATA code")
     .regex(/^[A-Z]{3}$/, "Invalid airport code format"),
@@ -21,11 +21,15 @@ export const FlightOffersSearchSchema = z.object({
     .max(9, "Max 9 adults"),
   children: z.coerce.number()
     .min(0)
-    .max(9, "Max 9 children"),
+    .max(8, "Max 8 children"),
+  infants: z.coerce.number()
+    .min(0)
+    .max(8, "Max 8 infants"),
+  childAges: z.array(z.number().int().min(2).max(12)),
+  infantAges: z.array(z.number().int().min(0).max(1)),
 }).refine(data => data.originLocationCode !== data.destinationLocationCode, {
   message: "Origin and destination cannot be the same",
   path: ["destinationLocationCode"]
-  
 }).refine(data => isAfter(parseISO(data.returnDate), parseISO(data.departureDate)), {
   message: "Return date must be after departure date",
   path: ["returnDate"]

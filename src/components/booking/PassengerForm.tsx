@@ -5,9 +5,10 @@ import { Input } from "../ui/input";
 import { BookingFormFields } from "@/lib/schemas/booking";
 import { Select, SelectContent, SelectTrigger, SelectItem, SelectValue } from "../ui/select";
 import { useFormContext, Controller, type Path } from "react-hook-form";
+import { formatPassengerType } from "@/lib/flightUtils";
 import LoyaltyProgramSearch from "../search/LoyaltyProgramSearch";
 
-export default function PassengerForm({ index }: { index: number }) {
+export default function PassengerForm({ index, passengerType, passengerAge, passengerId }: { index: number; passengerType?: "adult" | "child" | "infant_without_seat"; passengerAge?: string, passengerId?: string }) {
   const { register, control, formState: { errors } } = useFormContext<BookingFormFields>();
   const path = `passengers.${index}`;
   const getError = (fieldName: keyof BookingFormFields['passengers'][number]) => {
@@ -17,8 +18,12 @@ export default function PassengerForm({ index }: { index: number }) {
 
   return (
     <div className="px-6 py-5 text-xs">
-      <p className="text-xs font-medium text-white mb-6">Traveller {index + 1}</p>
+      <p className="text-xs font-medium text-white mb-6">
+        {`Traveller ${index + 1} - ${formatPassengerType(passengerType ?? "adult")}`} {passengerType !== "adult" && ` (Age: ${passengerAge})`}
+      </p>
       <div className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+        <Input type="hidden" value={passengerId} {...register(`${path}.passengerId` as Path<BookingFormFields>)} />
+        <Input type="hidden" value={passengerType} {...register(`${path}.passengerType` as Path<BookingFormFields>)} />
         <div>
           <label htmlFor="firstName" className="block font-medium text-xs text-gray-300 mb-1">
             First Name*
@@ -84,7 +89,6 @@ export default function PassengerForm({ index }: { index: number }) {
                 <SelectContent className="bg-zinc-800 text-white text-sm  border-zinc-700" position="popper">
                   <SelectItem className="p-1 hover:bg-zinc-600" value="male">Male</SelectItem>
                   <SelectItem className="p-1 hover:bg-zinc-600" value="female">Female</SelectItem>
-                  <SelectItem className="p-1 hover:bg-zinc-600" value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
               {getError("gender") && <p className="text-red-400 text-xs">{getError("gender")}</p>}

@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 type FormErrors = Record<string, string[] | undefined>
 
 type PassengerCounterProps = {
-  label: "Adults" | "Children",
-  field: "adults" | "children",
+  label: "Adults" | "Children" | "Infants",
+  field: "adults" | "children" | "infants",
   value: number,
   onChange: (num: number) => void
   errors: FormErrors
