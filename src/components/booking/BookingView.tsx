@@ -68,7 +68,7 @@ export default function BookingView({ offer }: { offer: DuffelOffer }) {
 
   const handleBookingSubmit = async (data: BookingFormFields) => {
     const result = await createOrder(data, offer);
-    if (result?.success) {
+    if (result?.success && result.order) {
       setBookingReference(result.order.booking_reference);
       router.push(`/booking/${offer.id}/confirmation?ref=${result.order.booking_reference}`);
     } else {
