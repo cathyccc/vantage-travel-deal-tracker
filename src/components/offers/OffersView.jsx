@@ -85,7 +85,7 @@ export default function OffersView() {
 
   return (
     <>
-      <div className="grid md:grid-cols-4 p-8 text-white lg:grid-cols-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 p-8 text-white lg:grid-cols-6">
         <div className="col-span-1 md:col-span-3 lg:col-span-2">
           <div className="text-3xl font-light mb-8">FIND BEST OFFERS</div>
           <OffersSearchForm/>

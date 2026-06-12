@@ -43,8 +43,8 @@ export default function PaymentForm() {
           {errors.cardHolderName && <p className="text-red-400 text-xs">{errors.cardHolderName.message as string}</p>}
         </div>
 
-        <div className="flex flex-wrap">
-          <div className="w-25 flex-none">
+        <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 gap-2 items-end">
+          <div>
             <label htmlFor="expiryMM" className="block font-medium text-gray-300 mb-1">
               Expiration Month
             </label>
@@ -60,7 +60,7 @@ export default function PaymentForm() {
             {errors.expiryMM && <p className="text-red-400 text-xs">{errors.expiryMM.message as string}</p>}
           </div>
 
-          <div className="w-25 flex-none ml-2">
+          <div>
             <label htmlFor="expiryYYYY" className="block font-medium text-gray-300 mb-1">
               Expiration Year
             </label>
@@ -77,7 +77,7 @@ export default function PaymentForm() {
             {errors.expiryYYYY && <p className="text-red-400 text-xs">{errors.expiryYYYY.message as string}</p>}
           </div>
 
-          <div className="w-25 flex-none ml-2">
+          <div>
             <label htmlFor="cvv" className="block font-medium text-gray-300 mb-1">
               CVV
             </label>
@@ -97,8 +97,8 @@ export default function PaymentForm() {
 
         <h2 className="text-sm font-medium mb-4 mt-6">Billing Information</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="col-span-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-end">
+          <div className="col-span-2">
             <label htmlFor="streetAddress" className="block font-medium text-gray-300 mb-1 text-xs">
               Street Address*
             </label>
@@ -111,7 +111,7 @@ export default function PaymentForm() {
             {errors.streetAddress && <p className="text-red-400 text-xs">{errors.streetAddress.message as string}</p>}
           </div>
 
-          <div className="col-span-full">
+          <div className="col-span-2 lg:col-span-1">
             <label htmlFor="city" className="block font-medium text-gray-300 mb-1 text-xs">
               City*
             </label>
@@ -124,7 +124,7 @@ export default function PaymentForm() {
             {errors.city && <p className="text-red-400 text-xs">{errors.city.message as string}</p>}
           </div>
 
-          <div className="col-span-full">
+          <div className="col-span-2 lg:col-span-1">
             <label htmlFor="stateOrProvince" className="block font-medium text-gray-300 mb-1 text-xs">
               State/Province*
             </label>
@@ -137,7 +137,7 @@ export default function PaymentForm() {
             {errors.stateOrProvince && <p className="text-red-400 text-xs">{errors.stateOrProvince.message as string}</p>}
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <label htmlFor="country" className="block font-medium text-gray-300 mb-1 text-xs">
               Country*
             </label>
@@ -150,7 +150,7 @@ export default function PaymentForm() {
             {errors.country && <p className="text-red-400 text-xs">{errors.country.message as string}</p>}
           </div>
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <label htmlFor="postalCode" className="block font-medium text-gray-300 mb-1 text-xs">
               Zip Code / Postal Code
             </label>
@@ -163,7 +163,7 @@ export default function PaymentForm() {
             {errors.postalCodeOrZip && <p className="text-red-400 text-xs">{errors.postalCodeOrZip.message as string}</p>}
           </div>
 
-          <div className="col-span-full">
+          <div className="col-span-2">
             <label htmlFor="email" className="block font-medium text-gray-300 mb-1 text-xs">
               Email Address*
             </label>
@@ -176,7 +176,7 @@ export default function PaymentForm() {
             {errors.email && <p className="text-red-400 text-xs">{errors.email.message as string}</p>}
           </div>
 
-          <div className="col-span-full">
+          <div className="col-span-2">
             <label htmlFor="phone" className="block font-medium text-gray-300 mb-1 text-xs">
               Phone*
             </label>
