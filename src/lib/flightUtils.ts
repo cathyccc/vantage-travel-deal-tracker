@@ -201,4 +201,4 @@ export const displayGateNum = (gate: number | string | null): string => {
 
 export const calculateAge = (dob: string): number => {
   return differenceInYears(new Date(), new Date(dob))
-}
+} 

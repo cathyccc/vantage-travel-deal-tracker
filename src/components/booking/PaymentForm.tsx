@@ -2,6 +2,7 @@
 
 import { useFormContext, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
+import CountrySearch from "../search/CountrySearch";
 import { Input } from "../ui/input";
 import 'react-phone-number-input/style.css';
 
@@ -141,11 +142,21 @@ export default function PaymentForm() {
             <label htmlFor="country" className="block font-medium text-gray-300 mb-1 text-xs">
               Country*
             </label>
-            <Input
-              {...register("country")}
-              id="country"
-              type="text"
-              className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
+            <Controller
+              name="country"
+              control={control}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <CountrySearch
+                    path="country"
+                    id="country"
+                    type="text"
+                    value={value}
+                    onChange={onChange}
+                    className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
+                  />
+                )
+              }}
             />
             {errors.country && <p className="text-red-400 text-xs">{errors.country.message as string}</p>}
           </div>
