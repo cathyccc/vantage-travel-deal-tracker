@@ -49,7 +49,7 @@ export default function PassengerCounter({ label, field, value, onChange, errors
         </Button>
       </div>
       {errors?.[field]?.[0] && (
-        <p className="text-red-400 text-xs pt-1">
+        <p data-testid={`${field}-error`} className="text-red-400 text-xs pt-1">
           {errors[field][0]}
         </p>
       )}

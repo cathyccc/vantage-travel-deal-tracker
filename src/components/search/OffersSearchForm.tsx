@@ -142,12 +142,12 @@ export default function OffersSearchForm() {
       <form onSubmit={searchFlightOffers}>
         <div className="pb-4">
           <AirportSearch label="Origin" field="originLocationCode" UrlValue={origin} handleSelectedAirportCode={handleSelectedAirportCode} />
-          {errors?.originLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.originLocationCode[0]}</p>}
+          {errors?.originLocationCode && <p data-testid="origin-error" className="text-red-400 text-xs pt-1">{errors?.originLocationCode[0]}</p>}
         </div>
 
         <div className="pb-4">
           <AirportSearch label="Destination" field="destinationLocationCode" UrlValue={destination} handleSelectedAirportCode={handleSelectedAirportCode} />
-          {errors?.destinationLocationCode && <p className="text-red-400 text-xs pt-1">{errors?.destinationLocationCode[0]}</p>}
+          {errors?.destinationLocationCode && <p data-testid="destination-error" className="text-red-400 text-xs pt-1">{errors?.destinationLocationCode[0]}</p>}
         </div>
 
         <div className="pb-4">
@@ -158,7 +158,7 @@ export default function OffersSearchForm() {
             disabledDates={departureDisabledDates}
             handleDateChange={handleDateChange}
           />
-          {errors?.departureDate && <p className="text-red-400 text-xs pt-1">{errors?.departureDate[0]}</p>}
+          {errors?.departureDate && <p data-testid="departureDate-error" className="text-red-400 text-xs pt-1">{errors?.departureDate[0]}</p>}
         </div>
 
         <div className="pb-4">
@@ -169,7 +169,7 @@ export default function OffersSearchForm() {
             disabledDates={returnDisabledDates}
             handleDateChange={handleDateChange}
           />
-          {errors?.returnDate && <p className="text-red-400 text-xs pt-1">{errors?.returnDate[0]}</p>}
+          {errors?.returnDate && <p data-testid="returnDate-error" className="text-red-400 text-xs pt-1">{errors?.returnDate[0]}</p>}
         </div>
 
         <div className="pb-4">
