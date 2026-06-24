@@ -2,12 +2,13 @@
 
 import { useFormContext, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
-import CountrySearch from "../search/CountrySearch";
+import CountriesOrCitiesSearch from "../search/CountriesOrCitiesSearch";
 import { Input } from "../ui/input";
 import 'react-phone-number-input/style.css';
 
 export default function PaymentForm() {
-  const { register, control, formState: { errors, touchedFields } } = useFormContext();
+  const { register, control, watch, formState: { errors } } = useFormContext();
+  const selectedCountry = watch("country");
 
   return (
     <div className="px-6 py-5 text-xs">
@@ -112,20 +113,50 @@ export default function PaymentForm() {
             {errors.streetAddress && <p className="text-red-400 text-xs">{errors.streetAddress.message as string}</p>}
           </div>
 
+          <div className="col-span-2 md:col-span-1">
+            <label htmlFor="country" className="block font-medium text-gray-300 mb-1 text-xs">
+              Country*
+            </label>
+            <Controller
+              name="country"
+              control={control}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <CountriesOrCitiesSearch
+                    searchTopic="country"
+                    path="country"
+                    value={value}
+                    onChange={onChange}
+                  />
+                )
+              }}
+            />
+            {errors.country && <p className="text-red-400 text-xs">{errors.country.message as string}</p>}
+          </div>
+
           <div className="col-span-2 lg:col-span-1">
             <label htmlFor="city" className="block font-medium text-gray-300 mb-1 text-xs">
               City*
             </label>
-            <Input
-              {...register("city")}
-              id="city"
-              type="text"
-              className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
+            <Controller
+              name="city"
+              control={control}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <CountriesOrCitiesSearch
+                    searchTopic="city"
+                    selectedCountry={selectedCountry}
+                    path="city"
+                    value={value}
+                    onChange={onChange}
+                  />
+                )
+              }}
             />
             {errors.city && <p className="text-red-400 text-xs">{errors.city.message as string}</p>}
           </div>
 
-          <div className="col-span-2 lg:col-span-1">
+          {/* <div className="col-span-2 lg:col-span-1">
             <label htmlFor="stateOrProvince" className="block font-medium text-gray-300 mb-1 text-xs">
               State/Province*
             </label>
@@ -136,30 +167,7 @@ export default function PaymentForm() {
               className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
             />
             {errors.stateOrProvince && <p className="text-red-400 text-xs">{errors.stateOrProvince.message as string}</p>}
-          </div>
-
-          <div className="col-span-2 md:col-span-1">
-            <label htmlFor="country" className="block font-medium text-gray-300 mb-1 text-xs">
-              Country*
-            </label>
-            <Controller
-              name="country"
-              control={control}
-              render={({ field: { onChange, value } }) => {
-                return (
-                  <CountrySearch
-                    path="country"
-                    id="country"
-                    type="text"
-                    value={value}
-                    onChange={onChange}
-                    className="w-full rounded-md border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-white focus:border-transparent"
-                  />
-                )
-              }}
-            />
-            {errors.country && <p className="text-red-400 text-xs">{errors.country.message as string}</p>}
-          </div>
+          </div> */}
 
           <div className="col-span-2 lg:col-span-1">
             <label htmlFor="postalCode" className="block font-medium text-gray-300 mb-1 text-xs">
