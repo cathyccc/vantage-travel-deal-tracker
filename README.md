@@ -24,22 +24,21 @@ Vantage is a high-performance flight search and deal tracking application design
 ---
 
 ## 🗺️ Roadmap
-- [x] Initial Next.js & Vite setup.
-- [x] Amadeus API flight search integration.
-- [x] Display flight offer details after "View Details" button.
-- [x] Transitioning autofill from Supabase to Fuse.js for local fuzzy searching.
-- [x] Migrate from Amadeus API (decommissioning in July 2026) to Duffel API for flight offers.
-- [x] Display fare details after "Continue to Fare Details" button.
-- [x] Clean airports JSON data: Remove entries for airports that do not support commercial aviation.
-- [x] Implement offer selection UI: Add functionality to select a specific flight offer from search results, storing the selected offer ID and details in URL.
-- [ ] In Progress: Create passenger details form: Build a form to collect traveler information (name, DOB, passport details, etc.) required by Duffel API for order creation; include validation for required fields.
-- [ ] Integrate Duffel API for offer request/creation: Use the selected offer to call Duffel's "Create Offer Request" endpoint if needed, or directly proceed to "Create Order" with passenger data; handle API responses and errors.
-- [ ] Simulate fake payment process: Implement a mock payment gateway UI (e.g., a form with dummy card details) that "processes" payment without real transactions; use Duffel's payment intent simulation if available, or a simple client-side mock with success/failure states.
-- [ ] Handle order creation with Duffel: Submit the order to Duffel API including passenger details and fake payment confirmation; retrieve and display order confirmation details (e.g., booking reference, itinerary).
-- [ ] Build confirmation page: Create a dedicated page or modal to show booking summary, confirmation number, and downloadable itinerary after successful order creation.
-- [ ] Add error handling and loading states: Implement global error boundaries, loading spinners, and user-friendly messages for API failures, invalid inputs, or payment simulation issues throughout the flow.
-- [ ] Test end-to-end flow: Write unit/integration tests for key components (search, offer selection, form validation, API calls); perform manual testing for the full user journey from search to fake booking.
-- [ ] Optimize UI/UX: Refine styling, add responsive design tweaks, and incorporate accessibility features (e.g., ARIA labels for forms and buttons).
+🎯 Current Focus: Test Automation
+- [ ] End-to-End Suite (Playwright): Implementing robust coverage for the full booking journey:
+  - Search & Offer Selection flow.
+  - Passenger form validation & data submission.
+  - Mock API/Payment integration tests.
+- [ ] Confirmation UI verification.
+- [ ] Unit/Integration Testing: Implementing tests for core helper functions and API error handling.
+
+🎨 Polish & Accessibility
+- [ ] Responsive Design & UX Refinement: Final CSS tweaks and loading state animations.
+- [ ] Accessibility Audit: Implementing ARIA labels and keyboard navigation for WCAG compliance.
+- [x] Infrastructure: Next.js, Vite, and Fuse.js fuzzy search implementation.
+- [x] Flight Engine: Successful migration from Amadeus to Duffel API.
+- [x] Booking Flow: Fully functional flight search, passenger collection, mock payment, and order confirmation.
+- [x] Data Management: Cleaned airport JSON data for commercial relevance.
 
 ---
 
