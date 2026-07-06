@@ -33,4 +33,11 @@ export const FlightOffersSearchSchema = z.object({
 }).refine(data => isAfter(parseISO(data.returnDate), parseISO(data.departureDate)), {
   message: "Return date must be after departure date",
   path: ["returnDate"]
-});
+}).refine(data => data.infants <= data.adults, {
+  message: "Number of infants cannot exceed number of adults",
+  path: ["infants"]
+}).refine(data => (data.adults + data.children + data.infants) <= 9, {
+  message: "Total passengers cannot exceed 9",
+  path: ["adults", "children", "infants"]
+})
+  ;

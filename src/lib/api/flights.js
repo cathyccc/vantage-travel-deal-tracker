@@ -31,22 +31,29 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
   }));
   const passengers = [...adultPassengers, ...childrenPassengers, ...infantsPassengers];
 
-  const offerRequest =  await duffel.offerRequests.create({
-    slices,
-    passengers,
-    cabin_class: "economy",
-    return_offers: true
-  });
-
-  const offers = await duffel.offers.list({
-    offer_request_id: offerRequest.data.id,
-    sort: 'total_amount'
-  })
-
-  return {
-    offerRequestId: offerRequest.data.id,
-    offers: offers.data
-  };
+  try {
+    const offerRequest =  await duffel.offerRequests.create({
+      slices,
+      passengers,
+      cabin_class: "economy",
+      return_offers: true
+    });
+  
+    const offers = await duffel.offers.list({
+      offer_request_id: offerRequest.data.id,
+      sort: 'total_amount'
+    })
+  
+    return {
+      offerRequestId: offerRequest.data.id,
+      offers: offers.data
+    };
+  } catch (error) {
+    console.error("searchOffers failed", error);
+    const duffelMessage = error?.errors?.[0]?.message;
+    const status = error?.meta?.status;
+    throw new Error(duffelMessage ?? `Failed to search flight offers (status: ${status ?? 'unknown'})`);
+  }
 }
 
 export async function getOffer(offerId) {
@@ -61,7 +68,7 @@ export async function getOffer(offerId) {
     const offer = await duffel.offers.get(offerId);
     return offer.data;
   } catch (error) {
-    console.error('getOffer failed:', error);
+    console.error("getOffer failed:", error);
     const duffelMessage = error?.errors?.[0]?.message;
     const status = error?.meta?.status;
 
