@@ -33,7 +33,7 @@ export default function OffersView() {
       return param.split(',').map(Number).filter(n => !isNaN(n));  // don't filter 0
     };
     const childAges = parseAges(searchParams.get('childAges'));
-    const infantAges = parseAges(searchParams.get('infantAges')?.split(','));
+    const infantAges = parseAges(searchParams.get('infantAges'));
 
     if (originLocationCode && destinationLocationCode && departureDate && adults) {
       setFormData({ originLocationCode, destinationLocationCode, departureDate, returnDate, adults, children, childAges, infantAges, infants });
@@ -62,7 +62,7 @@ export default function OffersView() {
               toast.warning(offerResults.errors.root)
             }
           }
-          setOffers(offerResults.data.offers);
+          setOffers(offerResults.data?.offers?? []);
         } catch (err) {
           console.error("Search failed:", err);
           setErrors(err.message || "Something went wrong fetching flights.");
