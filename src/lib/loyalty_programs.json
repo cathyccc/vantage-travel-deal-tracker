@@ -32,7 +32,7 @@
   {
     "airline_iata_code": "AF",
     "airline_name": "Air France",
-    "loyalty_program_name": "Flying Blue"
+    "loyalty_program_name": "Flying Blue - Air France"
   },
   {
     "airline_iata_code": "AC",
@@ -82,7 +82,7 @@
   {
     "airline_iata_code": "KL",
     "airline_name": "KLM",
-    "loyalty_program_name": "Flying Blue"
+    "loyalty_program_name": "Flying Blue - KLM"
   },
   {
     "airline_iata_code": "CX",

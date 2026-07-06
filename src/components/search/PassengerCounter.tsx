@@ -22,37 +22,39 @@ export default function PassengerCounter({ label, field, value, onChange, errors
   }
 
   return (
-    <div className="flex justify-between items-center">
-      <label htmlFor={field} className="text-sm text-zinc-400">{label}</label>
-      <div className="flex items-center justify-center gap-2">
-        <Button
-          type="button"
-          data-testid={`${field}-minus`}
-          disabled={value === min}
-          onClick={minusPassenger}
-          aria-label={`Remove ${label} passenger`}
-          className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          -
-        </Button>
-        <input type="hidden" name={field} id={field} value={value} />
-        <span data-testid={`${field}-count`} className="inline-block w-12 text-center">{value}</span>
-        <Button
-          type="button"
-          data-testid={`${field}-add`}
-          disabled={value >= 9}
-          onClick={addPassenger}
-          aria-label={`Add ${label} passenger`}
-          className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          +
-        </Button>
+    <>
+      <div className="flex justify-between items-center">
+        <label htmlFor={field} className="text-sm text-zinc-400">{label}</label>
+        <div className="flex items-center justify-center gap-2">
+          <Button
+            type="button"
+            data-testid={`${field}-minus`}
+            disabled={value === min}
+            onClick={minusPassenger}
+            aria-label={`Remove ${label} passenger`}
+            className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            -
+          </Button>
+          <input type="hidden" name={field} id={field} value={value} />
+          <span data-testid={`${field}-count`} className="inline-block w-12 text-center">{value}</span>
+          <Button
+            type="button"
+            data-testid={`${field}-add`}
+            disabled={value >= 9}
+            onClick={addPassenger}
+            aria-label={`Add ${label} passenger`}
+            className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            +
+          </Button>
+        </div>
       </div>
       {errors?.[field]?.[0] && (
-        <p data-testid={`${field}-error`} className="text-red-400 text-xs pt-1">
+        <p data-testid={`${field}-error`} className="text-red-400 text-xs">
           {errors[field][0]}
         </p>
       )}
-    </div>
+    </>
   )
 }

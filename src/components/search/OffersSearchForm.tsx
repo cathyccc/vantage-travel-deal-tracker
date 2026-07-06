@@ -2,7 +2,8 @@
 
 import { FormEvent, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import AirportSearch from './AirportSearch';
 import DatePicker from './DatePicker';
 import PassengerCounter from './PassengerCounter';
@@ -194,16 +195,26 @@ export default function OffersSearchForm() {
             <div className="mt-2 space-y-2">
               {Array.from({ length: children }, (_, i) => (
                 <div key={i} className="flex justify-between items-center">
-                  <label className="text-sm text-zinc-400">Child {i + 1} age</label>
-                  <select
-                    className="bg-zinc-800 text-zinc-100 rounded-sm px-2 py-1 text-sm"
-                    value={childAges[i]}
-                    onChange={(e) => handleChildAgeChange(i, Number(e.target.value))}
+                  <label className="text-xs text-zinc-300 ml-4">Child {i + 1} age</label>
+                  <Select
+                    value={childAges[i].toString()}
+                    onValueChange={(value) => handleChildAgeChange(i, Number(value))}
                   >
-                    {Array.from({ length: 11 }, (_, i) => i + 2).map(age => (
-                      <option key={age} value={age}>{age} years</option>
-                    ))}
-                  </select>
+                    <SelectTrigger className="bg-zinc-800 text-white rounded-sm text-sm w-32 border-none">
+                      <SelectValue placeholder="Select age" />
+                    </SelectTrigger>
+                    <SelectContent
+                      position="popper"
+                      align="end"
+                      className="bg-zinc-800 text-zinc-100 rounded-sm text-sm border-zinc-500"
+                    >
+                      {Array.from({ length: 11 }, (_, i) => i + 2).map(age => (
+                        <SelectItem key={age} value={age.toString()}>
+                          {age} years
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               ))}
             </div>
@@ -222,16 +233,26 @@ export default function OffersSearchForm() {
             <div className="mt-2 space-y-2">
               {Array.from({ length: infants }, (_, i) => (
                 <div key={i} className="flex justify-between items-center">
-                  <label className="text-sm text-zinc-400">Infant {i + 1} age</label>
-                  <select
-                    className="bg-zinc-800 text-zinc-100 rounded-sm px-2 py-1 text-sm"
-                    value={infantAges[i]}
-                    onChange={(e) => handleInfantAgeChange(i, Number(e.target.value))}
+                  <label className="text-xs text-zinc-300 ml-4">Infant {i + 1} age</label>
+                  <Select
+                    value={infantAges[i].toString()}
+                    onValueChange={(value) => handleInfantAgeChange(i, Number(value))}
                   >
-                    {[0, 1].map(age => (
-                      <option key={age} value={age}>{age === 0 ? 'Under 1' : '1 year'}</option>
-                    ))}
-                  </select>
+                    <SelectTrigger className="bg-zinc-800 text-white rounded-sm text-sm w-32 border-none">
+                      <SelectValue placeholder="Select age" />
+                    </SelectTrigger>
+                    <SelectContent
+                      position="popper"
+                      align="end"
+                      className="bg-zinc-800 text-zinc-100 rounded-sm text-sm border-zinc-500"
+                    >
+                      {[0, 1].map(age => (
+                        <SelectItem key={age} value={age.toString()}>
+                          {age === 0 ? 'Under 1' : '1 year'}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               ))}
             </div>

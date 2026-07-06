@@ -5,8 +5,8 @@ import { Toaster } from 'sonner';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full bg-zinc-950 overflow-hidden">
-      <div className="relative z-10 flex flex-col min-h-screen text-white">
+    <main className="relative min-h-screen w-full bg-zinc-950">
+      <div className="flex flex-col min-h-screen text-white">
         <Header />
         <Suspense fallback={<div className="p-10 text-center">Loading Flights...</div>}>
           <OffersView />
