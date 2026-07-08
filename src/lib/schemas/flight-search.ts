@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { parseISO, isAfter, endOfToday } from 'date-fns';
+import { parseISO, isAfter, isBefore, endOfToday } from 'date-fns';
 
 export const FlightOffersSearchSchema = z.object({
   originLocationCode: z.string({ message: 'Origin is required' })
@@ -25,19 +25,42 @@ export const FlightOffersSearchSchema = z.object({
   infants: z.coerce.number()
     .min(0)
     .max(8, "Max 8 infants"),
-  childAges: z.array(z.number().int().min(2).max(12)),
-  infantAges: z.array(z.number().int().min(0).max(1)),
-}).refine(data => data.originLocationCode !== data.destinationLocationCode, {
-  message: "Origin and destination cannot be the same",
-  path: ["destinationLocationCode"]
-}).refine(data => isAfter(parseISO(data.returnDate), parseISO(data.departureDate)), {
-  message: "Return date must be after departure date",
-  path: ["returnDate"]
-}).refine(data => data.infants <= data.adults, {
-  message: "Number of infants cannot exceed number of adults",
-  path: ["infants"]
-}).refine(data => (data.adults + data.children + data.infants) <= 9, {
-  message: "Total passengers cannot exceed 9",
-  path: ["adults", "children", "infants"]
-})
-  ;
+  childAges: z.array(z.number().int().min(2).max(12)).optional().default([]),
+  infantAges: z.array(z.number().int().min(0).max(1)).optional().default([]),
+}).superRefine((data, ctx) => {
+  if (data.originLocationCode === data.destinationLocationCode) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Origin and destination cannot be the same",
+      path: ["destinationLocationCode"]
+    });
+  }
+
+  if (data.departureDate && data.returnDate) {
+    const dep = parseISO(data.departureDate);
+    const ret = parseISO(data.returnDate);
+    if (isBefore(ret, dep)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Return date must be after departure date",
+        path: ["returnDate"]
+      });
+    }
+  }
+
+  if (data.infants > data.adults) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Number of infants cannot exceed number of adults",
+      path: ["infants"]
+    });
+  }
+
+  if (data.adults + data.children + data.infants > 9) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Total passengers cannot exceed 9",
+      path: ["adults", "children", "infants"]
+    })
+  }
+});

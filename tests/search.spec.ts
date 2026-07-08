@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { addDays, format, startOfTomorrow, startOfToday } from 'date-fns';
+import { addDays, format, startOfTomorrow } from 'date-fns';
 import { FlightSearchPage } from './pages/FlightSearchPage';
 
 interface TestDate {
@@ -160,14 +160,47 @@ test.describe('Flight Search Page', () => {
   });
 
   test("expect form to be autofilled with URL parameters @regression", async ({ page }) => {
-    const departureDate: TestDate = getDateData(startOfTomorrow(), 2);
-    const returnDate: TestDate = getDateData(startOfTomorrow(), 7);
+    const departureDate = getDateData(startOfTomorrow(), 2);
+    const returnDate = getDateData(startOfTomorrow(), 7);
 
-    await page.goto(`/?originLocationCode=YYZ&destinationLocationCode=YVR&departureDate=${departureDate.url}&returnDate=${returnDate.url}&adults=2&children=1`);
+    await page.goto(`/?originLocationCode=YYZ&destinationLocationCode=YVR&departureDate=${departureDate.url}&returnDate=${returnDate.url}&adults=2&children=2&infants=1&childAges=2%2C2&infantAges=0`);
     await expect(page.locator("[aria-label='Origin']")).toHaveValue("Toronto (YYZ - Toronto Pearson Intl. Airport, CA)");
     await expect(page.locator("[aria-label='Destination']")).toHaveValue("Vancouver (YVR - Vancouver Intl. Airport, CA)");
 
     await expect(page.getByText(departureDate.displayedValue)).toBeVisible();
     await expect(page.getByText(returnDate.displayedValue)).toBeVisible();
   });
+
+  test('infant counter is disabled once it reaches the adult count @regression', async () => {
+    await searchPage.increasePassengerCounter('adults');
+    for (let i = 0; i < 2; i++) {
+      await searchPage.increasePassengerCounter('infants');
+    };
+    await expect(searchPage.expectDisabledIncreaseButton('infants'));
+  });
+
+  test('error is shown when user tries to decrease adult count lower than infant count @regression', async () => {
+    await searchPage.increasePassengerCounter('adults');
+    for (let i = 0; i < 2; i++) {
+      await searchPage.increasePassengerCounter('infants');
+    }
+    await searchPage.decreasePassengerCounter('adults');
+    await expect(searchPage.infantPassengerError).toBeVisible();
+  })
+
+  test('total passenger count across adults, children and infants cannot exceed 9 @regression', async () => {
+    for (let i = 0; i < 4; i++) {
+      await searchPage.increasePassengerCounter('adults');
+      await searchPage.increasePassengerCounter('children');
+      await searchPage.increasePassengerCounter('infants');
+    }
+    await expect(searchPage.adultPassengerError).toBeVisible();
+  })
+
+  test('navigating directly to a URL with infants exceeding adults shows no offers found @regression', async ({ page }) => {
+    const departureDate = getDateData(startOfTomorrow(), 2);
+    const returnDate = getDateData(startOfTomorrow(), 7);
+    await page.goto(`/?originLocationCode=YYZ&destinationLocationCode=YVR&departureDate=${departureDate.url}&returnDate=${returnDate.url}&adults=8&children=2&childAges=2%2C2`);
+    await expect(page.getByText("No offers found")).toBeVisible();
+  })
 })

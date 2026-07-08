@@ -48,7 +48,7 @@ export default function OffersSearchForm() {
     });
 
     if (!result.success) {
-      setErrors(result.error.flatten().fieldErrors)
+      setErrors(prev => ({ ...prev, ...result.error.flatten().fieldErrors }));
       return;
     }
 
@@ -100,10 +100,36 @@ export default function OffersSearchForm() {
     else setDestination(iataCode);
   }
 
-  const handleAdultsCount = (num: number) => setAdults(num);
+  const validatePassengers = (adultsVal: number, childrenVal: number, infantsVal: number) => {
+    const totalPassengers = adultsVal + childrenVal + infantsVal;
+    const infantsExceedAdults = infantsVal > adultsVal;
+    if (totalPassengers > 9) {
+      setErrors(prev => ({
+        ...prev,
+        adults: ["Total passengers cannot exceed 9"]
+      }));
+    } else {
+      setErrors(prev => ({ ...prev, adults: [] }));
+    }
+
+    if (infantsExceedAdults) {
+      setErrors(prev => ({
+        ...prev,
+        infants: ["Number of infants cannot exceed number of adults"]
+      }));
+    } else {
+      setErrors(prev => ({ ...prev, infants: [] }));
+    }
+  }
+
+  const handleAdultsCount = (num: number) => {
+    setAdults(num);
+    validatePassengers(num, children, infants);
+  };
 
   const handleChildrenCount = (num: number) => {
     setChildren(num);
+    validatePassengers(adults, num, infants);
     setChildAges(prev => {
       if (num > prev.length) {
         return Array.from({ length: num }, (_, i) => prev[i] ?? 2);
@@ -114,6 +140,7 @@ export default function OffersSearchForm() {
 
   const handleInfantsCount = (num: number) => {
     setInfants(num);
+    validatePassengers(adults, children, num);
     setInfantAges(prev => {
       if (num > prev.length) {
         return Array.from({ length: num }, (_, i) => prev[i] ?? 0);
@@ -226,6 +253,7 @@ export default function OffersSearchForm() {
             label="Infants"
             field="infants"
             value={infants}
+            adultCount={adults}
             onChange={handleInfantsCount}
             errors={errors}
           />

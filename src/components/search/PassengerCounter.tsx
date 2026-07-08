@@ -6,11 +6,12 @@ type PassengerCounterProps = {
   label: "Adults" | "Children" | "Infants",
   field: "adults" | "children" | "infants",
   value: number,
+  adultCount?: number
   onChange: (num: number) => void
   errors: FormErrors
 }
 
-export default function PassengerCounter({ label, field, value, onChange, errors }: PassengerCounterProps) {
+export default function PassengerCounter({ label, field, value, adultCount = 1, onChange, errors }: PassengerCounterProps) {
   const min = field === 'adults' ? 1 : 0;
 
   const minusPassenger = (): void => {
@@ -32,7 +33,7 @@ export default function PassengerCounter({ label, field, value, onChange, errors
             disabled={value === min}
             onClick={minusPassenger}
             aria-label={`Remove ${label} passenger`}
-            className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-zinc-700 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed"
           >
             -
           </Button>
@@ -41,10 +42,10 @@ export default function PassengerCounter({ label, field, value, onChange, errors
           <Button
             type="button"
             data-testid={`${field}-add`}
-            disabled={value >= 9}
+            disabled={value >= 9 || (field === "infants" && adultCount <= value)}
             onClick={addPassenger}
             aria-label={`Add ${label} passenger`}
-            className="bg-zinc-800 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-zinc-700 text-zinc-100 rounded-sm hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed"
           >
             +
           </Button>

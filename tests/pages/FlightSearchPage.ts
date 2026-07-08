@@ -17,6 +17,8 @@ export class FlightSearchPage {
   readonly destinationError: Locator;
   readonly departureDateError: Locator;
   readonly returnDateError: Locator;
+  readonly adultPassengerError: Locator;
+  readonly infantPassengerError: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -31,6 +33,8 @@ export class FlightSearchPage {
     this.destinationError = page.getByTestId('destination-error');
     this.departureDateError = page.getByTestId('departureDate-error');
     this.returnDateError = page.getByTestId('returnDate-error');
+    this.adultPassengerError = page.getByTestId('adults-error');
+    this.infantPassengerError = page.getByTestId('infants-error');
     this.searchOffersButton = page.getByRole('button', { name: "SEARCH OFFERS" });
   }
 
@@ -47,7 +51,7 @@ export class FlightSearchPage {
       this.adultPassengerCounter,
       this.childPassengerCounter,
       this.infantPassengerCounter,
-      this.searchOffersButton
+      this.searchOffersButton,
     ]
 
     for (const field of flightSearchFields) {
