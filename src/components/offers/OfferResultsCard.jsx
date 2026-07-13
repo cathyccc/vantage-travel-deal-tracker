@@ -86,7 +86,7 @@ export default function OfferResultsCard({offer}) {
   }
 
   return (
-    <Card className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-none flex flex-col h-full">
+    <Card data-testid="offer-result-card" className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-none flex flex-col h-full">
       <CardHeader>
         <div className="flex justify-between items-start">
           <div className="text-sm font-extrabold">
@@ -95,7 +95,7 @@ export default function OfferResultsCard({offer}) {
           <div>
             <div className="block text-right pl-3">
               <span className="text-xs">{offer.base_currency} $ </span>
-              <span className="text-2xl text-violet-400 font-bold">{offer.total_amount}</span>
+              <span data-testid="offer-price" className="text-2xl text-violet-400 font-bold">{offer.total_amount}</span>
             </div>
             <span className="text-xs block text-right">Roundtrip</span>
           </div>
@@ -108,8 +108,8 @@ export default function OfferResultsCard({offer}) {
             <div className="flex flex-row">
               <span className="p-1"><PlaneTakeoff size={16} strokeWidth={1}/></span>
               <div className="px-1 flex items-start flex-col">
-                <div className="block text-xl font-thin">{departureTime}</div>
-                <div className="block text-xs font-thin">{departureLocationName}</div>
+                <div data-testid="offer-departure-time" className="block text-xl font-thin">{departureTime}</div>
+                <div data-testid="offer-departure-city" className="block text-xs font-thin">{departureLocationName}</div>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export default function OfferResultsCard({offer}) {
               </div>
 
               <div className="py-4 whitespace-nowrap overflow-visible">
-                <span className="text-xs text-violet-400 block">{duration} • {displayStops(layoverInfo.length)}</span> 
+                <span data-testid="offer-duration" className="text-xs text-violet-400 block">{duration} • {displayStops(layoverInfo.length)}</span> 
                 {displayLayoverTimes(layoverInfo)}
               </div>
             </div>
@@ -133,11 +133,11 @@ export default function OfferResultsCard({offer}) {
             <div className="flex flex-row">
               <span className="p-1"><PlaneLanding size={16} strokeWidth={1}/></span>
               <div className="px-1 flex flex-col items-start">
-                <div className="block text-xl font-thin flex items-baseline">
+                <div data-testid="offer-arrival-time" className="block text-xl font-thin flex items-baseline">
                   {arrivalTime}
                   <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff(slices[0].segments[0])}</span>
                 </div>
-                <div className="block text-xs font-thin">{arrivalLocationName}</div>
+                <div data-testid="offer-arrival-city" className="block text-xs font-thin">{arrivalLocationName}</div>
               </div>
             </div>
           </div>

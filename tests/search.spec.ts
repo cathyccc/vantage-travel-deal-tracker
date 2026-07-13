@@ -21,142 +21,142 @@ const getDateData = (baseDate: Date, daysToAdd = 0): TestDate => {
   }
 }
 
-test.describe('Flight Search Page', () => {
-  let searchPage: FlightSearchPage;
+test.describe('Flight Search Component', () => {
+  let flightSearchPage: FlightSearchPage;
 
   test.beforeEach(async ({ page }) => {
-    searchPage = new FlightSearchPage(page);
-    await searchPage.goto();
+    flightSearchPage = new FlightSearchPage(page);
+    await flightSearchPage.goto();
   });
 
   test('search form has all required fields and submit button @smoke', async () => {
-    await searchPage.expectAllFieldsToBeVisible();
+    await flightSearchPage.form.expectAllFieldsToBeVisible();
   });
 
   test('shows error when search form is empty @smoke @regression', async () => {
-    await searchPage.submitSearch();
-    await expect(searchPage.originError).toBeVisible();
-    await expect(searchPage.destinationError).toBeVisible();
-    await expect(searchPage.departureDateError).toBeVisible();
-    await expect(searchPage.returnDateError).toBeVisible();
+    await flightSearchPage.form.submitSearch();
+    await expect(flightSearchPage.form.originError).toBeVisible();
+    await expect(flightSearchPage.form.destinationError).toBeVisible();
+    await expect(flightSearchPage.form.departureDateError).toBeVisible();
+    await expect(flightSearchPage.form.returnDateError).toBeVisible();
   });
 
   test('user can select origin and destinations airports @regression', async () => {
-    await searchPage.fillOrigin("YYZ");
-    await searchPage.fillDestination("YVR");
-    await expect(searchPage.originInput).toHaveValue("Toronto (YYZ - Toronto Pearson Intl. Airport, CA)");
-    await expect(searchPage.destinationInput).toHaveValue("Vancouver (YVR - Vancouver Intl. Airport, CA)");
+    await flightSearchPage.form.fillOrigin("YYZ");
+    await flightSearchPage.form.fillDestination("YVR");
+    await expect(flightSearchPage.form.originInput).toHaveValue("Toronto (YYZ - Toronto Pearson Intl. Airport, CA)");
+    await expect(flightSearchPage.form.destinationInput).toHaveValue("Vancouver (YVR - Vancouver Intl. Airport, CA)");
   });
 
   test('shows no results when user types unmatched search @regression', async () => {
-    await searchPage.inputOrigin("ZZZZ");
-    await searchPage.expectNoAirportResults();
+    await flightSearchPage.form.inputOrigin("ZZZZ");
+    await flightSearchPage.form.expectNoAirportResults();
   });
 
   test('shows error when origin and destination are the same @regression', async () => {
-    await searchPage.fillOrigin("YYZ");
-    await searchPage.fillDestination("YYZ");
-    await expect(searchPage.destinationError).toHaveText('Origin and destination cannot be the same');
+    await flightSearchPage.form.fillOrigin("YYZ");
+    await flightSearchPage.form.fillDestination("YYZ");
+    await expect(flightSearchPage.form.destinationError).toHaveText('Origin and destination cannot be the same');
   });
 
   test('user can select departure and return dates @regression', async () => {
     const departureDate = addDays(startOfTomorrow(), 3);
     const returnDate = addDays(startOfTomorrow(), 7);
 
-    await searchPage.fillDateSelector('departure', departureDate);
-    await searchPage.fillDateSelector('return', returnDate);
-    await expect(searchPage.dateDisplay(departureDate)).toBeVisible();
-    await expect(searchPage.dateDisplay(returnDate)).toBeVisible();
+    await flightSearchPage.form.fillDateSelector('departure', departureDate);
+    await flightSearchPage.form.fillDateSelector('return', returnDate);
+    await expect(flightSearchPage.form.dateDisplay(departureDate)).toBeVisible();
+    await expect(flightSearchPage.form.dateDisplay(returnDate)).toBeVisible();
   });
 
   test('user cannot select an arrival date before the selected departure date @regression', async () => {
     const departureDate = addDays(startOfTomorrow(), 8);
     const returnDate = addDays(startOfTomorrow(), 2);
 
-    await searchPage.fillDateSelector('departure', departureDate);
-    await searchPage.expectDateToBeDisabled('return', returnDate);
+    await flightSearchPage.form.fillDateSelector('departure', departureDate);
+    await flightSearchPage.form.expectDateToBeDisabled('return', returnDate);
   });
 
   test('user cannot select a departure date after the selected return date @regression', async () => {
     const departureDate = addDays(startOfTomorrow(), 8);
     const returnDate = addDays(startOfTomorrow(), 2);
 
-    await searchPage.fillDateSelector('return', returnDate);
-    await searchPage.expectDateToBeDisabled('departure', departureDate);
+    await flightSearchPage.form.fillDateSelector('return', returnDate);
+    await flightSearchPage.form.expectDateToBeDisabled('departure', departureDate);
   });
 
   test('user can adjust number of adult passenger details @regression', async () => {
-    await expect(searchPage.adultPassengerCounter).toHaveText('1');
-    await searchPage.increasePassengerCounter('adults');
-    await expect(searchPage.adultPassengerCounter).toHaveText('2');
-    await searchPage.decreasePassengerCounter('adults');
-    await expect(searchPage.adultPassengerCounter).toHaveText('1');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.increasePassengerCounter('adults');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('2');
+    await flightSearchPage.form.decreasePassengerCounter('adults');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
   })
 
   test('user can adjust number of children passenger details @regression', async () => {
-    await expect(searchPage.childPassengerCounter).toHaveText('0');
-    await searchPage.increasePassengerCounter('children');
-    await expect(searchPage.childPassengerCounter).toHaveText('1');
-    await searchPage.decreasePassengerCounter('children');
-    await expect(searchPage.childPassengerCounter).toHaveText('0');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.increasePassengerCounter('children');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.decreasePassengerCounter('children');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('0');
   })
 
   test('user can adjust number of infants passenger details @regression', async () => {
-    await expect(searchPage.infantPassengerCounter).toHaveText('0');
-    await searchPage.increasePassengerCounter('infants');
-    await expect(searchPage.infantPassengerCounter).toHaveText('1');
-    await searchPage.decreasePassengerCounter('infants');
-    await expect(searchPage.infantPassengerCounter).toHaveText('0');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.increasePassengerCounter('infants');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.decreasePassengerCounter('infants');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('0');
   })
 
   test('passenger count cannot exceed 9 @regression', async () => {
-    await expect(searchPage.adultPassengerCounter).toHaveText('1');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
     for (let i = 0; i < 8; i++) {
-      await searchPage.increasePassengerCounter('adults');
+      await flightSearchPage.form.increasePassengerCounter('adults');
     }
 
-    await searchPage.expectDisabledIncreaseButton('adults');
-    await expect(searchPage.adultPassengerCounter).toHaveText('9');
+    await flightSearchPage.form.expectDisabledIncreaseButton('adults');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('9');
   })
 
   test('adult passenger count cannot be less than 1 @regression', async () => {
-    await expect(searchPage.adultPassengerCounter).toHaveText('1');
-    await searchPage.increasePassengerCounter('adults');
-    await expect(searchPage.adultPassengerCounter).toHaveText('2');
-    await searchPage.decreasePassengerCounter('adults');;
-    await expect(searchPage.adultPassengerCounter).toHaveText('1');
-    await searchPage.expectDisabledDecreaseButton('adults');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.increasePassengerCounter('adults');
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('2');
+    await flightSearchPage.form.decreasePassengerCounter('adults');;
+    await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.expectDisabledDecreaseButton('adults');
   });
 
   test('children passenger count cannot be less than 0 @regression', async () => {
-    await expect(searchPage.childPassengerCounter).toHaveText('0');
-    await searchPage.increasePassengerCounter('children');
-    await expect(searchPage.childPassengerCounter).toHaveText('1');
-    await searchPage.decreasePassengerCounter('children');
-    await expect(searchPage.childPassengerCounter).toHaveText('0');
-    await searchPage.expectDisabledDecreaseButton('children');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.increasePassengerCounter('children');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.decreasePassengerCounter('children');
+    await expect(flightSearchPage.form.childPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.expectDisabledDecreaseButton('children');
   });
 
   test('infants passenger count cannot be less than 0 @regression', async () => {
-    await expect(searchPage.infantPassengerCounter).toHaveText('0');
-    await searchPage.increasePassengerCounter('infants');
-    await expect(searchPage.infantPassengerCounter).toHaveText('1');
-    await searchPage.decreasePassengerCounter('infants');
-    await expect(searchPage.infantPassengerCounter).toHaveText('0');
-    await searchPage.expectDisabledDecreaseButton('infants');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.increasePassengerCounter('infants');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('1');
+    await flightSearchPage.form.decreasePassengerCounter('infants');
+    await expect(flightSearchPage.form.infantPassengerCounter).toHaveText('0');
+    await flightSearchPage.form.expectDisabledDecreaseButton('infants');
   });
 
   test('valid search updates URL with all expected params @e2e @smoke @regression', async () => {
     const departureDate = addDays(startOfTomorrow(), 3);
     const returnDate = addDays(startOfTomorrow(), 7);
 
-    await searchPage.fillOrigin("YYZ");
-    await searchPage.fillDestination("YVR");
-    await searchPage.fillDateSelector('departure', departureDate);
-    await searchPage.fillDateSelector('return', returnDate);
-    await searchPage.submitSearch();
+    await flightSearchPage.form.fillOrigin("YYZ");
+    await flightSearchPage.form.fillDestination("YVR");
+    await flightSearchPage.form.fillDateSelector('departure', departureDate);
+    await flightSearchPage.form.fillDateSelector('return', returnDate);
+    await flightSearchPage.form.submitSearch();
 
-    await searchPage.expectSearchURL({ origin: "YYZ", destination: "YVR", adults: "1", children: "0", infants: "0" });
+    await flightSearchPage.form.expectSearchURL({ origin: "YYZ", destination: "YVR", adults: "1", children: "0", infants: "0" });
   });
 
   test("expect form to be autofilled with URL parameters @regression", async ({ page }) => {
@@ -172,29 +172,29 @@ test.describe('Flight Search Page', () => {
   });
 
   test('infant counter is disabled once it reaches the adult count @regression', async () => {
-    await searchPage.increasePassengerCounter('adults');
+    await flightSearchPage.form.increasePassengerCounter('adults');
     for (let i = 0; i < 2; i++) {
-      await searchPage.increasePassengerCounter('infants');
+      await flightSearchPage.form.increasePassengerCounter('infants');
     };
-    await expect(searchPage.expectDisabledIncreaseButton('infants'));
+    await expect(flightSearchPage.form.expectDisabledIncreaseButton('infants'));
   });
 
   test('error is shown when user tries to decrease adult count lower than infant count @regression', async () => {
-    await searchPage.increasePassengerCounter('adults');
+    await flightSearchPage.form.increasePassengerCounter('adults');
     for (let i = 0; i < 2; i++) {
-      await searchPage.increasePassengerCounter('infants');
+      await flightSearchPage.form.increasePassengerCounter('infants');
     }
-    await searchPage.decreasePassengerCounter('adults');
-    await expect(searchPage.infantPassengerError).toBeVisible();
+    await flightSearchPage.form.decreasePassengerCounter('adults');
+    await expect(flightSearchPage.form.infantPassengerError).toBeVisible();
   })
 
   test('total passenger count across adults, children and infants cannot exceed 9 @regression', async () => {
     for (let i = 0; i < 4; i++) {
-      await searchPage.increasePassengerCounter('adults');
-      await searchPage.increasePassengerCounter('children');
-      await searchPage.increasePassengerCounter('infants');
+      await flightSearchPage.form.increasePassengerCounter('adults');
+      await flightSearchPage.form.increasePassengerCounter('children');
+      await flightSearchPage.form.increasePassengerCounter('infants');
     }
-    await expect(searchPage.adultPassengerError).toBeVisible();
+    await expect(flightSearchPage.form.adultPassengerError).toBeVisible();
   })
 
   test('navigating directly to a URL with infants exceeding adults shows no offers found @regression', async ({ page }) => {

@@ -19,6 +19,8 @@ export default function OffersView() {
   const [errors, setErrors] = useState();
 
   const searchParams = useSearchParams();
+  const originName = getLocationName(searchParams.get('originLocationCode')).toUpperCase();
+  const destinationName = getLocationName(searchParams.get('destinationLocationCode')).toUpperCase();
 
   useEffect(() => {
     const originLocationCode = searchParams.get('originLocationCode');
@@ -100,7 +102,9 @@ export default function OffersView() {
           )}
           {!isLoading && offers?.length > 0 && (
             <>
-              <div className="text-xl font-light mb-3">OFFERS FOR {getLocationName(formData?.originLocationCode).toUpperCase()} TO {getLocationName(formData?.destinationLocationCode).toUpperCase()}</div>
+              <div className="text-xl font-light mb-3" data-testid="offers-route-banner" data-origin={originName} data-destination={destinationName}>
+                OFFERS FOR {originName} TO {destinationName}
+              </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {listOfferCards()}
               </div>
