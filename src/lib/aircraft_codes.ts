@@ -61,4 +61,4 @@ export const AIRCRAFTS = {
   'E75': 'Embraer E175',
   'E90': 'Embraer E190',
   'E95': 'Embraer E195',
-}
+} as const;

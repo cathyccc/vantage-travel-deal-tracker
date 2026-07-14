@@ -23,7 +23,7 @@ export default function FlightDetailsCard({ segment }) {
               <div>
                 <span className="block text-lg/5 text-zinc-200 ">{segment.origin.city_name}</span>
                 <span className="block font-light text-xs text-zinc-200">{`${segment.origin.name} (${segment.origin.iata_code})`}</span>
-                <span className="block font-light text-xs text-zinc-200">{displayGateNum(segment.origin_terminal)}</span>
+                <span className="block font-light text-[10px] text-zinc-400">({displayGateNum(segment.origin_terminal)})</span>
               </div>
               <div className="my-4">
                 <span className="block text-xs text-purple-300">Travel time: {parseISODuration(segment.duration)}</span>
@@ -31,7 +31,7 @@ export default function FlightDetailsCard({ segment }) {
               <div>
                 <span className="block text-lg/5 text-zinc-200">{segment.destination.city_name}</span>
                 <span className="block font-light text-xs text-zinc-200">{`${segment.destination.name} (${segment.destination.iata_code})`}</span>
-                <span className="block font-light text-xs text-zinc-200">{displayGateNum(segment.destination_terminal)}</span>
+                <span className="block font-light text-[10px] text-zinc-400">({displayGateNum(segment.destination_terminal)})</span>
               </div>
             </div>
             </div>

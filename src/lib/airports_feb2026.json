@@ -14085,93 +14085,12 @@
     "is_major_hub": false
   },
   {
-    "iata": "LLV",
-    "name": "Lüliang Dawu Airport",
-    "city": "Lüliang",
-    "country": "CN",
-    "region": "CN-61",
-    "timezone": "Asia/Shanghai",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LLW",
-    "name": "Kamuzu Intl. Airport",
-    "city": "Lumbadzi",
-    "country": "MW",
-    "region": "MW-LI",
-    "timezone": "Africa/Blantyre",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LMM",
-    "name": "Valle del Fuerte Intl. Airport",
-    "city": "Los Mochis",
-    "country": "MX",
-    "region": "MX-SIN",
-    "timezone": "America/Mazatlan",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LMN",
-    "name": "Limbang Airport",
-    "city": "Limbang",
-    "country": "MY",
-    "region": "MY-13",
-    "timezone": "Asia/Brunei",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LMP",
-    "name": "Lampedusa Airport",
-    "city": "Lampedusa",
-    "country": "IT",
-    "region": "IT-82",
-    "timezone": "Europe/Rome",
-    "is_major_hub": false
-  },
-  {
     "iata": "LMT",
     "name": "Crater Lake-Klamath Airport",
     "city": "Klamath Falls",
     "country": "US",
     "region": "US-OR",
     "timezone": "America/Los_Angeles",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LNJ",
-    "name": "Lincang Boshang Airport",
-    "city": "Lincang",
-    "country": "CN",
-    "region": "CN-53",
-    "timezone": "Asia/Shanghai",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LNK",
-    "name": "Lincoln Airport",
-    "city": "Lincoln",
-    "country": "US",
-    "region": "US-NE",
-    "timezone": "America/Chicago",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LNL",
-    "name": "Longnan Chengzhou Airport",
-    "city": "Longnan (Cheng)",
-    "country": "CN",
-    "region": "CN-62",
-    "timezone": "Asia/Shanghai",
-    "is_major_hub": false
-  },
-  {
-    "iata": "LNO",
-    "name": "Leonora Airport",
-    "city": "Leonora",
-    "country": "AU",
-    "region": "AU-WA",
-    "timezone": "Australia/Perth",
     "is_major_hub": false
   },
   {

@@ -7,7 +7,7 @@ const isMock = () => process.env.NODE_ENV === 'development' && process.env.USE_M
 
 export async function searchOffers({originLocationCode, destinationLocationCode, adults, children, infants, childAges=[], infantAges=[], departureDate, returnDate}) {
   if (isMock()) {
-    const mockModule = await import('./mock-data/duffel-api-results.json');
+    const mockModule = await import('@/../tests/fixtures/offers/stops/lax-jfk-nonstop-1adult.json');
     return mockModule.default.data;
   }
   const slices = [
@@ -58,7 +58,7 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
 
 export async function getOffer(offerId) {
   if (isMock()) {
-    const mockModule = await import('./mock-data/duffel-api-results.json');
+    const mockModule = await import('@/../tests/fixtures/selectedOffer/off_0000B8KbRmoDG2P3gPoOq9.json');
     const mockOffer = mockModule.default.data.offers.find(o => o.id === offerId);
     if (!mockOffer) throw new Error("Mock offer not found");
     return mockOffer;

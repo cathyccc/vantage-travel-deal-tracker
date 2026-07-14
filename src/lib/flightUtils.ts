@@ -1,4 +1,5 @@
 import AIRPORTS from './airports_feb2026.json';
+import { AIRCRAFTS } from './aircraft_codes';
 import {
   format,
   parseISO,
@@ -194,11 +195,15 @@ export function getCarrierNames(slice: DuffelSlice): string {
 }
 
 export const displayGateNum = (gate: number | string | null): string => {
-  if (!gate) return "";
+  if (!gate) return "Unassigned Terminal";
   const isNumeric = !isNaN(Number(gate));
   return isNumeric ? `Terminal ${gate}` : `Concourse ${gate}`;
 }
 
 export const calculateAge = (dob: string): number => {
   return differenceInYears(new Date(), new Date(dob))
-} 
+}
+
+export const formattedAircraftName = (iata_code: string) => {
+  return AIRCRAFTS[iata_code as keyof typeof AIRCRAFTS] ?? "Unassigned Aircraft";
+}

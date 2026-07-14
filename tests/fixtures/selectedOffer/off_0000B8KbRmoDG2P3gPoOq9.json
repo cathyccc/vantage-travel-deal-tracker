@@ -1,0 +1,467 @@
+{
+  "total_emissions_kg": "590",
+  "intended_payment_methods": [],
+  "intended_services": [],
+  "available_airline_credit_ids": [],
+  "payment_requirements": {
+    "requires_instant_payment": false,
+    "price_guarantee_expires_at": "2026-07-16T15:43:41Z",
+    "payment_required_by": "2026-07-17T15:43:41Z"
+  },
+  "supported_passenger_identity_document_types": [
+    "passport",
+    "known_traveler_number",
+    "passenger_redress_number"
+  ],
+  "passenger_identity_documents_required": false,
+  "tax_currency": "USD",
+  "available_services": [],
+  "supported_loyalty_programmes": [
+    "AA",
+    "AS",
+    "CX",
+    "MH",
+    "BA",
+    "AY",
+    "UL",
+    "QF",
+    "IB",
+    "JM",
+    "QR",
+    "UM",
+    "RJ",
+    "AT"
+  ],
+  "private_fares": [],
+  "tax_amount": "46.76",
+  "base_amount": "259.81",
+  "base_currency": "USD",
+  "total_currency": "USD",
+  "created_at": "2026-07-14T15:43:41.718111Z",
+  "live_mode": false,
+  "slices": [
+    {
+      "comparison_key": "BV5ADg==",
+      "ngs_shelf": 1,
+      "destination_type": "airport",
+      "origin_type": "airport",
+      "fare_brand_name": "Basic",
+      "segments": [
+        {
+          "origin_terminal": "2",
+          "destination_terminal": "1",
+          "aircraft": null,
+          "departing_at": "2026-07-30T22:27:00",
+          "arriving_at": "2026-07-31T07:19:00",
+          "stops": [],
+          "operating_carrier": {
+            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg",
+            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/BA.svg",
+            "conditions_of_carriage_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+            "iata_code": "BA",
+            "name": "British Airways",
+            "id": "arl_00009VME7DBKeMags5CliQ"
+          },
+          "marketing_carrier": {
+            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg",
+            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/BA.svg",
+            "conditions_of_carriage_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+            "iata_code": "BA",
+            "name": "British Airways",
+            "id": "arl_00009VME7DBKeMags5CliQ"
+          },
+          "operating_carrier_flight_number": "0105",
+          "marketing_carrier_flight_number": "0105",
+          "passengers": [
+            {
+              "baggages": [
+                {
+                  "quantity": 1,
+                  "type": "checked"
+                },
+                {
+                  "quantity": 1,
+                  "type": "carry_on"
+                }
+              ],
+              "cabin_class_marketing_name": "Economy",
+              "passenger_id": "pas_0000B8KbRmVnNrgofqJnkJ",
+              "cabin": {
+                "amenities": {
+                  "seat": {
+                    "pitch": "30",
+                    "legroom": "n/a",
+                    "type": null
+                  },
+                  "wifi": {
+                    "cost": "paid",
+                    "available": true
+                  },
+                  "power": {
+                    "available": true
+                  }
+                },
+                "marketing_name": "Economy",
+                "name": "economy"
+              },
+              "cabin_class": "economy",
+              "fare_basis_code": "Y20LGTN2"
+            }
+          ],
+          "distance": "3974.2717774447433",
+          "duration": "PT5H52M",
+          "destination": {
+            "city_name": "New York",
+            "icao_code": "KJFK",
+            "airports": null,
+            "iata_city_code": "NYC",
+            "iata_country_code": "US",
+            "iata_code": "JFK",
+            "latitude": 40.640556,
+            "longitude": -73.778519,
+            "city": {
+              "city_name": null,
+              "icao_code": null,
+              "iata_city_code": "NYC",
+              "iata_country_code": "US",
+              "iata_code": "NYC",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "New York",
+              "id": "cit_nyc_us"
+            },
+            "time_zone": "America/New_York",
+            "type": "airport",
+            "name": "John F. Kennedy International Airport",
+            "id": "arp_jfk_us"
+          },
+          "origin": {
+            "city_name": "Los Angeles",
+            "icao_code": "KLAX",
+            "airports": null,
+            "iata_city_code": "LAX",
+            "iata_country_code": "US",
+            "iata_code": "LAX",
+            "latitude": 33.942045,
+            "longitude": -118.408263,
+            "city": {
+              "city_name": null,
+              "icao_code": null,
+              "iata_city_code": "LAX",
+              "iata_country_code": "US",
+              "iata_code": "LAX",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Los Angeles",
+              "id": "cit_lax_us"
+            },
+            "time_zone": "America/Los_Angeles",
+            "type": "airport",
+            "name": "Los Angeles International Airport",
+            "id": "arp_lax_us"
+          },
+          "id": "seg_0000B8KbRmnrHM7TfJe7Hu"
+        }
+      ],
+      "conditions": {
+        "change_before_departure": {
+          "penalty_currency": null,
+          "penalty_amount": null,
+          "allowed": false
+        },
+        "priority_check_in": null,
+        "priority_boarding": null,
+        "advance_seat_selection": null
+      },
+      "duration": "PT5H52M",
+      "destination": {
+        "city_name": "New York",
+        "icao_code": "KJFK",
+        "airports": null,
+        "iata_city_code": "NYC",
+        "iata_country_code": "US",
+        "iata_code": "JFK",
+        "latitude": 40.640556,
+        "longitude": -73.778519,
+        "city": {
+          "city_name": null,
+          "icao_code": null,
+          "iata_city_code": "NYC",
+          "iata_country_code": "US",
+          "iata_code": "NYC",
+          "latitude": null,
+          "longitude": null,
+          "time_zone": null,
+          "type": "city",
+          "name": "New York",
+          "id": "cit_nyc_us"
+        },
+        "time_zone": "America/New_York",
+        "type": "airport",
+        "name": "John F. Kennedy International Airport",
+        "id": "arp_jfk_us"
+      },
+      "origin": {
+        "city_name": "Los Angeles",
+        "icao_code": "KLAX",
+        "airports": null,
+        "iata_city_code": "LAX",
+        "iata_country_code": "US",
+        "iata_code": "LAX",
+        "latitude": 33.942045,
+        "longitude": -118.408263,
+        "city": {
+          "city_name": null,
+          "icao_code": null,
+          "iata_city_code": "LAX",
+          "iata_country_code": "US",
+          "iata_code": "LAX",
+          "latitude": null,
+          "longitude": null,
+          "time_zone": null,
+          "type": "city",
+          "name": "Los Angeles",
+          "id": "cit_lax_us"
+        },
+        "time_zone": "America/Los_Angeles",
+        "type": "airport",
+        "name": "Los Angeles International Airport",
+        "id": "arp_lax_us"
+      },
+      "id": "sli_0000B8KbRmnrHM7TfJe7Hv"
+    },
+    {
+      "comparison_key": "B/i0Kw==",
+      "ngs_shelf": 1,
+      "destination_type": "airport",
+      "origin_type": "airport",
+      "fare_brand_name": "Basic",
+      "segments": [
+        {
+          "origin_terminal": "2",
+          "destination_terminal": "1",
+          "aircraft": null,
+          "departing_at": "2026-08-07T04:38:00",
+          "arriving_at": "2026-08-07T07:30:00",
+          "stops": [],
+          "operating_carrier": {
+            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg",
+            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/BA.svg",
+            "conditions_of_carriage_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+            "iata_code": "BA",
+            "name": "British Airways",
+            "id": "arl_00009VME7DBKeMags5CliQ"
+          },
+          "marketing_carrier": {
+            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg",
+            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/BA.svg",
+            "conditions_of_carriage_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+            "iata_code": "BA",
+            "name": "British Airways",
+            "id": "arl_00009VME7DBKeMags5CliQ"
+          },
+          "operating_carrier_flight_number": "0105",
+          "marketing_carrier_flight_number": "0105",
+          "passengers": [
+            {
+              "baggages": [
+                {
+                  "quantity": 1,
+                  "type": "checked"
+                },
+                {
+                  "quantity": 1,
+                  "type": "carry_on"
+                }
+              ],
+              "cabin_class_marketing_name": "Economy",
+              "passenger_id": "pas_0000B8KbRmVnNrgofqJnkJ",
+              "cabin": {
+                "amenities": {
+                  "seat": {
+                    "pitch": "30",
+                    "legroom": "n/a",
+                    "type": null
+                  },
+                  "wifi": {
+                    "cost": "paid",
+                    "available": true
+                  },
+                  "power": {
+                    "available": true
+                  }
+                },
+                "marketing_name": "Economy",
+                "name": "economy"
+              },
+              "cabin_class": "economy",
+              "fare_basis_code": "Y20LGTN2"
+            }
+          ],
+          "distance": "3974.2717774447433",
+          "duration": "PT5H52M",
+          "destination": {
+            "city_name": "Los Angeles",
+            "icao_code": "KLAX",
+            "airports": null,
+            "iata_city_code": "LAX",
+            "iata_country_code": "US",
+            "iata_code": "LAX",
+            "latitude": 33.942045,
+            "longitude": -118.408263,
+            "city": {
+              "city_name": null,
+              "icao_code": null,
+              "iata_city_code": "LAX",
+              "iata_country_code": "US",
+              "iata_code": "LAX",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Los Angeles",
+              "id": "cit_lax_us"
+            },
+            "time_zone": "America/Los_Angeles",
+            "type": "airport",
+            "name": "Los Angeles International Airport",
+            "id": "arp_lax_us"
+          },
+          "origin": {
+            "city_name": "New York",
+            "icao_code": "KJFK",
+            "airports": null,
+            "iata_city_code": "NYC",
+            "iata_country_code": "US",
+            "iata_code": "JFK",
+            "latitude": 40.640556,
+            "longitude": -73.778519,
+            "city": {
+              "city_name": null,
+              "icao_code": null,
+              "iata_city_code": "NYC",
+              "iata_country_code": "US",
+              "iata_code": "NYC",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "New York",
+              "id": "cit_nyc_us"
+            },
+            "time_zone": "America/New_York",
+            "type": "airport",
+            "name": "John F. Kennedy International Airport",
+            "id": "arp_jfk_us"
+          },
+          "id": "seg_0000B8KbRmnrHM7TfJe7Hw"
+        }
+      ],
+      "conditions": {
+        "change_before_departure": {
+          "penalty_currency": null,
+          "penalty_amount": null,
+          "allowed": false
+        },
+        "priority_check_in": null,
+        "priority_boarding": null,
+        "advance_seat_selection": null
+      },
+      "duration": "PT5H52M",
+      "destination": {
+        "city_name": "Los Angeles",
+        "icao_code": "KLAX",
+        "airports": null,
+        "iata_city_code": "LAX",
+        "iata_country_code": "US",
+        "iata_code": "LAX",
+        "latitude": 33.942045,
+        "longitude": -118.408263,
+        "city": {
+          "city_name": null,
+          "icao_code": null,
+          "iata_city_code": "LAX",
+          "iata_country_code": "US",
+          "iata_code": "LAX",
+          "latitude": null,
+          "longitude": null,
+          "time_zone": null,
+          "type": "city",
+          "name": "Los Angeles",
+          "id": "cit_lax_us"
+        },
+        "time_zone": "America/Los_Angeles",
+        "type": "airport",
+        "name": "Los Angeles International Airport",
+        "id": "arp_lax_us"
+      },
+      "origin": {
+        "city_name": "New York",
+        "icao_code": "KJFK",
+        "airports": null,
+        "iata_city_code": "NYC",
+        "iata_country_code": "US",
+        "iata_code": "JFK",
+        "latitude": 40.640556,
+        "longitude": -73.778519,
+        "city": {
+          "city_name": null,
+          "icao_code": null,
+          "iata_city_code": "NYC",
+          "iata_country_code": "US",
+          "iata_code": "NYC",
+          "latitude": null,
+          "longitude": null,
+          "time_zone": null,
+          "type": "city",
+          "name": "New York",
+          "id": "cit_nyc_us"
+        },
+        "time_zone": "America/New_York",
+        "type": "airport",
+        "name": "John F. Kennedy International Airport",
+        "id": "arp_jfk_us"
+      },
+      "id": "sli_0000B8KbRmoDG2P3gPoOq8"
+    }
+  ],
+  "total_amount": "306.57",
+  "passengers": [
+    {
+      "loyalty_programme_accounts": [],
+      "family_name": null,
+      "given_name": null,
+      "age": null,
+      "type": "adult",
+      "id": "pas_0000B8KbRmVnNrgofqJnkJ"
+    }
+  ],
+  "conditions": {
+    "refund_before_departure": {
+      "penalty_currency": null,
+      "penalty_amount": null,
+      "allowed": false
+    },
+    "change_before_departure": {
+      "penalty_currency": null,
+      "penalty_amount": null,
+      "allowed": false
+    }
+  },
+  "updated_at": "2026-07-14T15:44:32.597246Z",
+  "expires_at": "2026-07-14T16:13:41.718113Z",
+  "partial": false,
+  "owner": {
+    "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/BA.svg",
+    "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/BA.svg",
+    "conditions_of_carriage_url": "https://www.britishairways.com/en-gb/information/legal/british-airways/general-conditions-of-carriage",
+    "iata_code": "BA",
+    "name": "British Airways",
+    "id": "arl_00009VME7DBKeMags5CliQ"
+  },
+  "id": "off_0000B8KbRmoDG2P3gPoOq9"
+}

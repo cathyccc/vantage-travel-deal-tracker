@@ -5,6 +5,7 @@ import { parseISODuration,
          displayDateDiff,
          getCarrierNames,
          displayGateNum,
+         formattedAircraftName
        } from "@/lib/flightUtils";
 import { format } from "date-fns";
 import { ChevronRight } from "lucide-react";
@@ -30,7 +31,7 @@ export default function FlightSummaryCard({offer}) {
             <span>{displayDateDiff(segToDestination)}</span>
           </div>
         </div>
-        <div className="text-base font-semibold">{segToDestination.origin.city_name} ({segToDestination.origin.iata_code}) to {segToDestination.destination.city_name} ({segToDestination.destination.iata_code})</div>
+        <div className="text-base font-semibold">{offer.slices[0].origin.city_name} ({offer.slices[0].origin.iata_code}) to {offer.slices[0].destination.city_name} ({offer.slices[0].destination.iata_code})</div>
         <div>
           <div className="inline">{`${getCarrierNames(offer.slices[0])}, ${displayStops(layoverInfoToDestination.length).toLowerCase()}`}</div>
           <div className="inline ml-5">{parseISODuration(offer.slices[0].duration)}</div>
@@ -47,8 +48,10 @@ export default function FlightSummaryCard({offer}) {
           </CollapsibleTrigger>
           <CollapsibleContent>
             { toDestinationSegs.map(seg => {
+              const matchingLayover = layoverInfoToDestination.find(item => item.layoverLocationCode === seg.destination.iata_code)
+
               return(
-                <div key={seg.id}>
+                <div key={seg.id} className="pb-3">
                   <div className="px-6 bg-zinc-800 p-2 w-full flex justify-between flex-row">
                     <div className="font-bold">{seg.origin.iata_code} to {seg.destination.iata_code}</div>
                     <div className="font-medium">{format(seg.departing_at, 'EEE, MMM d')}</div>
@@ -66,7 +69,7 @@ export default function FlightSummaryCard({offer}) {
                     </div>
                     <div className="flex flex-col text-right">
                       <div>{seg.marketing_carrier.iata_code} {seg.marketing_carrier_flight_number}</div>
-                      <div>{seg.aircraft? seg.aircraft: 'Aircraft Unknown'}</div>
+                      <div>{seg.aircraft? formattedAircraftName(seg.aircraft.iata_code): 'Aircraft Unknown'}</div>
                     </div>
                   </div>
 
@@ -103,10 +106,10 @@ export default function FlightSummaryCard({offer}) {
                       <div>Flight Time</div>
                       <div className="text-xs">{parseISODuration(seg.duration)}</div>
                     </div>
-                    { layoverInfoToDestination.length > 0 &&
+                    { layoverInfoToDestination.length > 0 && matchingLayover &&
                       <div className="flex flex-row justify-between bg-purple-950 rounded-sm px-2 py-1 mb-2">
                         <div>Layover Time</div>
-                        <div className="text-xs">{layoverInfoToDestination.find(item => item.layoverLocationCode === seg.destination.iata_code).layoverDuration}</div>
+                        <div className="text-xs">{matchingLayover.layoverDuration}</div>
                       </div>
                     }
                   </div>
@@ -125,10 +128,10 @@ export default function FlightSummaryCard({offer}) {
             <span>{displayDateDiff(segToOrigin)}</span>
           </div>
         </div>
-        <div className="text-base font-semibold">{segToOrigin.origin.city_name} ({segToOrigin.origin.iata_code}) to {segToOrigin.destination.city_name} ({segToOrigin.destination.iata_code})</div>
+        <div className="text-base font-semibold">{offer.slices[1].origin.city_name} ({offer.slices[1].origin.iata_code}) to {offer.slices[1].destination.city_name} ({offer.slices[1].destination.iata_code})</div>
         <div>
-          <div className="inline">{`${getCarrierNames(offer.slices[0])}, ${displayStops(layoverInfoToDestination.length).toLowerCase()}`}</div>
-          <div className="inline ml-5">{parseISODuration(offer.slices[0].duration)}</div>
+          <div className="inline">{`${getCarrierNames(offer.slices[1])}, ${displayStops(layoverInfoToDestination.length).toLowerCase()}`}</div>
+          <div className="inline ml-5">{parseISODuration(offer.slices[1].duration)}</div>
         </div>
       </div>
 
@@ -142,6 +145,8 @@ export default function FlightSummaryCard({offer}) {
           </CollapsibleTrigger>
           <CollapsibleContent>
             { toOriginSegs.map(seg => {
+              const matchingLayover = layoverInfoToOrigin.find(item => item.layoverLocationCode === seg.destination.iata_code)
+
               return(
                 <div key={seg.id}>
                   <div className="px-6 bg-zinc-800 p-2 w-full flex justify-between flex-row">
@@ -161,7 +166,7 @@ export default function FlightSummaryCard({offer}) {
                     </div>
                     <div className="flex flex-col text-right">
                       <div>{seg.marketing_carrier.iata_code} {seg.marketing_carrier_flight_number}</div>
-                      <div>{seg.aircraft? seg.aircraft: 'Aircraft Unknown'}</div>
+                      <div>{seg.aircraft? formattedAircraftName(seg.aircraft.iata_code): 'Aircraft Unknown'}</div>
                     </div>
                   </div>
 
@@ -198,10 +203,10 @@ export default function FlightSummaryCard({offer}) {
                       <div>Flight Time</div>
                       <div className="text-xs">{parseISODuration(seg.duration)}</div>
                     </div>
-                    { layoverInfoToOrigin.length > 0 &&
+                    { layoverInfoToOrigin.length > 0 && matchingLayover &&
                       <div className="flex flex-row justify-between bg-purple-950 rounded-sm px-2 py-1 mb-2">
                         <div>Layover Time</div>
-                        <div className="text-xs">{layoverInfoToOrigin.find(item => item.layoverLocationCode === seg.destination.iata_code).layoverDuration}</div>
+                        <div className="text-xs">{matchingLayover.layoverDuration}</div>
                       </div>
                     }
                   </div>
