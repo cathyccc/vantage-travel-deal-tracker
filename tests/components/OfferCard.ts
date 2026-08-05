@@ -24,4 +24,8 @@ export class OfferCard {
   async clickViewDetails() {
     await this.viewDetailsButton.click();
   }
+
+  async getOfferId() {
+    return this.root.getAttribute('data-offer-id');
+  }
 }

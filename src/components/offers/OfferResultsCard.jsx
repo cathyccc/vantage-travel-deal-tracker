@@ -86,7 +86,7 @@ export default function OfferResultsCard({offer}) {
   }
 
   return (
-    <Card data-testid="offer-result-card" className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-none flex flex-col h-full">
+    <Card data-testid="offer-result-card" data-offer-id={offer.id} className="bg-zinc-900 rounded-2xl shadow-2xl text-white border-none flex flex-col h-full">
       <CardHeader>
         <div className="flex justify-between items-start">
           <div className="text-sm font-extrabold">

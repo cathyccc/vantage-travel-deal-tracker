@@ -17,17 +17,17 @@ test.describe('Offer to Booking Flow @e2e', () => {
     )
 
     const card = flightSearchPage.results.card(0);
-    const cardPrice = await card.price.textContent();
+    await expect(card.price).toContainText('306.57'); // total_amount from fixture
     await card.clickViewDetails();
 
     await expect(flightSearchPage.offerDialog.departureLabel).toBeVisible();
     await flightSearchPage.offerDialog.goToFareDetails();
+    await expect(flightSearchPage.offerDialog.farePrice).toContainText('259.81'); // base_amount from fixture
 
-    await expect(flightSearchPage.offerDialog.farePrice).toBeVisible(); //ensures the transition has completed loading
-    // await expect(flightSearchPage.offerDialog.farePrice).toContainText(cardPrice);
-
+    await expect(flightSearchPage.offerDialog.farePrice).toBeVisible();
     await flightSearchPage.offerDialog.selectFare();
 
-    await expect(page).toHaveURL(/\/booking\/off_/);
+    const offerId = await card.getOfferId();
+    await expect(page).toHaveURL(new RegExp(`/booking/${offerId}`));
   })
 })
