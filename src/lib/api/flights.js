@@ -2,14 +2,7 @@ import { Duffel } from '@duffel/api';
 
 const duffel = new Duffel ({token: process.env.DUFFEL_ACCESS_TOKEN})
 
-// Toggle for testing
-const isMock = () => process.env.NODE_ENV === 'development' && process.env.USE_MOCK === 'true'; // Set to false when ready to use real API
-
 export async function searchOffers({originLocationCode, destinationLocationCode, adults, children, infants, childAges=[], infantAges=[], departureDate, returnDate}) {
-  if (isMock()) {
-    const mockModule = await import('@/../tests/fixtures/offers/stops/lax-jfk-nonstop-1adult.json');
-    return mockModule.default.data;
-  }
   const slices = [
     {
       origin: originLocationCode,
@@ -57,13 +50,6 @@ export async function searchOffers({originLocationCode, destinationLocationCode,
 }
 
 export async function getOffer(offerId) {
-  if (isMock()) {
-    const mockModule = await import('@/../tests/fixtures/selectedOffer/off_0000B8KbRmoDG2P3gPoOq9.json');
-    const mockOffer = mockModule.default.data.offers.find(o => o.id === offerId);
-    if (!mockOffer) throw new Error("Mock offer not found");
-    return mockOffer;
-  }
-
   try {
     const offer = await duffel.offers.get(offerId);
     return offer.data;

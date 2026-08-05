@@ -25,7 +25,7 @@ export default function OfferDetailsCard({offer, goToFare}) {
       {/* Scrollable Area */}
       <div className="no-scrollbar -mx-4 max-h-[50vh] overflow-y-auto px-4">
 
-        <div className="text-purple-200">Departure</div>
+        <div data-testid="flight-details-departure-label" className="text-purple-200">Departure</div>
         <div className={`grid sm:grid-cols-1 ${isNonStop(slices[0].segments) ? 'md:grid-cols-1 mx-20':'md:grid-cols-2'} gap-5 flex items-stretch`}>
           {
             slices[0].segments.map(s => {
@@ -49,7 +49,7 @@ export default function OfferDetailsCard({offer, goToFare}) {
           }
         </div>
 
-        <div className="text-purple-200 mt-10">Return</div>
+        <div data-testid="flight-details-return-label" className="text-purple-200 mt-10">Return</div>
         <div className={`grid sm:grid-cols-1 ${isNonStop(slices[1].segments) ? 'md:grid-cols-1 mx-20':'md:grid-cols-2'} gap-5`}>
           {
             slices[1].segments.map(s => {
@@ -75,7 +75,7 @@ export default function OfferDetailsCard({offer, goToFare}) {
       </div>
 
       <DialogFooter>
-        <Button onClick={() => handleClick()} size="sm" variant="outline" className="text-xs mt-3 text-white hover:text-white bg-purple-600 hover:bg-purple-500 border-none">
+        <Button data-testid="view-fare-details-button"onClick={() => handleClick()} size="sm" variant="outline" className="text-xs mt-3 text-white hover:text-white bg-purple-600 hover:bg-purple-500 border-none">
           VIEW FARE DETAILS
         </Button>
       </DialogFooter>

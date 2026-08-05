@@ -1,1047 +1,1054 @@
-[
-  {
-    "total_emissions_kg": "781",
-    "intended_payment_methods": [],
-    "available_airline_credit_ids": [],
-    "payment_requirements": {
-      "requires_instant_payment": false,
-      "price_guarantee_expires_at": "2026-07-16T15:15:12Z",
-      "payment_required_by": "2026-07-17T15:15:12Z"
-    },
-    "supported_passenger_identity_document_types": [
-      "passport",
-      "known_traveler_number",
-      "passenger_redress_number"
-    ],
-    "passenger_identity_documents_required": false,
-    "tax_currency": "USD",
-    "supported_loyalty_programmes": [
-      "AA",
-      "AS",
-      "CX",
-      "MH",
-      "BA",
-      "AY",
-      "UL",
-      "QF",
-      "IB",
-      "JM",
-      "QR",
-      "UM",
-      "RJ",
-      "AT"
-    ],
-    "private_fares": [],
-    "tax_amount": "79.42",
-    "base_amount": "441.20",
-    "base_currency": "USD",
-    "total_currency": "USD",
-    "total_amount": "520.62",
-    "created_at": "2026-07-14T15:15:12.702299Z",
-    "live_mode": false,
-    "slices": [
-      {
-        "comparison_key": "BkJcLQ==",
-        "ngs_shelf": 1,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Basic Economy",
-        "segments": [
-          {
-            "origin_terminal": "2",
-            "destination_terminal": "1",
-            "aircraft": null,
-            "departing_at": "2026-07-16T11:36:00",
-            "arriving_at": "2026-07-16T13:38:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-              "iata_code": "AA",
-              "name": "American Airlines",
-              "id": "arl_00009VME7DAGiJjwomhv32"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-              "iata_code": "AA",
-              "name": "American Airlines",
-              "id": "arl_00009VME7DAGiJjwomhv32"
-            },
-            "operating_carrier_flight_number": "1274",
-            "marketing_carrier_flight_number": "1274",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "n/a",
-                      "type": null
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y20LGTN2"
-              },
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "n/a",
-                      "type": null
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y20LGTN2"
-              }
-            ],
-            "distance": "3345.6062981240593",
-            "duration": "PT5H2M",
-            "destination": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YVR",
-              "city_name": "Vancouver",
-              "icao_code": "CYVR",
-              "iata_code": "YVR",
-              "latitude": 49.195296,
-              "longitude": -123.182755,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YVR",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YVR",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Vancouver",
-                "id": "cit_yvr_ca"
-              },
-              "time_zone": "America/Vancouver",
-              "type": "airport",
-              "name": "Vancouver International Airport",
-              "id": "arp_yvr_ca"
-            },
-            "origin": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "id": "seg_0000B8KYuBDCXq9ouY2jc8"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": {
-            "penalty_currency": "USD",
-            "penalty_amount": "90.00",
-            "allowed": true
-          },
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT5H2M",
-        "destination": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YVR",
-          "city_name": "Vancouver",
-          "icao_code": "CYVR",
-          "iata_code": "YVR",
-          "latitude": 49.195296,
-          "longitude": -123.182755,
-          "city": {
-            "iata_country_code": "CA",
-            "iata_city_code": "YVR",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YVR",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Vancouver",
-            "id": "cit_yvr_ca"
-          },
-          "time_zone": "America/Vancouver",
-          "type": "airport",
-          "name": "Vancouver International Airport",
-          "id": "arp_yvr_ca"
-        },
-        "origin": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_country_code": "CA",
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "id": "sli_0000B8KYuBDCXq9ouY2jc9"
-      },
-      {
-        "comparison_key": "Be1S4Q==",
-        "ngs_shelf": 1,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Basic Economy",
-        "segments": [
-          {
-            "origin_terminal": "2",
-            "destination_terminal": "1",
-            "aircraft": null,
-            "departing_at": "2026-07-31T23:13:00",
-            "arriving_at": "2026-08-01T07:15:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-              "iata_code": "AA",
-              "name": "American Airlines",
-              "id": "arl_00009VME7DAGiJjwomhv32"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-              "iata_code": "AA",
-              "name": "American Airlines",
-              "id": "arl_00009VME7DAGiJjwomhv32"
-            },
-            "operating_carrier_flight_number": "1274",
-            "marketing_carrier_flight_number": "1274",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "n/a",
-                      "type": null
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y20LGTN2"
-              },
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "n/a",
-                      "type": null
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y20LGTN2"
-              }
-            ],
-            "distance": "3345.6062981240593",
-            "duration": "PT5H2M",
-            "destination": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "origin": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YVR",
-              "city_name": "Vancouver",
-              "icao_code": "CYVR",
-              "iata_code": "YVR",
-              "latitude": 49.195296,
-              "longitude": -123.182755,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YVR",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YVR",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Vancouver",
-                "id": "cit_yvr_ca"
-              },
-              "time_zone": "America/Vancouver",
-              "type": "airport",
-              "name": "Vancouver International Airport",
-              "id": "arp_yvr_ca"
-            },
-            "id": "seg_0000B8KYuBDCXq9ouY2jcA"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": {
-            "penalty_currency": "USD",
-            "penalty_amount": "90.00",
-            "allowed": true
-          },
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT5H2M",
-        "destination": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_country_code": "CA",
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "origin": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YVR",
-          "city_name": "Vancouver",
-          "icao_code": "CYVR",
-          "iata_code": "YVR",
-          "latitude": 49.195296,
-          "longitude": -123.182755,
-          "city": {
-            "iata_country_code": "CA",
-            "iata_city_code": "YVR",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YVR",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Vancouver",
-            "id": "cit_yvr_ca"
-          },
-          "time_zone": "America/Vancouver",
-          "type": "airport",
-          "name": "Vancouver International Airport",
-          "id": "arp_yvr_ca"
-        },
-        "id": "sli_0000B8KYuBDCXq9ouY2jcB"
-      }
-    ],
-    "passengers": [
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KYuAmEQ6ezWa85dz"
-      },
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KYuAmEQ6ezWa85e0"
-      }
-    ],
-    "conditions": {
-      "refund_before_departure": {
-        "penalty_currency": "USD",
-        "penalty_amount": "90.00",
-        "allowed": true
-      },
-      "change_before_departure": {
-        "penalty_currency": "USD",
-        "penalty_amount": "90.00",
-        "allowed": true
-      }
-    },
-    "updated_at": "2026-07-14T15:15:12.702299Z",
-    "expires_at": "2026-07-14T15:45:12.702301Z",
-    "partial": false,
-    "owner": {
-      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-      "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-      "iata_code": "AA",
-      "name": "American Airlines",
-      "id": "arl_00009VME7DAGiJjwomhv32"
-    },
-    "id": "off_0000B8KYuBDCXq9ouY2jcC"
+{
+  "meta": {
+    "limit": 50,
+    "before": null,
+    "after": null
   },
-  {
-    "total_emissions_kg": "812",
-    "intended_payment_methods": [],
-    "available_airline_credit_ids": [],
-    "payment_requirements": {
-      "requires_instant_payment": false,
-      "price_guarantee_expires_at": null,
-      "payment_required_by": "2026-07-15T15:15:00Z"
-    },
-    "supported_passenger_identity_document_types": [
-      "known_traveler_number",
-      "passenger_redress_number",
-      "passport"
-    ],
-    "passenger_identity_documents_required": false,
-    "tax_currency": "USD",
-    "supported_loyalty_programmes": [
-      "WS"
-    ],
-    "private_fares": [],
-    "tax_amount": "708.56",
-    "base_amount": "2082.00",
-    "base_currency": "USD",
-    "total_currency": "USD",
-    "total_amount": "2790.56",
-    "created_at": "2026-07-14T15:15:16.831448Z",
-    "live_mode": false,
-    "slices": [
-      {
-        "comparison_key": "Ah/cug==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Econo",
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "7M8",
-              "name": "Boeing 737 MAX 8 / BBJ MAX 8/MAX200",
-              "id": "arc_00009g3mppxYZbG6EEWxlI"
-            },
-            "departing_at": "2026-07-16T09:45:00",
-            "arriving_at": "2026-07-16T12:00:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
-              "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
-              "iata_code": "WS",
-              "name": "WestJet",
-              "id": "arl_00009VME7DDoV8ZkzmMkaw"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
-              "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
-              "iata_code": "WS",
-              "name": "WestJet",
-              "id": "arl_00009VME7DDoV8ZkzmMkaw"
-            },
-            "operating_carrier_flight_number": "0713",
-            "marketing_carrier_flight_number": "0713",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "HC1D0QES"
+  "data": [
+    {
+      "total_emissions_kg": "781",
+      "intended_payment_methods": [],
+      "available_airline_credit_ids": [],
+      "payment_requirements": {
+        "requires_instant_payment": false,
+        "price_guarantee_expires_at": "2026-07-16T15:15:12Z",
+        "payment_required_by": "2026-07-17T15:15:12Z"
+      },
+      "supported_passenger_identity_document_types": [
+        "passport",
+        "known_traveler_number",
+        "passenger_redress_number"
+      ],
+      "passenger_identity_documents_required": false,
+      "tax_currency": "USD",
+      "supported_loyalty_programmes": [
+        "AA",
+        "AS",
+        "CX",
+        "MH",
+        "BA",
+        "AY",
+        "UL",
+        "QF",
+        "IB",
+        "JM",
+        "QR",
+        "UM",
+        "RJ",
+        "AT"
+      ],
+      "private_fares": [],
+      "tax_amount": "79.42",
+      "base_amount": "441.20",
+      "base_currency": "USD",
+      "total_currency": "USD",
+      "total_amount": "520.62",
+      "created_at": "2026-07-14T15:15:12.702299Z",
+      "live_mode": false,
+      "slices": [
+        {
+          "comparison_key": "BkJcLQ==",
+          "ngs_shelf": 1,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Basic Economy",
+          "segments": [
+            {
+              "origin_terminal": "2",
+              "destination_terminal": "1",
+              "aircraft": null,
+              "departing_at": "2026-07-16T11:36:00",
+              "arriving_at": "2026-07-16T13:38:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+                "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+                "iata_code": "AA",
+                "name": "American Airlines",
+                "id": "arl_00009VME7DAGiJjwomhv32"
               },
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+                "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+                "iata_code": "AA",
+                "name": "American Airlines",
+                "id": "arl_00009VME7DAGiJjwomhv32"
+              },
+              "operating_carrier_flight_number": "1274",
+              "marketing_carrier_flight_number": "1274",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
                     },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
                     }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "n/a",
+                        "type": null
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
                   },
-                  "marketing_name": "Economy",
-                  "name": "economy"
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y20LGTN2"
                 },
-                "cabin_class": "economy",
-                "fare_basis_code": "HC1D0QES"
-              }
-            ],
-            "distance": null,
-            "duration": "PT5H15M",
-            "destination": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YVR",
-              "city_name": "Vancouver",
-              "icao_code": "CYVR",
-              "iata_code": "YVR",
-              "latitude": 49.195296,
-              "longitude": -123.182755,
-              "city": {
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "n/a",
+                        "type": null
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y20LGTN2"
+                }
+              ],
+              "distance": "3345.6062981240593",
+              "duration": "PT5H2M",
+              "destination": {
+                "airports": null,
                 "iata_country_code": "CA",
                 "iata_city_code": "YVR",
-                "city_name": null,
-                "icao_code": null,
+                "city_name": "Vancouver",
+                "icao_code": "CYVR",
                 "iata_code": "YVR",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Vancouver",
-                "id": "cit_yvr_ca"
+                "latitude": 49.195296,
+                "longitude": -123.182755,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YVR",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YVR",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Vancouver",
+                  "id": "cit_yvr_ca"
+                },
+                "time_zone": "America/Vancouver",
+                "type": "airport",
+                "name": "Vancouver International Airport",
+                "id": "arp_yvr_ca"
               },
-              "time_zone": "America/Vancouver",
-              "type": "airport",
-              "name": "Vancouver International Airport",
-              "id": "arp_yvr_ca"
-            },
-            "origin": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
+              "origin": {
+                "airports": null,
                 "iata_country_code": "CA",
                 "iata_city_code": "YTO",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
+                "city_name": "Toronto",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
               },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
+              "id": "seg_0000B8KYuBDCXq9ouY2jc8"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": {
+              "penalty_currency": "USD",
+              "penalty_amount": "90.00",
+              "allowed": true
             },
-            "id": "seg_0000B8KYubT2vYHSLDekvc"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT5H15M",
-        "destination": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YVR",
-          "city_name": "Vancouver",
-          "icao_code": "CYVR",
-          "iata_code": "YVR",
-          "latitude": 49.195296,
-          "longitude": -123.182755,
-          "city": {
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT5H2M",
+          "destination": {
+            "airports": null,
             "iata_country_code": "CA",
             "iata_city_code": "YVR",
-            "city_name": null,
-            "icao_code": null,
+            "city_name": "Vancouver",
+            "icao_code": "CYVR",
             "iata_code": "YVR",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Vancouver",
-            "id": "cit_yvr_ca"
-          },
-          "time_zone": "America/Vancouver",
-          "type": "airport",
-          "name": "Vancouver International Airport",
-          "id": "arp_yvr_ca"
-        },
-        "origin": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_country_code": "CA",
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "id": "sli_0000B8KYubT2vYHSLDekvd"
-      },
-      {
-        "comparison_key": "AnbMeA==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Econo",
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "73H",
-              "name": "Boeing 737-800 (winglets)/BBJ2",
-              "id": "arc_00009VMF8AhBTmADP77oj7"
-            },
-            "departing_at": "2026-07-31T09:00:00",
-            "arriving_at": "2026-07-31T16:35:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
-              "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
-              "iata_code": "WS",
-              "name": "WestJet",
-              "id": "arl_00009VME7DDoV8ZkzmMkaw"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
-              "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
-              "iata_code": "WS",
-              "name": "WestJet",
-              "id": "arl_00009VME7DDoV8ZkzmMkaw"
-            },
-            "operating_carrier_flight_number": "0710",
-            "marketing_carrier_flight_number": "0710",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "XCQD0QES"
-              },
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "XCQD0QES"
-              }
-            ],
-            "distance": null,
-            "duration": "PT4H35M",
-            "destination": {
-              "airports": null,
-              "iata_country_code": "CA",
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "origin": {
-              "airports": null,
+            "latitude": 49.195296,
+            "longitude": -123.182755,
+            "city": {
               "iata_country_code": "CA",
               "iata_city_code": "YVR",
-              "city_name": "Vancouver",
-              "icao_code": "CYVR",
+              "city_name": null,
+              "icao_code": null,
               "iata_code": "YVR",
-              "latitude": 49.195296,
-              "longitude": -123.182755,
-              "city": {
-                "iata_country_code": "CA",
-                "iata_city_code": "YVR",
-                "city_name": null,
-                "icao_code": null,
-                "iata_code": "YVR",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Vancouver",
-                "id": "cit_yvr_ca"
-              },
-              "time_zone": "America/Vancouver",
-              "type": "airport",
-              "name": "Vancouver International Airport",
-              "id": "arp_yvr_ca"
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Vancouver",
+              "id": "cit_yvr_ca"
             },
-            "id": "seg_0000B8KYubT2vYHSLDekvf"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT4H35M",
-        "destination": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
+            "time_zone": "America/Vancouver",
+            "type": "airport",
+            "name": "Vancouver International Airport",
+            "id": "arp_yvr_ca"
+          },
+          "origin": {
+            "airports": null,
             "iata_country_code": "CA",
             "iata_city_code": "YTO",
-            "city_name": null,
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
+            "city_name": "Toronto",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
           },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
+          "id": "sli_0000B8KYuBDCXq9ouY2jc9"
         },
-        "origin": {
-          "airports": null,
-          "iata_country_code": "CA",
-          "iata_city_code": "YVR",
-          "city_name": "Vancouver",
-          "icao_code": "CYVR",
-          "iata_code": "YVR",
-          "latitude": 49.195296,
-          "longitude": -123.182755,
-          "city": {
+        {
+          "comparison_key": "Be1S4Q==",
+          "ngs_shelf": 1,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Basic Economy",
+          "segments": [
+            {
+              "origin_terminal": "2",
+              "destination_terminal": "1",
+              "aircraft": null,
+              "departing_at": "2026-07-31T23:13:00",
+              "arriving_at": "2026-08-01T07:15:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+                "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+                "iata_code": "AA",
+                "name": "American Airlines",
+                "id": "arl_00009VME7DAGiJjwomhv32"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+                "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+                "iata_code": "AA",
+                "name": "American Airlines",
+                "id": "arl_00009VME7DAGiJjwomhv32"
+              },
+              "operating_carrier_flight_number": "1274",
+              "marketing_carrier_flight_number": "1274",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "n/a",
+                        "type": null
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y20LGTN2"
+                },
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "n/a",
+                        "type": null
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y20LGTN2"
+                }
+              ],
+              "distance": "3345.6062981240593",
+              "duration": "PT5H2M",
+              "destination": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "origin": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YVR",
+                "city_name": "Vancouver",
+                "icao_code": "CYVR",
+                "iata_code": "YVR",
+                "latitude": 49.195296,
+                "longitude": -123.182755,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YVR",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YVR",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Vancouver",
+                  "id": "cit_yvr_ca"
+                },
+                "time_zone": "America/Vancouver",
+                "type": "airport",
+                "name": "Vancouver International Airport",
+                "id": "arp_yvr_ca"
+              },
+              "id": "seg_0000B8KYuBDCXq9ouY2jcA"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": {
+              "penalty_currency": "USD",
+              "penalty_amount": "90.00",
+              "allowed": true
+            },
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT5H2M",
+          "destination": {
+            "airports": null,
+            "iata_country_code": "CA",
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "origin": {
+            "airports": null,
             "iata_country_code": "CA",
             "iata_city_code": "YVR",
-            "city_name": null,
-            "icao_code": null,
+            "city_name": "Vancouver",
+            "icao_code": "CYVR",
             "iata_code": "YVR",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Vancouver",
-            "id": "cit_yvr_ca"
+            "latitude": 49.195296,
+            "longitude": -123.182755,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YVR",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YVR",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Vancouver",
+              "id": "cit_yvr_ca"
+            },
+            "time_zone": "America/Vancouver",
+            "type": "airport",
+            "name": "Vancouver International Airport",
+            "id": "arp_yvr_ca"
           },
-          "time_zone": "America/Vancouver",
-          "type": "airport",
-          "name": "Vancouver International Airport",
-          "id": "arp_yvr_ca"
+          "id": "sli_0000B8KYuBDCXq9ouY2jcB"
+        }
+      ],
+      "passengers": [
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KYuAmEQ6ezWa85dz"
         },
-        "id": "sli_0000B8KYubT2vYHSLDekvg"
-      }
-    ],
-    "passengers": [
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KYuAmEQ6ezWa85dz"
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KYuAmEQ6ezWa85e0"
+        }
+      ],
+      "conditions": {
+        "refund_before_departure": {
+          "penalty_currency": "USD",
+          "penalty_amount": "90.00",
+          "allowed": true
+        },
+        "change_before_departure": {
+          "penalty_currency": "USD",
+          "penalty_amount": "90.00",
+          "allowed": true
+        }
       },
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KYuAmEQ6ezWa85e0"
-      }
-    ],
-    "conditions": {
-      "refund_before_departure": null,
-      "change_before_departure": null
+      "updated_at": "2026-07-14T15:15:12.702299Z",
+      "expires_at": "2026-07-14T15:45:12.702301Z",
+      "partial": false,
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+        "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+        "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+        "iata_code": "AA",
+        "name": "American Airlines",
+        "id": "arl_00009VME7DAGiJjwomhv32"
+      },
+      "id": "off_0000B8KYuBDCXq9ouY2jcC"
     },
-    "updated_at": "2026-07-14T15:15:16.831448Z",
-    "expires_at": "2026-07-14T16:15:16.370856Z",
-    "partial": false,
-    "owner": {
-      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
-      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
-      "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
-      "iata_code": "WS",
-      "name": "WestJet",
-      "id": "arl_00009VME7DDoV8ZkzmMkaw"
-    },
-    "id": "off_0000B8KYubT2vYHSLDekvi"
-  }
-]
+    {
+      "total_emissions_kg": "812",
+      "intended_payment_methods": [],
+      "available_airline_credit_ids": [],
+      "payment_requirements": {
+        "requires_instant_payment": false,
+        "price_guarantee_expires_at": null,
+        "payment_required_by": "2026-07-15T15:15:00Z"
+      },
+      "supported_passenger_identity_document_types": [
+        "known_traveler_number",
+        "passenger_redress_number",
+        "passport"
+      ],
+      "passenger_identity_documents_required": false,
+      "tax_currency": "USD",
+      "supported_loyalty_programmes": [
+        "WS"
+      ],
+      "private_fares": [],
+      "tax_amount": "708.56",
+      "base_amount": "2082.00",
+      "base_currency": "USD",
+      "total_currency": "USD",
+      "total_amount": "2790.56",
+      "created_at": "2026-07-14T15:15:16.831448Z",
+      "live_mode": false,
+      "slices": [
+        {
+          "comparison_key": "Ah/cug==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Econo",
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "7M8",
+                "name": "Boeing 737 MAX 8 / BBJ MAX 8/MAX200",
+                "id": "arc_00009g3mppxYZbG6EEWxlI"
+              },
+              "departing_at": "2026-07-16T09:45:00",
+              "arriving_at": "2026-07-16T12:00:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
+                "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+                "iata_code": "WS",
+                "name": "WestJet",
+                "id": "arl_00009VME7DDoV8ZkzmMkaw"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
+                "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+                "iata_code": "WS",
+                "name": "WestJet",
+                "id": "arl_00009VME7DDoV8ZkzmMkaw"
+              },
+              "operating_carrier_flight_number": "0713",
+              "marketing_carrier_flight_number": "0713",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "HC1D0QES"
+                },
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "HC1D0QES"
+                }
+              ],
+              "distance": null,
+              "duration": "PT5H15M",
+              "destination": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YVR",
+                "city_name": "Vancouver",
+                "icao_code": "CYVR",
+                "iata_code": "YVR",
+                "latitude": 49.195296,
+                "longitude": -123.182755,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YVR",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YVR",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Vancouver",
+                  "id": "cit_yvr_ca"
+                },
+                "time_zone": "America/Vancouver",
+                "type": "airport",
+                "name": "Vancouver International Airport",
+                "id": "arp_yvr_ca"
+              },
+              "origin": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "id": "seg_0000B8KYubT2vYHSLDekvc"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT5H15M",
+          "destination": {
+            "airports": null,
+            "iata_country_code": "CA",
+            "iata_city_code": "YVR",
+            "city_name": "Vancouver",
+            "icao_code": "CYVR",
+            "iata_code": "YVR",
+            "latitude": 49.195296,
+            "longitude": -123.182755,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YVR",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YVR",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Vancouver",
+              "id": "cit_yvr_ca"
+            },
+            "time_zone": "America/Vancouver",
+            "type": "airport",
+            "name": "Vancouver International Airport",
+            "id": "arp_yvr_ca"
+          },
+          "origin": {
+            "airports": null,
+            "iata_country_code": "CA",
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "id": "sli_0000B8KYubT2vYHSLDekvd"
+        },
+        {
+          "comparison_key": "AnbMeA==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Econo",
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "73H",
+                "name": "Boeing 737-800 (winglets)/BBJ2",
+                "id": "arc_00009VMF8AhBTmADP77oj7"
+              },
+              "departing_at": "2026-07-31T09:00:00",
+              "arriving_at": "2026-07-31T16:35:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
+                "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+                "iata_code": "WS",
+                "name": "WestJet",
+                "id": "arl_00009VME7DDoV8ZkzmMkaw"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
+                "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+                "iata_code": "WS",
+                "name": "WestJet",
+                "id": "arl_00009VME7DDoV8ZkzmMkaw"
+              },
+              "operating_carrier_flight_number": "0710",
+              "marketing_carrier_flight_number": "0710",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85dz",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "XCQD0QES"
+                },
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KYuAmEQ6ezWa85e0",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "XCQD0QES"
+                }
+              ],
+              "distance": null,
+              "duration": "PT4H35M",
+              "destination": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "origin": {
+                "airports": null,
+                "iata_country_code": "CA",
+                "iata_city_code": "YVR",
+                "city_name": "Vancouver",
+                "icao_code": "CYVR",
+                "iata_code": "YVR",
+                "latitude": 49.195296,
+                "longitude": -123.182755,
+                "city": {
+                  "iata_country_code": "CA",
+                  "iata_city_code": "YVR",
+                  "city_name": null,
+                  "icao_code": null,
+                  "iata_code": "YVR",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Vancouver",
+                  "id": "cit_yvr_ca"
+                },
+                "time_zone": "America/Vancouver",
+                "type": "airport",
+                "name": "Vancouver International Airport",
+                "id": "arp_yvr_ca"
+              },
+              "id": "seg_0000B8KYubT2vYHSLDekvf"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT4H35M",
+          "destination": {
+            "airports": null,
+            "iata_country_code": "CA",
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "origin": {
+            "airports": null,
+            "iata_country_code": "CA",
+            "iata_city_code": "YVR",
+            "city_name": "Vancouver",
+            "icao_code": "CYVR",
+            "iata_code": "YVR",
+            "latitude": 49.195296,
+            "longitude": -123.182755,
+            "city": {
+              "iata_country_code": "CA",
+              "iata_city_code": "YVR",
+              "city_name": null,
+              "icao_code": null,
+              "iata_code": "YVR",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Vancouver",
+              "id": "cit_yvr_ca"
+            },
+            "time_zone": "America/Vancouver",
+            "type": "airport",
+            "name": "Vancouver International Airport",
+            "id": "arp_yvr_ca"
+          },
+          "id": "sli_0000B8KYubT2vYHSLDekvg"
+        }
+      ],
+      "passengers": [
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KYuAmEQ6ezWa85dz"
+        },
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KYuAmEQ6ezWa85e0"
+        }
+      ],
+      "conditions": {
+        "refund_before_departure": null,
+        "change_before_departure": null
+      },
+      "updated_at": "2026-07-14T15:15:16.831448Z",
+      "expires_at": "2026-07-14T16:15:16.370856Z",
+      "partial": false,
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/WS.svg",
+        "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/WS.svg",
+        "conditions_of_carriage_url": "https://www.westjet.com/en-ca/legal/travel-terms-conditions/westjet-flights",
+        "iata_code": "WS",
+        "name": "WestJet",
+        "id": "arl_00009VME7DDoV8ZkzmMkaw"
+      },
+      "id": "off_0000B8KYubT2vYHSLDekvi"
+    }
+  ]
+}

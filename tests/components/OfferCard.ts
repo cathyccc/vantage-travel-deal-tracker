@@ -20,4 +20,8 @@ export class OfferCard {
     this.duration = root.getByTestId('offer-duration');
     this.viewDetailsButton = root.getByRole('button', { name: 'View Details' });
   }
+
+  async clickViewDetails() {
+    await this.viewDetailsButton.click();
+  }
 }

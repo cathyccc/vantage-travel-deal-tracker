@@ -1,948 +1,955 @@
-[
-  {
-    "total_emissions_kg": "1902",
-    "intended_payment_methods": [],
-    "available_airline_credit_ids": [],
-    "payment_requirements": {
-      "requires_instant_payment": false,
-      "price_guarantee_expires_at": null,
-      "payment_required_by": "2026-07-17T23:12:00Z"
-    },
-    "supported_passenger_identity_document_types": [
-      "passport",
-      "passenger_redress_number",
-      "known_traveler_number"
-    ],
-    "passenger_identity_documents_required": false,
-    "tax_currency": "USD",
-    "supported_loyalty_programmes": [
-      "AC",
-      "AI",
-      "AV",
-      "A3",
-      "BE",
-      "BR",
-      "CA",
-      "CM",
-      "CX",
-      "DE",
-      "EN",
-      "ET",
-      "EW",
-      "KC",
-      "KM",
-      "LA",
-      "LG",
-      "LH",
-      "LO",
-      "LR",
-      "LX",
-      "MS",
-      "NH",
-      "NZ",
-      "OA",
-      "OS",
-      "OU",
-      "OZ",
-      "SA",
-      "SK",
-      "SN",
-      "SQ",
-      "TA",
-      "TG",
-      "TK",
-      "TP",
-      "UA",
-      "UK",
-      "WE",
-      "WK",
-      "ZH",
-      "4U",
-      "4Y"
-    ],
-    "private_fares": [],
-    "tax_amount": "856.50",
-    "base_amount": "303.65",
-    "base_currency": "USD",
-    "total_currency": "USD",
-    "live_mode": false,
-    "total_amount": "1160.15",
-    "created_at": "2026-07-14T18:12:08.518025Z",
-    "slices": [
-      {
-        "comparison_key": "BRzvUw==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Economy Comfort",
-        "segments": [
-          {
-            "origin_terminal": "N",
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "E95",
-              "name": "Embraer 195 and Legacy 1000",
-              "id": "arc_00009VMF8AiFPp0xSPcfO1"
-            },
-            "departing_at": "2026-07-31T18:35:00",
-            "arriving_at": "2026-07-31T21:15:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0433",
-            "marketing_carrier_flight_number": "0433",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "29",
-                      "legroom": "less",
-                      "type": "standard"
+{
+  "meta": {
+    "limit": 50,
+    "before": null,
+    "after": null
+  },
+  "data": [
+    {
+      "total_emissions_kg": "1902",
+      "intended_payment_methods": [],
+      "available_airline_credit_ids": [],
+      "payment_requirements": {
+        "requires_instant_payment": false,
+        "price_guarantee_expires_at": null,
+        "payment_required_by": "2026-07-17T23:12:00Z"
+      },
+      "supported_passenger_identity_document_types": [
+        "passport",
+        "passenger_redress_number",
+        "known_traveler_number"
+      ],
+      "passenger_identity_documents_required": false,
+      "tax_currency": "USD",
+      "supported_loyalty_programmes": [
+        "AC",
+        "AI",
+        "AV",
+        "A3",
+        "BE",
+        "BR",
+        "CA",
+        "CM",
+        "CX",
+        "DE",
+        "EN",
+        "ET",
+        "EW",
+        "KC",
+        "KM",
+        "LA",
+        "LG",
+        "LH",
+        "LO",
+        "LR",
+        "LX",
+        "MS",
+        "NH",
+        "NZ",
+        "OA",
+        "OS",
+        "OU",
+        "OZ",
+        "SA",
+        "SK",
+        "SN",
+        "SQ",
+        "TA",
+        "TG",
+        "TK",
+        "TP",
+        "UA",
+        "UK",
+        "WE",
+        "WK",
+        "ZH",
+        "4U",
+        "4Y"
+      ],
+      "private_fares": [],
+      "tax_amount": "856.50",
+      "base_amount": "303.65",
+      "base_currency": "USD",
+      "total_currency": "USD",
+      "live_mode": false,
+      "total_amount": "1160.15",
+      "created_at": "2026-07-14T18:12:08.518025Z",
+      "slices": [
+        {
+          "comparison_key": "BRzvUw==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Economy Comfort",
+          "segments": [
+            {
+              "origin_terminal": "N",
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "E95",
+                "name": "Embraer 195 and Legacy 1000",
+                "id": "arc_00009VMF8AiFPp0xSPcfO1"
+              },
+              "departing_at": "2026-07-31T18:35:00",
+              "arriving_at": "2026-07-31T21:15:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0433",
+              "marketing_carrier_flight_number": "0433",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
                     },
-                    "wifi": {
-                      "cost": "n/a",
-                      "available": false
-                    },
-                    "power": {
-                      "available": true
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
                     }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "29",
+                        "legroom": "less",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "n/a",
+                        "available": false
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
                   },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "777.31122",
-            "duration": "PT1H40M",
-            "destination": {
-              "airports": null,
-              "icao_code": "LSZH",
-              "city_name": "Zürich",
-              "iata_city_code": "ZRH",
-              "iata_country_code": "CH",
-              "iata_code": "ZRH",
-              "latitude": 47.461458,
-              "longitude": 8.552323,
-              "city": null,
-              "time_zone": "Europe/Zurich",
-              "type": "airport",
-              "name": "Zürich Airport",
-              "id": "arp_zrh_ch"
-            },
-            "origin": {
-              "airports": null,
-              "icao_code": "EGKK",
-              "city_name": "London",
-              "iata_city_code": "LON",
-              "iata_country_code": "GB",
-              "iata_code": "LGW",
-              "latitude": 51.150882,
-              "longitude": -0.18617,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "777.31122",
+              "duration": "PT1H40M",
+              "destination": {
+                "airports": null,
+                "icao_code": "LSZH",
+                "city_name": "Zürich",
+                "iata_city_code": "ZRH",
+                "iata_country_code": "CH",
+                "iata_code": "ZRH",
+                "latitude": 47.461458,
+                "longitude": 8.552323,
+                "city": null,
+                "time_zone": "Europe/Zurich",
+                "type": "airport",
+                "name": "Zürich Airport",
+                "id": "arp_zrh_ch"
+              },
+              "origin": {
+                "airports": null,
+                "icao_code": "EGKK",
+                "city_name": "London",
                 "iata_city_code": "LON",
                 "iata_country_code": "GB",
-                "iata_code": "LON",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "London",
-                "id": "cit_lon_gb"
-              },
-              "time_zone": "Europe/London",
-              "type": "airport",
-              "name": "Gatwick Airport",
-              "id": "arp_lgw_gb"
-            },
-            "id": "seg_0000B8KohCBXvsLT11m1et"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": "1",
-            "aircraft": {
-              "iata_code": "77W",
-              "name": "Boeing 777-300ER",
-              "id": "arc_00009VMF8AhXSSRnQDI6HH"
-            },
-            "departing_at": "2026-07-31T22:40:00",
-            "arriving_at": "2026-08-01T16:40:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0138",
-            "marketing_carrier_flight_number": "0138",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
+                "iata_code": "LGW",
+                "latitude": 51.150882,
+                "longitude": -0.18617,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "LON",
+                  "iata_country_code": "GB",
+                  "iata_code": "LON",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "London",
+                  "id": "cit_lon_gb"
                 },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "9281.06378",
-            "duration": "PT12H",
-            "destination": {
-              "airports": null,
-              "icao_code": "VHHH",
-              "city_name": "Hong Kong",
-              "iata_city_code": "HKG",
-              "iata_country_code": "HK",
-              "iata_code": "HKG",
-              "latitude": 22.308331,
-              "longitude": 113.91732,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+                "time_zone": "Europe/London",
+                "type": "airport",
+                "name": "Gatwick Airport",
+                "id": "arp_lgw_gb"
+              },
+              "id": "seg_0000B8KohCBXvsLT11m1et"
+            },
+            {
+              "origin_terminal": null,
+              "destination_terminal": "1",
+              "aircraft": {
+                "iata_code": "77W",
+                "name": "Boeing 777-300ER",
+                "id": "arc_00009VMF8AhXSSRnQDI6HH"
+              },
+              "departing_at": "2026-07-31T22:40:00",
+              "arriving_at": "2026-08-01T16:40:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0138",
+              "marketing_carrier_flight_number": "0138",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "9281.06378",
+              "duration": "PT12H",
+              "destination": {
+                "airports": null,
+                "icao_code": "VHHH",
+                "city_name": "Hong Kong",
                 "iata_city_code": "HKG",
                 "iata_country_code": "HK",
                 "iata_code": "HKG",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Hong Kong",
-                "id": "cit_hkg_hk"
-              },
-              "time_zone": "Asia/Hong_Kong",
-              "type": "airport",
-              "name": "Hong Kong International Airport",
-              "id": "arp_hkg_hk"
-            },
-            "origin": {
-              "airports": null,
-              "icao_code": "LSZH",
-              "city_name": "Zürich",
-              "iata_city_code": "ZRH",
-              "iata_country_code": "CH",
-              "iata_code": "ZRH",
-              "latitude": 47.461458,
-              "longitude": 8.552323,
-              "city": null,
-              "time_zone": "Europe/Zurich",
-              "type": "airport",
-              "name": "Zürich Airport",
-              "id": "arp_zrh_ch"
-            },
-            "id": "seg_0000B8KohCBXvsLT11m1ev"
-          },
-          {
-            "origin_terminal": "1",
-            "destination_terminal": "1",
-            "aircraft": {
-              "iata_code": "359",
-              "name": "Airbus A350-900",
-              "id": "arc_00009Y7soL1P9aXc7ZDTdo"
-            },
-            "departing_at": "2026-08-01T19:05:00",
-            "arriving_at": "2026-08-02T06:10:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/CX.svg",
-              "conditions_of_carriage_url": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf",
-              "iata_code": "CX",
-              "name": "Cathay Pacific",
-              "id": "arl_00009VME7DBgd2sGtBN3GD"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0111",
-            "marketing_carrier_flight_number": "9501",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
+                "latitude": 22.308331,
+                "longitude": 113.91732,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "HKG",
+                  "iata_country_code": "HK",
+                  "iata_code": "HKG",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Hong Kong",
+                  "id": "cit_hkg_hk"
                 },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "7394.91730",
-            "duration": "PT9H5M",
-            "destination": {
-              "airports": null,
-              "icao_code": "YSSY",
-              "city_name": "Sydney",
-              "iata_city_code": "SYD",
-              "iata_country_code": "AU",
-              "iata_code": "SYD",
-              "latitude": -33.943011,
-              "longitude": 151.176138,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+                "time_zone": "Asia/Hong_Kong",
+                "type": "airport",
+                "name": "Hong Kong International Airport",
+                "id": "arp_hkg_hk"
+              },
+              "origin": {
+                "airports": null,
+                "icao_code": "LSZH",
+                "city_name": "Zürich",
+                "iata_city_code": "ZRH",
+                "iata_country_code": "CH",
+                "iata_code": "ZRH",
+                "latitude": 47.461458,
+                "longitude": 8.552323,
+                "city": null,
+                "time_zone": "Europe/Zurich",
+                "type": "airport",
+                "name": "Zürich Airport",
+                "id": "arp_zrh_ch"
+              },
+              "id": "seg_0000B8KohCBXvsLT11m1ev"
+            },
+            {
+              "origin_terminal": "1",
+              "destination_terminal": "1",
+              "aircraft": {
+                "iata_code": "359",
+                "name": "Airbus A350-900",
+                "id": "arc_00009Y7soL1P9aXc7ZDTdo"
+              },
+              "departing_at": "2026-08-01T19:05:00",
+              "arriving_at": "2026-08-02T06:10:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/CX.svg",
+                "conditions_of_carriage_url": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf",
+                "iata_code": "CX",
+                "name": "Cathay Pacific",
+                "id": "arl_00009VME7DBgd2sGtBN3GD"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0111",
+              "marketing_carrier_flight_number": "9501",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "7394.91730",
+              "duration": "PT9H5M",
+              "destination": {
+                "airports": null,
+                "icao_code": "YSSY",
+                "city_name": "Sydney",
                 "iata_city_code": "SYD",
                 "iata_country_code": "AU",
                 "iata_code": "SYD",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Sydney",
-                "id": "cit_syd_au"
+                "latitude": -33.943011,
+                "longitude": 151.176138,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "SYD",
+                  "iata_country_code": "AU",
+                  "iata_code": "SYD",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Sydney",
+                  "id": "cit_syd_au"
+                },
+                "time_zone": "Australia/Sydney",
+                "type": "airport",
+                "name": "Sydney Airport",
+                "id": "arp_syd_au"
               },
-              "time_zone": "Australia/Sydney",
-              "type": "airport",
-              "name": "Sydney Airport",
-              "id": "arp_syd_au"
-            },
-            "origin": {
-              "airports": null,
-              "icao_code": "VHHH",
-              "city_name": "Hong Kong",
-              "iata_city_code": "HKG",
-              "iata_country_code": "HK",
-              "iata_code": "HKG",
-              "latitude": 22.308331,
-              "longitude": 113.91732,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+              "origin": {
+                "airports": null,
+                "icao_code": "VHHH",
+                "city_name": "Hong Kong",
                 "iata_city_code": "HKG",
                 "iata_country_code": "HK",
                 "iata_code": "HKG",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Hong Kong",
-                "id": "cit_hkg_hk"
+                "latitude": 22.308331,
+                "longitude": 113.91732,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "HKG",
+                  "iata_country_code": "HK",
+                  "iata_code": "HKG",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Hong Kong",
+                  "id": "cit_hkg_hk"
+                },
+                "time_zone": "Asia/Hong_Kong",
+                "type": "airport",
+                "name": "Hong Kong International Airport",
+                "id": "arp_hkg_hk"
               },
-              "time_zone": "Asia/Hong_Kong",
-              "type": "airport",
-              "name": "Hong Kong International Airport",
-              "id": "arp_hkg_hk"
+              "id": "seg_0000B8KohCBXvsLT11m1ew"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": {
+              "penalty_currency": "GBP",
+              "penalty_amount": "200",
+              "allowed": true
             },
-            "id": "seg_0000B8KohCBXvsLT11m1ew"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": {
-            "penalty_currency": "GBP",
-            "penalty_amount": "200",
-            "allowed": true
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
           },
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "P1DT2H35M",
-        "destination": {
-          "airports": null,
-          "icao_code": "YSSY",
-          "city_name": "Sydney",
-          "iata_city_code": "SYD",
-          "iata_country_code": "AU",
-          "iata_code": "SYD",
-          "latitude": -33.943011,
-          "longitude": 151.176138,
-          "city": {
-            "icao_code": null,
-            "city_name": null,
+          "duration": "P1DT2H35M",
+          "destination": {
+            "airports": null,
+            "icao_code": "YSSY",
+            "city_name": "Sydney",
             "iata_city_code": "SYD",
             "iata_country_code": "AU",
             "iata_code": "SYD",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Sydney",
-            "id": "cit_syd_au"
-          },
-          "time_zone": "Australia/Sydney",
-          "type": "airport",
-          "name": "Sydney Airport",
-          "id": "arp_syd_au"
-        },
-        "origin": {
-          "airports": null,
-          "icao_code": "EGKK",
-          "city_name": "London",
-          "iata_city_code": "LON",
-          "iata_country_code": "GB",
-          "iata_code": "LGW",
-          "latitude": 51.150882,
-          "longitude": -0.18617,
-          "city": {
-            "icao_code": null,
-            "city_name": null,
-            "iata_city_code": "LON",
-            "iata_country_code": "GB",
-            "iata_code": "LON",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "London",
-            "id": "cit_lon_gb"
-          },
-          "time_zone": "Europe/London",
-          "type": "airport",
-          "name": "Gatwick Airport",
-          "id": "arp_lgw_gb"
-        },
-        "id": "sli_0000B8KohCBXvsLT11m1ex"
-      },
-      {
-        "comparison_key": "BgaZBg==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Economy Comfort",
-        "segments": [
-          {
-            "origin_terminal": "1",
-            "destination_terminal": "1",
-            "aircraft": {
-              "iata_code": "77W",
-              "name": "Boeing 777-300ER",
-              "id": "arc_00009VMF8AhXSSRnQDI6HH"
-            },
-            "departing_at": "2026-08-07T14:05:00",
-            "arriving_at": "2026-08-07T21:30:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/CX.svg",
-              "conditions_of_carriage_url": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf",
-              "iata_code": "CX",
-              "name": "Cathay Pacific",
-              "id": "arl_00009VME7DBgd2sGtBN3GD"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0100",
-            "marketing_carrier_flight_number": "9500",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "7394.91730",
-            "duration": "PT9H25M",
-            "destination": {
-              "airports": null,
-              "icao_code": "VHHH",
-              "city_name": "Hong Kong",
-              "iata_city_code": "HKG",
-              "iata_country_code": "HK",
-              "iata_code": "HKG",
-              "latitude": 22.308331,
-              "longitude": 113.91732,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
-                "iata_city_code": "HKG",
-                "iata_country_code": "HK",
-                "iata_code": "HKG",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Hong Kong",
-                "id": "cit_hkg_hk"
-              },
-              "time_zone": "Asia/Hong_Kong",
-              "type": "airport",
-              "name": "Hong Kong International Airport",
-              "id": "arp_hkg_hk"
-            },
-            "origin": {
-              "airports": null,
-              "icao_code": "YSSY",
-              "city_name": "Sydney",
+            "latitude": -33.943011,
+            "longitude": 151.176138,
+            "city": {
+              "icao_code": null,
+              "city_name": null,
               "iata_city_code": "SYD",
               "iata_country_code": "AU",
               "iata_code": "SYD",
-              "latitude": -33.943011,
-              "longitude": 151.176138,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
-                "iata_city_code": "SYD",
-                "iata_country_code": "AU",
-                "iata_code": "SYD",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Sydney",
-                "id": "cit_syd_au"
-              },
-              "time_zone": "Australia/Sydney",
-              "type": "airport",
-              "name": "Sydney Airport",
-              "id": "arp_syd_au"
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Sydney",
+              "id": "cit_syd_au"
             },
-            "id": "seg_0000B8KohCBXvsLT11m1ez"
+            "time_zone": "Australia/Sydney",
+            "type": "airport",
+            "name": "Sydney Airport",
+            "id": "arp_syd_au"
           },
-          {
-            "origin_terminal": "1",
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "77W",
-              "name": "Boeing 777-300ER",
-              "id": "arc_00009VMF8AhXSSRnQDI6HH"
+          "origin": {
+            "airports": null,
+            "icao_code": "EGKK",
+            "city_name": "London",
+            "iata_city_code": "LON",
+            "iata_country_code": "GB",
+            "iata_code": "LGW",
+            "latitude": 51.150882,
+            "longitude": -0.18617,
+            "city": {
+              "icao_code": null,
+              "city_name": null,
+              "iata_city_code": "LON",
+              "iata_country_code": "GB",
+              "iata_code": "LON",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "London",
+              "id": "cit_lon_gb"
             },
-            "departing_at": "2026-08-07T23:05:00",
-            "arriving_at": "2026-08-08T06:10:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0139",
-            "marketing_carrier_flight_number": "0139",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
+            "time_zone": "Europe/London",
+            "type": "airport",
+            "name": "Gatwick Airport",
+            "id": "arp_lgw_gb"
+          },
+          "id": "sli_0000B8KohCBXvsLT11m1ex"
+        },
+        {
+          "comparison_key": "BgaZBg==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Economy Comfort",
+          "segments": [
+            {
+              "origin_terminal": "1",
+              "destination_terminal": "1",
+              "aircraft": {
+                "iata_code": "77W",
+                "name": "Boeing 777-300ER",
+                "id": "arc_00009VMF8AhXSSRnQDI6HH"
+              },
+              "departing_at": "2026-08-07T14:05:00",
+              "arriving_at": "2026-08-07T21:30:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/CX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/CX.svg",
+                "conditions_of_carriage_url": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf",
+                "iata_code": "CX",
+                "name": "Cathay Pacific",
+                "id": "arl_00009VME7DBgd2sGtBN3GD"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0100",
+              "marketing_carrier_flight_number": "9500",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
                     },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
                     }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
                   },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "9281.06378",
-            "duration": "PT13H5M",
-            "destination": {
-              "airports": null,
-              "icao_code": "LSZH",
-              "city_name": "Zürich",
-              "iata_city_code": "ZRH",
-              "iata_country_code": "CH",
-              "iata_code": "ZRH",
-              "latitude": 47.461458,
-              "longitude": 8.552323,
-              "city": null,
-              "time_zone": "Europe/Zurich",
-              "type": "airport",
-              "name": "Zürich Airport",
-              "id": "arp_zrh_ch"
-            },
-            "origin": {
-              "airports": null,
-              "icao_code": "VHHH",
-              "city_name": "Hong Kong",
-              "iata_city_code": "HKG",
-              "iata_country_code": "HK",
-              "iata_code": "HKG",
-              "latitude": 22.308331,
-              "longitude": 113.91732,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "7394.91730",
+              "duration": "PT9H25M",
+              "destination": {
+                "airports": null,
+                "icao_code": "VHHH",
+                "city_name": "Hong Kong",
                 "iata_city_code": "HKG",
                 "iata_country_code": "HK",
                 "iata_code": "HKG",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Hong Kong",
-                "id": "cit_hkg_hk"
-              },
-              "time_zone": "Asia/Hong_Kong",
-              "type": "airport",
-              "name": "Hong Kong International Airport",
-              "id": "arp_hkg_hk"
-            },
-            "id": "seg_0000B8KohCBXvsLT11m1f1"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": "N",
-            "aircraft": {
-              "iata_code": "E95",
-              "name": "Embraer 195 and Legacy 1000",
-              "id": "arc_00009VMF8AiFPp0xSPcfO1"
-            },
-            "departing_at": "2026-08-08T17:10:00",
-            "arriving_at": "2026-08-08T17:50:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
-              "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
-              "iata_code": "LX",
-              "name": "SWISS",
-              "id": "arl_00009VME7DDSWSIAygCT1z"
-            },
-            "operating_carrier_flight_number": "0432",
-            "marketing_carrier_flight_number": "0432",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "checked"
-                  },
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "ECONOMY",
-                "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "29",
-                      "legroom": "less",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "n/a",
-                      "available": false
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "ECONOMY",
-                  "name": "economy"
+                "latitude": 22.308331,
+                "longitude": 113.91732,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "HKG",
+                  "iata_country_code": "HK",
+                  "iata_code": "HKG",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Hong Kong",
+                  "id": "cit_hkg_hk"
                 },
-                "cabin_class": "economy",
-                "fare_basis_code": "KX0XSYNC"
-              }
-            ],
-            "distance": "777.31122",
-            "duration": "PT1H40M",
-            "destination": {
-              "airports": null,
-              "icao_code": "EGKK",
-              "city_name": "London",
-              "iata_city_code": "LON",
-              "iata_country_code": "GB",
-              "iata_code": "LGW",
-              "latitude": 51.150882,
-              "longitude": -0.18617,
-              "city": {
-                "icao_code": null,
-                "city_name": null,
+                "time_zone": "Asia/Hong_Kong",
+                "type": "airport",
+                "name": "Hong Kong International Airport",
+                "id": "arp_hkg_hk"
+              },
+              "origin": {
+                "airports": null,
+                "icao_code": "YSSY",
+                "city_name": "Sydney",
+                "iata_city_code": "SYD",
+                "iata_country_code": "AU",
+                "iata_code": "SYD",
+                "latitude": -33.943011,
+                "longitude": 151.176138,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "SYD",
+                  "iata_country_code": "AU",
+                  "iata_code": "SYD",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Sydney",
+                  "id": "cit_syd_au"
+                },
+                "time_zone": "Australia/Sydney",
+                "type": "airport",
+                "name": "Sydney Airport",
+                "id": "arp_syd_au"
+              },
+              "id": "seg_0000B8KohCBXvsLT11m1ez"
+            },
+            {
+              "origin_terminal": "1",
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "77W",
+                "name": "Boeing 777-300ER",
+                "id": "arc_00009VMF8AhXSSRnQDI6HH"
+              },
+              "departing_at": "2026-08-07T23:05:00",
+              "arriving_at": "2026-08-08T06:10:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0139",
+              "marketing_carrier_flight_number": "0139",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "9281.06378",
+              "duration": "PT13H5M",
+              "destination": {
+                "airports": null,
+                "icao_code": "LSZH",
+                "city_name": "Zürich",
+                "iata_city_code": "ZRH",
+                "iata_country_code": "CH",
+                "iata_code": "ZRH",
+                "latitude": 47.461458,
+                "longitude": 8.552323,
+                "city": null,
+                "time_zone": "Europe/Zurich",
+                "type": "airport",
+                "name": "Zürich Airport",
+                "id": "arp_zrh_ch"
+              },
+              "origin": {
+                "airports": null,
+                "icao_code": "VHHH",
+                "city_name": "Hong Kong",
+                "iata_city_code": "HKG",
+                "iata_country_code": "HK",
+                "iata_code": "HKG",
+                "latitude": 22.308331,
+                "longitude": 113.91732,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "HKG",
+                  "iata_country_code": "HK",
+                  "iata_code": "HKG",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Hong Kong",
+                  "id": "cit_hkg_hk"
+                },
+                "time_zone": "Asia/Hong_Kong",
+                "type": "airport",
+                "name": "Hong Kong International Airport",
+                "id": "arp_hkg_hk"
+              },
+              "id": "seg_0000B8KohCBXvsLT11m1f1"
+            },
+            {
+              "origin_terminal": null,
+              "destination_terminal": "N",
+              "aircraft": {
+                "iata_code": "E95",
+                "name": "Embraer 195 and Legacy 1000",
+                "id": "arc_00009VMF8AiFPp0xSPcfO1"
+              },
+              "departing_at": "2026-08-08T17:10:00",
+              "arriving_at": "2026-08-08T17:50:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LX.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LX.svg",
+                "conditions_of_carriage_url": "https://www.swiss.com/de/en/terms-conditions/conditions-of-carriage",
+                "iata_code": "LX",
+                "name": "SWISS",
+                "id": "arl_00009VME7DDSWSIAygCT1z"
+              },
+              "operating_carrier_flight_number": "0432",
+              "marketing_carrier_flight_number": "0432",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "checked"
+                    },
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "ECONOMY",
+                  "passenger_id": "pas_0000B8KogwlmWHPITWJrYh",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "29",
+                        "legroom": "less",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "n/a",
+                        "available": false
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "ECONOMY",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "KX0XSYNC"
+                }
+              ],
+              "distance": "777.31122",
+              "duration": "PT1H40M",
+              "destination": {
+                "airports": null,
+                "icao_code": "EGKK",
+                "city_name": "London",
                 "iata_city_code": "LON",
                 "iata_country_code": "GB",
-                "iata_code": "LON",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "London",
-                "id": "cit_lon_gb"
+                "iata_code": "LGW",
+                "latitude": 51.150882,
+                "longitude": -0.18617,
+                "city": {
+                  "icao_code": null,
+                  "city_name": null,
+                  "iata_city_code": "LON",
+                  "iata_country_code": "GB",
+                  "iata_code": "LON",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "London",
+                  "id": "cit_lon_gb"
+                },
+                "time_zone": "Europe/London",
+                "type": "airport",
+                "name": "Gatwick Airport",
+                "id": "arp_lgw_gb"
               },
-              "time_zone": "Europe/London",
-              "type": "airport",
-              "name": "Gatwick Airport",
-              "id": "arp_lgw_gb"
+              "origin": {
+                "airports": null,
+                "icao_code": "LSZH",
+                "city_name": "Zürich",
+                "iata_city_code": "ZRH",
+                "iata_country_code": "CH",
+                "iata_code": "ZRH",
+                "latitude": 47.461458,
+                "longitude": 8.552323,
+                "city": null,
+                "time_zone": "Europe/Zurich",
+                "type": "airport",
+                "name": "Zürich Airport",
+                "id": "arp_zrh_ch"
+              },
+              "id": "seg_0000B8KohCBXvsLT11m1f2"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": {
+              "penalty_currency": "GBP",
+              "penalty_amount": "200",
+              "allowed": true
             },
-            "origin": {
-              "airports": null,
-              "icao_code": "LSZH",
-              "city_name": "Zürich",
-              "iata_city_code": "ZRH",
-              "iata_country_code": "CH",
-              "iata_code": "ZRH",
-              "latitude": 47.461458,
-              "longitude": 8.552323,
-              "city": null,
-              "time_zone": "Europe/Zurich",
-              "type": "airport",
-              "name": "Zürich Airport",
-              "id": "arp_zrh_ch"
-            },
-            "id": "seg_0000B8KohCBXvsLT11m1f2"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": {
-            "penalty_currency": "GBP",
-            "penalty_amount": "200",
-            "allowed": true
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
           },
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "P1DT12H45M",
-        "destination": {
-          "airports": null,
-          "icao_code": "EGKK",
-          "city_name": "London",
-          "iata_city_code": "LON",
-          "iata_country_code": "GB",
-          "iata_code": "LGW",
-          "latitude": 51.150882,
-          "longitude": -0.18617,
-          "city": {
-            "icao_code": null,
-            "city_name": null,
+          "duration": "P1DT12H45M",
+          "destination": {
+            "airports": null,
+            "icao_code": "EGKK",
+            "city_name": "London",
             "iata_city_code": "LON",
             "iata_country_code": "GB",
-            "iata_code": "LON",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "London",
-            "id": "cit_lon_gb"
+            "iata_code": "LGW",
+            "latitude": 51.150882,
+            "longitude": -0.18617,
+            "city": {
+              "icao_code": null,
+              "city_name": null,
+              "iata_city_code": "LON",
+              "iata_country_code": "GB",
+              "iata_code": "LON",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "London",
+              "id": "cit_lon_gb"
+            },
+            "time_zone": "Europe/London",
+            "type": "airport",
+            "name": "Gatwick Airport",
+            "id": "arp_lgw_gb"
           },
-          "time_zone": "Europe/London",
-          "type": "airport",
-          "name": "Gatwick Airport",
-          "id": "arp_lgw_gb"
-        },
-        "origin": {
-          "airports": null,
-          "icao_code": "YSSY",
-          "city_name": "Sydney",
-          "iata_city_code": "SYD",
-          "iata_country_code": "AU",
-          "iata_code": "SYD",
-          "latitude": -33.943011,
-          "longitude": 151.176138,
-          "city": {
-            "icao_code": null,
-            "city_name": null,
+          "origin": {
+            "airports": null,
+            "icao_code": "YSSY",
+            "city_name": "Sydney",
             "iata_city_code": "SYD",
             "iata_country_code": "AU",
             "iata_code": "SYD",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Sydney",
-            "id": "cit_syd_au"
+            "latitude": -33.943011,
+            "longitude": 151.176138,
+            "city": {
+              "icao_code": null,
+              "city_name": null,
+              "iata_city_code": "SYD",
+              "iata_country_code": "AU",
+              "iata_code": "SYD",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Sydney",
+              "id": "cit_syd_au"
+            },
+            "time_zone": "Australia/Sydney",
+            "type": "airport",
+            "name": "Sydney Airport",
+            "id": "arp_syd_au"
           },
-          "time_zone": "Australia/Sydney",
-          "type": "airport",
-          "name": "Sydney Airport",
-          "id": "arp_syd_au"
+          "id": "sli_0000B8KohCBXvsLT11m1f4"
+        }
+      ],
+      "passengers": [
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KogwlmWHPITWJrYh"
+        }
+      ],
+      "conditions": {
+        "refund_before_departure": {
+          "penalty_currency": null,
+          "penalty_amount": null,
+          "allowed": false
         },
-        "id": "sli_0000B8KohCBXvsLT11m1f4"
-      }
-    ],
-    "passengers": [
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KogwlmWHPITWJrYh"
-      }
-    ],
-    "conditions": {
-      "refund_before_departure": {
-        "penalty_currency": null,
-        "penalty_amount": null,
-        "allowed": false
+        "change_before_departure": {
+          "penalty_currency": "GBP",
+          "penalty_amount": "400",
+          "allowed": true
+        }
       },
-      "change_before_departure": {
-        "penalty_currency": "GBP",
-        "penalty_amount": "400",
-        "allowed": true
-      }
-    },
-    "updated_at": "2026-07-14T18:12:08.518025Z",
-    "expires_at": "2026-07-14T18:42:06.000000Z",
-    "partial": false,
-    "owner": {
-      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LH.svg",
-      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LH.svg",
-      "conditions_of_carriage_url": "https://www.lufthansa.com/gb/en/business-terms-and-conditions-1",
-      "iata_code": "LH",
-      "name": "Lufthansa",
-      "id": "arl_00009VME7DCkZ5j0wTrtvG"
-    },
-    "id": "off_0000B8KohCBXvsLT11m1f9"
-  }
-]
+      "updated_at": "2026-07-14T18:12:08.518025Z",
+      "expires_at": "2026-07-14T18:42:06.000000Z",
+      "partial": false,
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/LH.svg",
+        "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/LH.svg",
+        "conditions_of_carriage_url": "https://www.lufthansa.com/gb/en/business-terms-and-conditions-1",
+        "iata_code": "LH",
+        "name": "Lufthansa",
+        "id": "arl_00009VME7DCkZ5j0wTrtvG"
+      },
+      "id": "off_0000B8KohCBXvsLT11m1f9"
+    }
+  ]
+}

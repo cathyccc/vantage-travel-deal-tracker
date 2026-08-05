@@ -1,1249 +1,1256 @@
-[
-  {
-    "total_emissions_kg": "896",
-    "intended_payment_methods": [],
-    "available_airline_credit_ids": [],
-    "payment_requirements": {
-      "requires_instant_payment": false,
-      "price_guarantee_expires_at": null,
-      "payment_required_by": "2026-07-15T15:52:00Z"
-    },
-    "supported_passenger_identity_document_types": [
-      "known_traveler_number",
-      "passenger_redress_number",
-      "passport"
-    ],
-    "passenger_identity_documents_required": false,
-    "tax_currency": "USD",
-    "private_fares": [],
-    "supported_loyalty_programmes": [
-      "AC",
-      "NZ",
-      "NH",
-      "OZ",
-      "CM",
-      "MS",
-      "AI",
-      "OU",
-      "BR",
-      "SQ",
-      "AV",
-      "UA",
-      "A3",
-      "LH",
-      "TK",
-      "CA",
-      "TG",
-      "ET",
-      "TP",
-      "SA"
-    ],
-    "tax_amount": "183.75",
-    "base_amount": "998.00",
-    "base_currency": "USD",
-    "total_currency": "USD",
-    "live_mode": false,
-    "total_amount": "1181.75",
-    "created_at": "2026-07-14T15:52:39.339942Z",
-    "slices": [
-      {
-        "comparison_key": "BWpuJg==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Standard",
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "223",
-              "name": "Airbus A220-300",
-              "id": "arc_00009oBdrPis4D1mAnkllM"
-            },
-            "departing_at": "2026-07-31T10:00:00",
-            "arriving_at": "2026-07-31T12:32:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "operating_carrier_flight_number": "0741",
-            "marketing_carrier_flight_number": "0741",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "TNA4A0TG"
-              }
-            ],
-            "distance": null,
-            "duration": "PT5H32M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "SFO",
-              "city_name": "San Francisco",
-              "iata_country_code": "US",
-              "icao_code": "KSFO",
-              "iata_code": "SFO",
-              "latitude": 37.620156,
-              "longitude": -122.376977,
-              "city": null,
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "San Francisco International Airport",
-              "id": "arp_sfo_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "iata_country_code": "CA",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "iata_country_code": "CA",
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "id": "seg_0000B8KcFMxr95eQ9okUtx"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "777",
-              "name": "Boeing 777",
-              "id": "arc_00009VMF8AhXSSRnQDI6HF"
-            },
-            "departing_at": "2026-07-31T13:55:00",
-            "arriving_at": "2026-07-31T16:18:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/UA.svg",
-              "conditions_of_carriage_url": "https://www.united.com/ual/en/GB/fly/contract.html",
-              "iata_code": "UA",
-              "name": "United Airlines",
-              "id": "arl_00009VME7DDoV8ZkzmMkaN"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "operating_carrier_flight_number": null,
-            "marketing_carrier_flight_number": "3507",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "TNA4A0TG"
-              }
-            ],
-            "distance": null,
-            "duration": "PT5H23M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "HNL",
-              "city_name": "Honolulu",
-              "iata_country_code": "US",
-              "icao_code": "PHNL",
-              "iata_code": "HNL",
-              "latitude": 21.322566,
-              "longitude": -157.92465,
-              "city": null,
-              "time_zone": "Pacific/Honolulu",
-              "type": "airport",
-              "name": "Daniel K. Inouye International Airport",
-              "id": "arp_hnl_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "SFO",
-              "city_name": "San Francisco",
-              "iata_country_code": "US",
-              "icao_code": "KSFO",
-              "iata_code": "SFO",
-              "latitude": 37.620156,
-              "longitude": -122.376977,
-              "city": null,
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "San Francisco International Airport",
-              "id": "arp_sfo_us"
-            },
-            "id": "seg_0000B8KcFMxr95eQ9okUu2"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT12H18M",
-        "destination": {
-          "airports": null,
-          "iata_city_code": "HNL",
-          "city_name": "Honolulu",
-          "iata_country_code": "US",
-          "icao_code": "PHNL",
-          "iata_code": "HNL",
-          "latitude": 21.322566,
-          "longitude": -157.92465,
-          "city": null,
-          "time_zone": "Pacific/Honolulu",
-          "type": "airport",
-          "name": "Daniel K. Inouye International Airport",
-          "id": "arp_hnl_us"
-        },
-        "origin": {
-          "airports": null,
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "iata_country_code": "CA",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "iata_country_code": "CA",
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "id": "sli_0000B8KcFMxr95eQ9okUu6"
-      },
-      {
-        "comparison_key": "B9NqcA==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": "Standard",
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "753",
-              "name": "Boeing 757-300",
-              "id": "arc_00009VMF8AhBTmADP77ojZ"
-            },
-            "departing_at": "2026-08-07T07:00:00",
-            "arriving_at": "2026-08-07T15:32:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UA.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/UA.svg",
-              "conditions_of_carriage_url": "https://www.united.com/ual/en/GB/fly/contract.html",
-              "iata_code": "UA",
-              "name": "United Airlines",
-              "id": "arl_00009VME7DDoV8ZkzmMkaN"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "operating_carrier_flight_number": null,
-            "marketing_carrier_flight_number": "3500",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "WNA1A1TG"
-              }
-            ],
-            "distance": null,
-            "duration": "PT5H32M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "LAX",
-              "city_name": "Los Angeles",
-              "iata_country_code": "US",
-              "icao_code": "KLAX",
-              "iata_code": "LAX",
-              "latitude": 33.942045,
-              "longitude": -118.408263,
-              "city": {
-                "iata_city_code": "LAX",
-                "city_name": null,
-                "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAX",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Los Angeles",
-                "id": "cit_lax_us"
-              },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Los Angeles International Airport",
-              "id": "arp_lax_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "HNL",
-              "city_name": "Honolulu",
-              "iata_country_code": "US",
-              "icao_code": "PHNL",
-              "iata_code": "HNL",
-              "latitude": 21.322566,
-              "longitude": -157.92465,
-              "city": null,
-              "time_zone": "Pacific/Honolulu",
-              "type": "airport",
-              "name": "Daniel K. Inouye International Airport",
-              "id": "arp_hnl_us"
-            },
-            "id": "seg_0000B8KcFMxr95eQ9okUuE"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "321",
-              "name": "Airbus A321",
-              "id": "arc_00009VMF8AgpV5sdO0xXAs"
-            },
-            "departing_at": "2026-08-07T16:30:00",
-            "arriving_at": "2026-08-08T00:13:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-              "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-              "iata_code": "AC",
-              "name": "Air Canada",
-              "id": "arl_00009VME7DAch01WpssCc4"
-            },
-            "operating_carrier_flight_number": "0792",
-            "marketing_carrier_flight_number": "0792",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "paid",
-                      "available": true
-                    },
-                    "power": {
-                      "available": false
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "WNA1A1TG"
-              }
-            ],
-            "distance": null,
-            "duration": "PT4H43M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "iata_country_code": "CA",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "iata_country_code": "CA",
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "LAX",
-              "city_name": "Los Angeles",
-              "iata_country_code": "US",
-              "icao_code": "KLAX",
-              "iata_code": "LAX",
-              "latitude": 33.942045,
-              "longitude": -118.408263,
-              "city": {
-                "iata_city_code": "LAX",
-                "city_name": null,
-                "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAX",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Los Angeles",
-                "id": "cit_lax_us"
-              },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Los Angeles International Airport",
-              "id": "arp_lax_us"
-            },
-            "id": "seg_0000B8KcFMxr95eQ9okUuH"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT11H13M",
-        "destination": {
-          "airports": null,
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "iata_country_code": "CA",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "iata_country_code": "CA",
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "origin": {
-          "airports": null,
-          "iata_city_code": "HNL",
-          "city_name": "Honolulu",
-          "iata_country_code": "US",
-          "icao_code": "PHNL",
-          "iata_code": "HNL",
-          "latitude": 21.322566,
-          "longitude": -157.92465,
-          "city": null,
-          "time_zone": "Pacific/Honolulu",
-          "type": "airport",
-          "name": "Daniel K. Inouye International Airport",
-          "id": "arp_hnl_us"
-        },
-        "id": "sli_0000B8KcFMxr95eQ9okUuK"
-      }
-    ],
-    "passengers": [
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KcF90lr3fXChzzKl"
-      }
-    ],
-    "conditions": {
-      "refund_before_departure": null,
-      "change_before_departure": null
-    },
-    "updated_at": "2026-07-14T15:52:39.339942Z",
-    "expires_at": "2026-07-14T16:52:39.304347Z",
-    "partial": false,
-    "owner": {
-      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
-      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
-      "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
-      "iata_code": "AC",
-      "name": "Air Canada",
-      "id": "arl_00009VME7DAch01WpssCc4"
-    },
-    "id": "off_0000B8KcFMxr95eQ9okUuU"
+{
+  "meta": {
+    "limit": 50,
+    "before": null,
+    "after": null
   },
-  {
-    "total_emissions_kg": "1146",
-    "intended_payment_methods": [],
-    "available_airline_credit_ids": [],
-    "payment_requirements": {
-      "requires_instant_payment": false,
-      "price_guarantee_expires_at": null,
-      "payment_required_by": "2026-07-15T15:52:00Z"
-    },
-    "supported_passenger_identity_document_types": [
-      "known_traveler_number",
-      "passenger_redress_number",
-      "passport"
-    ],
-    "passenger_identity_documents_required": false,
-    "tax_currency": "USD",
-    "private_fares": [],
-    "supported_loyalty_programmes": [
-      "PD"
-    ],
-    "tax_amount": "221.83",
-    "base_amount": "1980.00",
-    "base_currency": "USD",
-    "total_currency": "USD",
-    "live_mode": false,
-    "total_amount": "2201.83",
-    "created_at": "2026-07-14T15:52:39.339942Z",
-    "slices": [
-      {
-        "comparison_key": "AsAs/g==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": null,
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "295",
-              "name": "Embraer 195 E2",
-              "id": "arc_00009oBdrPis4D1mAnkllP"
-            },
-            "departing_at": "2026-07-31T20:35:00",
-            "arriving_at": "2026-07-31T22:22:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
-              "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
-              "iata_code": "PD",
-              "name": "Porter Airlines",
-              "id": "arl_00009VME7DD6Xm0axa2BU2"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
-              "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
-              "iata_code": "PD",
-              "name": "Porter Airlines",
-              "id": "arl_00009VME7DD6Xm0axa2BU2"
-            },
-            "operating_carrier_flight_number": "0655",
-            "marketing_carrier_flight_number": "0655",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y0N0ZRZE"
-              }
-            ],
-            "distance": null,
-            "duration": "PT4H47M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "LAS",
-              "city_name": "Las Vegas",
-              "iata_country_code": "US",
-              "icao_code": "KLAS",
-              "iata_code": "LAS",
-              "latitude": 36.08205,
-              "longitude": -115.152869,
-              "city": {
-                "iata_city_code": "LAS",
-                "city_name": null,
-                "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAS",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Las Vegas",
-                "id": "cit_las_us"
-              },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Harry Reid International Airport",
-              "id": "arp_las_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "iata_country_code": "CA",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
-                "iata_city_code": "YTO",
-                "city_name": null,
-                "iata_country_code": "CA",
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
-              },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
-            },
-            "id": "seg_0000B8KcFN3smgTISVZJIK"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "332",
-              "name": "Airbus A330-200",
-              "id": "arc_00009VMF8AgpV5sdO0xXAv"
-            },
-            "departing_at": "2026-08-01T01:55:00",
-            "arriving_at": "2026-08-01T05:16:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
-              "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
-              "iata_code": "AS",
-              "name": "Alaska Airlines",
-              "id": "arl_00009VME7DAch01WpssCcN"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
-              "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
-              "iata_code": "AS",
-              "name": "Alaska Airlines",
-              "id": "arl_00009VME7DAch01WpssCcN"
-            },
-            "operating_carrier_flight_number": "0817",
-            "marketing_carrier_flight_number": "0817",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "QH4OAVMN"
-              }
-            ],
-            "distance": null,
-            "duration": "PT6H21M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "HNL",
-              "city_name": "Honolulu",
-              "iata_country_code": "US",
-              "icao_code": "PHNL",
-              "iata_code": "HNL",
-              "latitude": 21.322566,
-              "longitude": -157.92465,
-              "city": null,
-              "time_zone": "Pacific/Honolulu",
-              "type": "airport",
-              "name": "Daniel K. Inouye International Airport",
-              "id": "arp_hnl_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "LAS",
-              "city_name": "Las Vegas",
-              "iata_country_code": "US",
-              "icao_code": "KLAS",
-              "iata_code": "LAS",
-              "latitude": 36.08205,
-              "longitude": -115.152869,
-              "city": {
-                "iata_city_code": "LAS",
-                "city_name": null,
-                "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAS",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Las Vegas",
-                "id": "cit_las_us"
-              },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Harry Reid International Airport",
-              "id": "arp_las_us"
-            },
-            "id": "seg_0000B8KcFN3smgTISVZJIL"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT14H41M",
-        "destination": {
-          "airports": null,
-          "iata_city_code": "HNL",
-          "city_name": "Honolulu",
-          "iata_country_code": "US",
-          "icao_code": "PHNL",
-          "iata_code": "HNL",
-          "latitude": 21.322566,
-          "longitude": -157.92465,
-          "city": null,
-          "time_zone": "Pacific/Honolulu",
-          "type": "airport",
-          "name": "Daniel K. Inouye International Airport",
-          "id": "arp_hnl_us"
-        },
-        "origin": {
-          "airports": null,
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "iata_country_code": "CA",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "iata_country_code": "CA",
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
-          },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
-        },
-        "id": "sli_0000B8KcFN3smgTISVZJIM"
+  "data": [
+    {
+      "total_emissions_kg": "896",
+      "intended_payment_methods": [],
+      "available_airline_credit_ids": [],
+      "payment_requirements": {
+        "requires_instant_payment": false,
+        "price_guarantee_expires_at": null,
+        "payment_required_by": "2026-07-15T15:52:00Z"
       },
-      {
-        "comparison_key": "BzzlMQ==",
-        "ngs_shelf": 2,
-        "destination_type": "airport",
-        "origin_type": "airport",
-        "fare_brand_name": null,
-        "segments": [
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "332",
-              "name": "Airbus A330-200",
-              "id": "arc_00009VMF8AgpV5sdO0xXAv"
-            },
-            "departing_at": "2026-08-07T23:20:00",
-            "arriving_at": "2026-08-08T08:03:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
-              "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
-              "iata_code": "AS",
-              "name": "Alaska Airlines",
-              "id": "arl_00009VME7DAch01WpssCcN"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
-              "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
-              "iata_code": "AS",
-              "name": "Alaska Airlines",
-              "id": "arl_00009VME7DAch01WpssCcN"
-            },
-            "operating_carrier_flight_number": "0808",
-            "marketing_carrier_flight_number": "0808",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "31",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
-                    }
-                  },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "SH0OWSMN"
-              }
-            ],
-            "distance": null,
-            "duration": "PT5H43M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "LAS",
-              "city_name": "Las Vegas",
-              "iata_country_code": "US",
-              "icao_code": "KLAS",
-              "iata_code": "LAS",
-              "latitude": 36.08205,
-              "longitude": -115.152869,
-              "city": {
-                "iata_city_code": "LAS",
-                "city_name": null,
-                "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAS",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Las Vegas",
-                "id": "cit_las_us"
+      "supported_passenger_identity_document_types": [
+        "known_traveler_number",
+        "passenger_redress_number",
+        "passport"
+      ],
+      "passenger_identity_documents_required": false,
+      "tax_currency": "USD",
+      "private_fares": [],
+      "supported_loyalty_programmes": [
+        "AC",
+        "NZ",
+        "NH",
+        "OZ",
+        "CM",
+        "MS",
+        "AI",
+        "OU",
+        "BR",
+        "SQ",
+        "AV",
+        "UA",
+        "A3",
+        "LH",
+        "TK",
+        "CA",
+        "TG",
+        "ET",
+        "TP",
+        "SA"
+      ],
+      "tax_amount": "183.75",
+      "base_amount": "998.00",
+      "base_currency": "USD",
+      "total_currency": "USD",
+      "live_mode": false,
+      "total_amount": "1181.75",
+      "created_at": "2026-07-14T15:52:39.339942Z",
+      "slices": [
+        {
+          "comparison_key": "BWpuJg==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Standard",
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "223",
+                "name": "Airbus A220-300",
+                "id": "arc_00009oBdrPis4D1mAnkllM"
               },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Harry Reid International Airport",
-              "id": "arp_las_us"
-            },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "HNL",
-              "city_name": "Honolulu",
-              "iata_country_code": "US",
-              "icao_code": "PHNL",
-              "iata_code": "HNL",
-              "latitude": 21.322566,
-              "longitude": -157.92465,
-              "city": null,
-              "time_zone": "Pacific/Honolulu",
-              "type": "airport",
-              "name": "Daniel K. Inouye International Airport",
-              "id": "arp_hnl_us"
-            },
-            "id": "seg_0000B8KcFN3smgTISVZJIQ"
-          },
-          {
-            "origin_terminal": null,
-            "destination_terminal": null,
-            "aircraft": {
-              "iata_code": "295",
-              "name": "Embraer 195 E2",
-              "id": "arc_00009oBdrPis4D1mAnkllP"
-            },
-            "departing_at": "2026-08-08T09:45:00",
-            "arriving_at": "2026-08-08T17:09:00",
-            "stops": [],
-            "operating_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
-              "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
-              "iata_code": "PD",
-              "name": "Porter Airlines",
-              "id": "arl_00009VME7DD6Xm0axa2BU2"
-            },
-            "marketing_carrier": {
-              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
-              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
-              "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
-              "iata_code": "PD",
-              "name": "Porter Airlines",
-              "id": "arl_00009VME7DD6Xm0axa2BU2"
-            },
-            "operating_carrier_flight_number": "0654",
-            "marketing_carrier_flight_number": "0654",
-            "passengers": [
-              {
-                "baggages": [
-                  {
-                    "quantity": 1,
-                    "type": "carry_on"
-                  }
-                ],
-                "cabin_class_marketing_name": "Economy",
-                "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
-                "cabin": {
-                  "amenities": {
-                    "seat": {
-                      "pitch": "30",
-                      "legroom": "standard",
-                      "type": "standard"
-                    },
-                    "wifi": {
-                      "cost": "free",
-                      "available": true
-                    },
-                    "power": {
-                      "available": true
+              "departing_at": "2026-07-31T10:00:00",
+              "arriving_at": "2026-07-31T12:32:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "operating_carrier_flight_number": "0741",
+              "marketing_carrier_flight_number": "0741",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
                     }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
                   },
-                  "marketing_name": "Economy",
-                  "name": "economy"
-                },
-                "cabin_class": "economy",
-                "fare_basis_code": "Y0N0ZRZE"
-              }
-            ],
-            "distance": null,
-            "duration": "PT4H24M",
-            "destination": {
-              "airports": null,
-              "iata_city_code": "YTO",
-              "city_name": "Toronto",
-              "iata_country_code": "CA",
-              "icao_code": "CYYZ",
-              "iata_code": "YYZ",
-              "latitude": 43.677459,
-              "longitude": -79.62771,
-              "city": {
+                  "cabin_class": "economy",
+                  "fare_basis_code": "TNA4A0TG"
+                }
+              ],
+              "distance": null,
+              "duration": "PT5H32M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "SFO",
+                "city_name": "San Francisco",
+                "iata_country_code": "US",
+                "icao_code": "KSFO",
+                "iata_code": "SFO",
+                "latitude": 37.620156,
+                "longitude": -122.376977,
+                "city": null,
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "San Francisco International Airport",
+                "id": "arp_sfo_us"
+              },
+              "origin": {
+                "airports": null,
                 "iata_city_code": "YTO",
-                "city_name": null,
+                "city_name": "Toronto",
                 "iata_country_code": "CA",
-                "icao_code": null,
-                "iata_code": "YTO",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Toronto",
-                "id": "cit_yto_ca"
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "iata_country_code": "CA",
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
               },
-              "time_zone": "America/Toronto",
-              "type": "airport",
-              "name": "Toronto Pearson International Airport",
-              "id": "arp_yyz_ca"
+              "id": "seg_0000B8KcFMxr95eQ9okUtx"
             },
-            "origin": {
-              "airports": null,
-              "iata_city_code": "LAS",
-              "city_name": "Las Vegas",
-              "iata_country_code": "US",
-              "icao_code": "KLAS",
-              "iata_code": "LAS",
-              "latitude": 36.08205,
-              "longitude": -115.152869,
-              "city": {
-                "iata_city_code": "LAS",
-                "city_name": null,
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "777",
+                "name": "Boeing 777",
+                "id": "arc_00009VMF8AhXSSRnQDI6HF"
+              },
+              "departing_at": "2026-07-31T13:55:00",
+              "arriving_at": "2026-07-31T16:18:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/UA.svg",
+                "conditions_of_carriage_url": "https://www.united.com/ual/en/GB/fly/contract.html",
+                "iata_code": "UA",
+                "name": "United Airlines",
+                "id": "arl_00009VME7DDoV8ZkzmMkaN"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "operating_carrier_flight_number": null,
+              "marketing_carrier_flight_number": "3507",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "TNA4A0TG"
+                }
+              ],
+              "distance": null,
+              "duration": "PT5H23M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "HNL",
+                "city_name": "Honolulu",
                 "iata_country_code": "US",
-                "icao_code": null,
-                "iata_code": "LAS",
-                "latitude": null,
-                "longitude": null,
-                "time_zone": null,
-                "type": "city",
-                "name": "Las Vegas",
-                "id": "cit_las_us"
+                "icao_code": "PHNL",
+                "iata_code": "HNL",
+                "latitude": 21.322566,
+                "longitude": -157.92465,
+                "city": null,
+                "time_zone": "Pacific/Honolulu",
+                "type": "airport",
+                "name": "Daniel K. Inouye International Airport",
+                "id": "arp_hnl_us"
               },
-              "time_zone": "America/Los_Angeles",
-              "type": "airport",
-              "name": "Harry Reid International Airport",
-              "id": "arp_las_us"
-            },
-            "id": "seg_0000B8KcFN3smgTISVZJIU"
-          }
-        ],
-        "conditions": {
-          "change_before_departure": null,
-          "priority_check_in": null,
-          "priority_boarding": null,
-          "advance_seat_selection": null
-        },
-        "duration": "PT11H49M",
-        "destination": {
-          "airports": null,
-          "iata_city_code": "YTO",
-          "city_name": "Toronto",
-          "iata_country_code": "CA",
-          "icao_code": "CYYZ",
-          "iata_code": "YYZ",
-          "latitude": 43.677459,
-          "longitude": -79.62771,
-          "city": {
-            "iata_city_code": "YTO",
-            "city_name": null,
-            "iata_country_code": "CA",
-            "icao_code": null,
-            "iata_code": "YTO",
-            "latitude": null,
-            "longitude": null,
-            "time_zone": null,
-            "type": "city",
-            "name": "Toronto",
-            "id": "cit_yto_ca"
+              "origin": {
+                "airports": null,
+                "iata_city_code": "SFO",
+                "city_name": "San Francisco",
+                "iata_country_code": "US",
+                "icao_code": "KSFO",
+                "iata_code": "SFO",
+                "latitude": 37.620156,
+                "longitude": -122.376977,
+                "city": null,
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "San Francisco International Airport",
+                "id": "arp_sfo_us"
+              },
+              "id": "seg_0000B8KcFMxr95eQ9okUu2"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
           },
-          "time_zone": "America/Toronto",
-          "type": "airport",
-          "name": "Toronto Pearson International Airport",
-          "id": "arp_yyz_ca"
+          "duration": "PT12H18M",
+          "destination": {
+            "airports": null,
+            "iata_city_code": "HNL",
+            "city_name": "Honolulu",
+            "iata_country_code": "US",
+            "icao_code": "PHNL",
+            "iata_code": "HNL",
+            "latitude": 21.322566,
+            "longitude": -157.92465,
+            "city": null,
+            "time_zone": "Pacific/Honolulu",
+            "type": "airport",
+            "name": "Daniel K. Inouye International Airport",
+            "id": "arp_hnl_us"
+          },
+          "origin": {
+            "airports": null,
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "iata_country_code": "CA",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "iata_country_code": "CA",
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "id": "sli_0000B8KcFMxr95eQ9okUu6"
         },
-        "origin": {
-          "airports": null,
-          "iata_city_code": "HNL",
-          "city_name": "Honolulu",
-          "iata_country_code": "US",
-          "icao_code": "PHNL",
-          "iata_code": "HNL",
-          "latitude": 21.322566,
-          "longitude": -157.92465,
-          "city": null,
-          "time_zone": "Pacific/Honolulu",
-          "type": "airport",
-          "name": "Daniel K. Inouye International Airport",
-          "id": "arp_hnl_us"
+        {
+          "comparison_key": "B9NqcA==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": "Standard",
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "753",
+                "name": "Boeing 757-300",
+                "id": "arc_00009VMF8AhBTmADP77ojZ"
+              },
+              "departing_at": "2026-08-07T07:00:00",
+              "arriving_at": "2026-08-07T15:32:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/UA.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/UA.svg",
+                "conditions_of_carriage_url": "https://www.united.com/ual/en/GB/fly/contract.html",
+                "iata_code": "UA",
+                "name": "United Airlines",
+                "id": "arl_00009VME7DDoV8ZkzmMkaN"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "operating_carrier_flight_number": null,
+              "marketing_carrier_flight_number": "3500",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "WNA1A1TG"
+                }
+              ],
+              "distance": null,
+              "duration": "PT5H32M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "LAX",
+                "city_name": "Los Angeles",
+                "iata_country_code": "US",
+                "icao_code": "KLAX",
+                "iata_code": "LAX",
+                "latitude": 33.942045,
+                "longitude": -118.408263,
+                "city": {
+                  "iata_city_code": "LAX",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAX",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Los Angeles",
+                  "id": "cit_lax_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Los Angeles International Airport",
+                "id": "arp_lax_us"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "HNL",
+                "city_name": "Honolulu",
+                "iata_country_code": "US",
+                "icao_code": "PHNL",
+                "iata_code": "HNL",
+                "latitude": 21.322566,
+                "longitude": -157.92465,
+                "city": null,
+                "time_zone": "Pacific/Honolulu",
+                "type": "airport",
+                "name": "Daniel K. Inouye International Airport",
+                "id": "arp_hnl_us"
+              },
+              "id": "seg_0000B8KcFMxr95eQ9okUuE"
+            },
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "321",
+                "name": "Airbus A321",
+                "id": "arc_00009VMF8AgpV5sdO0xXAs"
+              },
+              "departing_at": "2026-08-07T16:30:00",
+              "arriving_at": "2026-08-08T00:13:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+                "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+                "iata_code": "AC",
+                "name": "Air Canada",
+                "id": "arl_00009VME7DAch01WpssCc4"
+              },
+              "operating_carrier_flight_number": "0792",
+              "marketing_carrier_flight_number": "0792",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "paid",
+                        "available": true
+                      },
+                      "power": {
+                        "available": false
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "WNA1A1TG"
+                }
+              ],
+              "distance": null,
+              "duration": "PT4H43M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "iata_country_code": "CA",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "iata_country_code": "CA",
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "LAX",
+                "city_name": "Los Angeles",
+                "iata_country_code": "US",
+                "icao_code": "KLAX",
+                "iata_code": "LAX",
+                "latitude": 33.942045,
+                "longitude": -118.408263,
+                "city": {
+                  "iata_city_code": "LAX",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAX",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Los Angeles",
+                  "id": "cit_lax_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Los Angeles International Airport",
+                "id": "arp_lax_us"
+              },
+              "id": "seg_0000B8KcFMxr95eQ9okUuH"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT11H13M",
+          "destination": {
+            "airports": null,
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "iata_country_code": "CA",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "iata_country_code": "CA",
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "origin": {
+            "airports": null,
+            "iata_city_code": "HNL",
+            "city_name": "Honolulu",
+            "iata_country_code": "US",
+            "icao_code": "PHNL",
+            "iata_code": "HNL",
+            "latitude": 21.322566,
+            "longitude": -157.92465,
+            "city": null,
+            "time_zone": "Pacific/Honolulu",
+            "type": "airport",
+            "name": "Daniel K. Inouye International Airport",
+            "id": "arp_hnl_us"
+          },
+          "id": "sli_0000B8KcFMxr95eQ9okUuK"
+        }
+      ],
+      "passengers": [
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KcF90lr3fXChzzKl"
+        }
+      ],
+      "conditions": {
+        "refund_before_departure": null,
+        "change_before_departure": null
+      },
+      "updated_at": "2026-07-14T15:52:39.339942Z",
+      "expires_at": "2026-07-14T16:52:39.304347Z",
+      "partial": false,
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AC.svg",
+        "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AC.svg",
+        "conditions_of_carriage_url": "https://www.aircanada.com/us/en/aco/home/legal/conditions-carriage-tariffs.html#/",
+        "iata_code": "AC",
+        "name": "Air Canada",
+        "id": "arl_00009VME7DAch01WpssCc4"
+      },
+      "id": "off_0000B8KcFMxr95eQ9okUuU"
+    },
+    {
+      "total_emissions_kg": "1146",
+      "intended_payment_methods": [],
+      "available_airline_credit_ids": [],
+      "payment_requirements": {
+        "requires_instant_payment": false,
+        "price_guarantee_expires_at": null,
+        "payment_required_by": "2026-07-15T15:52:00Z"
+      },
+      "supported_passenger_identity_document_types": [
+        "known_traveler_number",
+        "passenger_redress_number",
+        "passport"
+      ],
+      "passenger_identity_documents_required": false,
+      "tax_currency": "USD",
+      "private_fares": [],
+      "supported_loyalty_programmes": [
+        "PD"
+      ],
+      "tax_amount": "221.83",
+      "base_amount": "1980.00",
+      "base_currency": "USD",
+      "total_currency": "USD",
+      "live_mode": false,
+      "total_amount": "2201.83",
+      "created_at": "2026-07-14T15:52:39.339942Z",
+      "slices": [
+        {
+          "comparison_key": "AsAs/g==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": null,
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "295",
+                "name": "Embraer 195 E2",
+                "id": "arc_00009oBdrPis4D1mAnkllP"
+              },
+              "departing_at": "2026-07-31T20:35:00",
+              "arriving_at": "2026-07-31T22:22:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
+                "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
+                "iata_code": "PD",
+                "name": "Porter Airlines",
+                "id": "arl_00009VME7DD6Xm0axa2BU2"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
+                "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
+                "iata_code": "PD",
+                "name": "Porter Airlines",
+                "id": "arl_00009VME7DD6Xm0axa2BU2"
+              },
+              "operating_carrier_flight_number": "0655",
+              "marketing_carrier_flight_number": "0655",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y0N0ZRZE"
+                }
+              ],
+              "distance": null,
+              "duration": "PT4H47M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "LAS",
+                "city_name": "Las Vegas",
+                "iata_country_code": "US",
+                "icao_code": "KLAS",
+                "iata_code": "LAS",
+                "latitude": 36.08205,
+                "longitude": -115.152869,
+                "city": {
+                  "iata_city_code": "LAS",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAS",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Las Vegas",
+                  "id": "cit_las_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Harry Reid International Airport",
+                "id": "arp_las_us"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "iata_country_code": "CA",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "iata_country_code": "CA",
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "id": "seg_0000B8KcFN3smgTISVZJIK"
+            },
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "332",
+                "name": "Airbus A330-200",
+                "id": "arc_00009VMF8AgpV5sdO0xXAv"
+              },
+              "departing_at": "2026-08-01T01:55:00",
+              "arriving_at": "2026-08-01T05:16:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
+                "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+                "iata_code": "AS",
+                "name": "Alaska Airlines",
+                "id": "arl_00009VME7DAch01WpssCcN"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
+                "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+                "iata_code": "AS",
+                "name": "Alaska Airlines",
+                "id": "arl_00009VME7DAch01WpssCcN"
+              },
+              "operating_carrier_flight_number": "0817",
+              "marketing_carrier_flight_number": "0817",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "QH4OAVMN"
+                }
+              ],
+              "distance": null,
+              "duration": "PT6H21M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "HNL",
+                "city_name": "Honolulu",
+                "iata_country_code": "US",
+                "icao_code": "PHNL",
+                "iata_code": "HNL",
+                "latitude": 21.322566,
+                "longitude": -157.92465,
+                "city": null,
+                "time_zone": "Pacific/Honolulu",
+                "type": "airport",
+                "name": "Daniel K. Inouye International Airport",
+                "id": "arp_hnl_us"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "LAS",
+                "city_name": "Las Vegas",
+                "iata_country_code": "US",
+                "icao_code": "KLAS",
+                "iata_code": "LAS",
+                "latitude": 36.08205,
+                "longitude": -115.152869,
+                "city": {
+                  "iata_city_code": "LAS",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAS",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Las Vegas",
+                  "id": "cit_las_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Harry Reid International Airport",
+                "id": "arp_las_us"
+              },
+              "id": "seg_0000B8KcFN3smgTISVZJIL"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT14H41M",
+          "destination": {
+            "airports": null,
+            "iata_city_code": "HNL",
+            "city_name": "Honolulu",
+            "iata_country_code": "US",
+            "icao_code": "PHNL",
+            "iata_code": "HNL",
+            "latitude": 21.322566,
+            "longitude": -157.92465,
+            "city": null,
+            "time_zone": "Pacific/Honolulu",
+            "type": "airport",
+            "name": "Daniel K. Inouye International Airport",
+            "id": "arp_hnl_us"
+          },
+          "origin": {
+            "airports": null,
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "iata_country_code": "CA",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "iata_country_code": "CA",
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "id": "sli_0000B8KcFN3smgTISVZJIM"
         },
-        "id": "sli_0000B8KcFN3smgTISVZJIW"
-      }
-    ],
-    "passengers": [
-      {
-        "loyalty_programme_accounts": [],
-        "family_name": null,
-        "given_name": null,
-        "age": null,
-        "type": "adult",
-        "id": "pas_0000B8KcF90lr3fXChzzKl"
-      }
-    ],
-    "conditions": {
-      "refund_before_departure": null,
-      "change_before_departure": null
-    },
-    "updated_at": "2026-07-14T15:52:39.339942Z",
-    "expires_at": "2026-07-14T16:52:39.312041Z",
-    "partial": false,
-    "owner": {
-      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
-      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
-      "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
-      "iata_code": "PD",
-      "name": "Porter Airlines",
-      "id": "arl_00009VME7DD6Xm0axa2BU2"
-    },
-    "id": "off_0000B8KcFN3smgTISVZJId"
-  }
-]
+        {
+          "comparison_key": "BzzlMQ==",
+          "ngs_shelf": 2,
+          "destination_type": "airport",
+          "origin_type": "airport",
+          "fare_brand_name": null,
+          "segments": [
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "332",
+                "name": "Airbus A330-200",
+                "id": "arc_00009VMF8AgpV5sdO0xXAv"
+              },
+              "departing_at": "2026-08-07T23:20:00",
+              "arriving_at": "2026-08-08T08:03:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
+                "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+                "iata_code": "AS",
+                "name": "Alaska Airlines",
+                "id": "arl_00009VME7DAch01WpssCcN"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AS.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AS.svg",
+                "conditions_of_carriage_url": "https://www.alaskaair.com/content/legal/contract-of-carriage/rule-1",
+                "iata_code": "AS",
+                "name": "Alaska Airlines",
+                "id": "arl_00009VME7DAch01WpssCcN"
+              },
+              "operating_carrier_flight_number": "0808",
+              "marketing_carrier_flight_number": "0808",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "31",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "SH0OWSMN"
+                }
+              ],
+              "distance": null,
+              "duration": "PT5H43M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "LAS",
+                "city_name": "Las Vegas",
+                "iata_country_code": "US",
+                "icao_code": "KLAS",
+                "iata_code": "LAS",
+                "latitude": 36.08205,
+                "longitude": -115.152869,
+                "city": {
+                  "iata_city_code": "LAS",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAS",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Las Vegas",
+                  "id": "cit_las_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Harry Reid International Airport",
+                "id": "arp_las_us"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "HNL",
+                "city_name": "Honolulu",
+                "iata_country_code": "US",
+                "icao_code": "PHNL",
+                "iata_code": "HNL",
+                "latitude": 21.322566,
+                "longitude": -157.92465,
+                "city": null,
+                "time_zone": "Pacific/Honolulu",
+                "type": "airport",
+                "name": "Daniel K. Inouye International Airport",
+                "id": "arp_hnl_us"
+              },
+              "id": "seg_0000B8KcFN3smgTISVZJIQ"
+            },
+            {
+              "origin_terminal": null,
+              "destination_terminal": null,
+              "aircraft": {
+                "iata_code": "295",
+                "name": "Embraer 195 E2",
+                "id": "arc_00009oBdrPis4D1mAnkllP"
+              },
+              "departing_at": "2026-08-08T09:45:00",
+              "arriving_at": "2026-08-08T17:09:00",
+              "stops": [],
+              "operating_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
+                "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
+                "iata_code": "PD",
+                "name": "Porter Airlines",
+                "id": "arl_00009VME7DD6Xm0axa2BU2"
+              },
+              "marketing_carrier": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
+                "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
+                "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
+                "iata_code": "PD",
+                "name": "Porter Airlines",
+                "id": "arl_00009VME7DD6Xm0axa2BU2"
+              },
+              "operating_carrier_flight_number": "0654",
+              "marketing_carrier_flight_number": "0654",
+              "passengers": [
+                {
+                  "baggages": [
+                    {
+                      "quantity": 1,
+                      "type": "carry_on"
+                    }
+                  ],
+                  "cabin_class_marketing_name": "Economy",
+                  "passenger_id": "pas_0000B8KcF90lr3fXChzzKl",
+                  "cabin": {
+                    "amenities": {
+                      "seat": {
+                        "pitch": "30",
+                        "legroom": "standard",
+                        "type": "standard"
+                      },
+                      "wifi": {
+                        "cost": "free",
+                        "available": true
+                      },
+                      "power": {
+                        "available": true
+                      }
+                    },
+                    "marketing_name": "Economy",
+                    "name": "economy"
+                  },
+                  "cabin_class": "economy",
+                  "fare_basis_code": "Y0N0ZRZE"
+                }
+              ],
+              "distance": null,
+              "duration": "PT4H24M",
+              "destination": {
+                "airports": null,
+                "iata_city_code": "YTO",
+                "city_name": "Toronto",
+                "iata_country_code": "CA",
+                "icao_code": "CYYZ",
+                "iata_code": "YYZ",
+                "latitude": 43.677459,
+                "longitude": -79.62771,
+                "city": {
+                  "iata_city_code": "YTO",
+                  "city_name": null,
+                  "iata_country_code": "CA",
+                  "icao_code": null,
+                  "iata_code": "YTO",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Toronto",
+                  "id": "cit_yto_ca"
+                },
+                "time_zone": "America/Toronto",
+                "type": "airport",
+                "name": "Toronto Pearson International Airport",
+                "id": "arp_yyz_ca"
+              },
+              "origin": {
+                "airports": null,
+                "iata_city_code": "LAS",
+                "city_name": "Las Vegas",
+                "iata_country_code": "US",
+                "icao_code": "KLAS",
+                "iata_code": "LAS",
+                "latitude": 36.08205,
+                "longitude": -115.152869,
+                "city": {
+                  "iata_city_code": "LAS",
+                  "city_name": null,
+                  "iata_country_code": "US",
+                  "icao_code": null,
+                  "iata_code": "LAS",
+                  "latitude": null,
+                  "longitude": null,
+                  "time_zone": null,
+                  "type": "city",
+                  "name": "Las Vegas",
+                  "id": "cit_las_us"
+                },
+                "time_zone": "America/Los_Angeles",
+                "type": "airport",
+                "name": "Harry Reid International Airport",
+                "id": "arp_las_us"
+              },
+              "id": "seg_0000B8KcFN3smgTISVZJIU"
+            }
+          ],
+          "conditions": {
+            "change_before_departure": null,
+            "priority_check_in": null,
+            "priority_boarding": null,
+            "advance_seat_selection": null
+          },
+          "duration": "PT11H49M",
+          "destination": {
+            "airports": null,
+            "iata_city_code": "YTO",
+            "city_name": "Toronto",
+            "iata_country_code": "CA",
+            "icao_code": "CYYZ",
+            "iata_code": "YYZ",
+            "latitude": 43.677459,
+            "longitude": -79.62771,
+            "city": {
+              "iata_city_code": "YTO",
+              "city_name": null,
+              "iata_country_code": "CA",
+              "icao_code": null,
+              "iata_code": "YTO",
+              "latitude": null,
+              "longitude": null,
+              "time_zone": null,
+              "type": "city",
+              "name": "Toronto",
+              "id": "cit_yto_ca"
+            },
+            "time_zone": "America/Toronto",
+            "type": "airport",
+            "name": "Toronto Pearson International Airport",
+            "id": "arp_yyz_ca"
+          },
+          "origin": {
+            "airports": null,
+            "iata_city_code": "HNL",
+            "city_name": "Honolulu",
+            "iata_country_code": "US",
+            "icao_code": "PHNL",
+            "iata_code": "HNL",
+            "latitude": 21.322566,
+            "longitude": -157.92465,
+            "city": null,
+            "time_zone": "Pacific/Honolulu",
+            "type": "airport",
+            "name": "Daniel K. Inouye International Airport",
+            "id": "arp_hnl_us"
+          },
+          "id": "sli_0000B8KcFN3smgTISVZJIW"
+        }
+      ],
+      "passengers": [
+        {
+          "loyalty_programme_accounts": [],
+          "family_name": null,
+          "given_name": null,
+          "age": null,
+          "type": "adult",
+          "id": "pas_0000B8KcF90lr3fXChzzKl"
+        }
+      ],
+      "conditions": {
+        "refund_before_departure": null,
+        "change_before_departure": null
+      },
+      "updated_at": "2026-07-14T15:52:39.339942Z",
+      "expires_at": "2026-07-14T16:52:39.312041Z",
+      "partial": false,
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/PD.svg",
+        "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/PD.svg",
+        "conditions_of_carriage_url": "https://www.flyporter.com/en/travel-terms-and-conditions",
+        "iata_code": "PD",
+        "name": "Porter Airlines",
+        "id": "arl_00009VME7DD6Xm0axa2BU2"
+      },
+      "id": "off_0000B8KcFN3smgTISVZJId"
+    }
+  ]
+}

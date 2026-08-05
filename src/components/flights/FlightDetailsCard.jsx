@@ -8,7 +8,7 @@ export default function FlightDetailsCard({ segment }) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-zinc-800 rounded-lg px-6 py-3 mt-3 flex-grow">
+    <div data-testid="flight-detail-segment" className="flex flex-col h-full bg-zinc-800 rounded-lg px-6 py-3 mt-3 flex-grow">
         <div className="text-zinc-200 text-xs">
           {segment.marketing_carrier.name} – {segment.marketing_carrier.iata_code} {segment.marketing_carrier_flight_number}
           <span className="block text-[10px] font-extralight">
@@ -26,7 +26,7 @@ export default function FlightDetailsCard({ segment }) {
                 <span className="block font-light text-[10px] text-zinc-400">({displayGateNum(segment.origin_terminal)})</span>
               </div>
               <div className="my-4">
-                <span className="block text-xs text-purple-300">Travel time: {parseISODuration(segment.duration)}</span>
+                <span data-testid="flight-detail-travel-time" className="block text-xs text-purple-300">Travel time: {parseISODuration(segment.duration)}</span>
               </div>
               <div>
                 <span className="block text-lg/5 text-zinc-200">{segment.destination.city_name}</span>
@@ -60,8 +60,8 @@ export default function FlightDetailsCard({ segment }) {
           <span className="block">Checked Bags Included</span>
         </div>
         <div className="basis-1/2 text-sm/6 text-right text-xs">
-          <span className="block">{formatCabinClassName(segment.passengers[0].cabin_class)}</span>
-          <span className="block">{displayCheckedBagsQuantity()}</span>
+          <span data-testid="flight-detail-cabin" className="block">{formatCabinClassName(segment.passengers[0].cabin_class)}</span>
+          <span data-testid="flight-detail-checked-bags" className="block">{displayCheckedBagsQuantity()}</span>
         </div>
       </div>
     </div>

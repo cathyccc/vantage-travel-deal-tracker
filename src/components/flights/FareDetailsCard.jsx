@@ -44,11 +44,11 @@ export default function FareDetailsCard({handleViewChange, offer}) {
       <div className="no-scrollbar -mx-4 max-h-[50vh] overflow-y-auto px-4 text-white">
         <div className="flex flex-row justify-between">
           <div>
-            <div className="text-2xl font-medium">{`$${offer.base_amount}`}<span className="text-xs"> (tax excl.)</span></div>
+            <div data-testid="fare-price"className="text-2xl font-medium">{`$${offer.base_amount}`}<span className="text-xs"> (tax excl.)</span></div>
             <div className="font-extralight">{`${offer.base_currency} $${(offer.base_amount/offer.passengers.length).toFixed(2)} roundtrip for 1 traveller`}</div>
           </div>
           <div className="flex flex-col justify-between text-right">
-            <div className="font-extralight">{`Type: ${cabinClass}`}</div>
+            <div data-testid="fare-type"className="font-extralight">{`Type: ${cabinClass}`}</div>
             <div className="font-normal">{`${format(offer.slices[0].segments[0].departing_at, 'EEE, MMM d')} - ${format(offer.slices[1].segments[0].departing_at, 'EEE, MMM d')}`}</div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function FareDetailsCard({handleViewChange, offer}) {
         </div>
         
         <div className="mb-6 rounded-2xl bg-zinc-800 mx-15 py-5 px-7">
-          <div className="text-xs text-purple-500 mb-1">Departure</div>
+          <div data-testid="fare-departure-label" className="text-xs text-purple-500 mb-1">Departure</div>
           <div className="flex flex-row justify-between items-center">
             <div>
               <div className="text-xl tracking-light flex items-start">
@@ -156,7 +156,7 @@ export default function FareDetailsCard({handleViewChange, offer}) {
         </div>
 
         <div className="rounded-2xl bg-zinc-800 mx-15 py-5 px-7">
-          <div className="text-xs text-purple-500 mb-1">Return</div>
+          <div data-testid="fare-return-label" className="text-xs text-purple-500 mb-1">Return</div>
           <div className="flex flex-row justify-between items-center">
             <div>
               <div className="text-xl tracking-light flex items-start">
@@ -175,11 +175,11 @@ export default function FareDetailsCard({handleViewChange, offer}) {
       </div>
 
       <DialogFooter className="sm:justify-between">
-        <Button onClick={()=>{handleViewChange()}} size="sm" variant="outline" className="text-xs font-light mt-3 text-white hover:text-white bg-zinc-800 hover:bg-zinc-700 border-1 border-zinc-600">
+        <Button data-testid="back-to-flight-details-button"onClick={()=>{handleViewChange()}} size="sm" variant="outline" className="text-xs font-light mt-3 text-white hover:text-white bg-zinc-800 hover:bg-zinc-700 border-1 border-zinc-600">
           <ArrowLeft size={14} strokeWidth={1.5} className="text-white inline"/>
           BACK TO FLIGHT DETAILS
         </Button>
-        <Button onClick={handleSelectFare} variant="outline" size="sm" className="text-xs mt-3 tracking-tight text-white border-none hover:text-white bg-purple-600 hover:bg-purple-500">
+        <Button data-testid="select-fare-button" onClick={handleSelectFare} variant="outline" size="sm" className="text-xs mt-3 tracking-tight text-white border-none hover:text-white bg-purple-600 hover:bg-purple-500">
           <Plane />{`SELECT FARE TO ${offer.slices[0].destination.city_name.toUpperCase()}`}
         </Button>
       </DialogFooter>

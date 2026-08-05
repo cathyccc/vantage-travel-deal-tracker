@@ -123,7 +123,7 @@ test.describe('Flight Search Component', () => {
     await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
     await flightSearchPage.form.increasePassengerCounter('adults');
     await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('2');
-    await flightSearchPage.form.decreasePassengerCounter('adults');;
+    await flightSearchPage.form.decreasePassengerCounter('adults');
     await expect(flightSearchPage.form.adultPassengerCounter).toHaveText('1');
     await flightSearchPage.form.expectDisabledDecreaseButton('adults');
   });
@@ -146,17 +146,19 @@ test.describe('Flight Search Component', () => {
     await flightSearchPage.form.expectDisabledDecreaseButton('infants');
   });
 
-  test('valid search updates URL with all expected params @e2e @smoke @regression', async () => {
+  test('valid search updates URL with all expected params @e2e @smoke @regression', async ({ page }) => {
+    await page.setExtraHTTPHeaders({ 'x-scenario': 'nonstopLaxJfk' });
+
     const departureDate = addDays(startOfTomorrow(), 3);
     const returnDate = addDays(startOfTomorrow(), 7);
 
-    await flightSearchPage.form.fillOrigin("YYZ");
-    await flightSearchPage.form.fillDestination("YVR");
+    await flightSearchPage.form.fillOrigin("LAX");
+    await flightSearchPage.form.fillDestination("JFK");
     await flightSearchPage.form.fillDateSelector('departure', departureDate);
     await flightSearchPage.form.fillDateSelector('return', returnDate);
     await flightSearchPage.form.submitSearch();
 
-    await flightSearchPage.form.expectSearchURL({ origin: "YYZ", destination: "YVR", adults: "1", children: "0", infants: "0" });
+    await flightSearchPage.form.expectSearchURL({ origin: "LAX", destination: "JFK", adults: "1", children: "0", infants: "0" });
   });
 
   test("expect form to be autofilled with URL parameters @regression", async ({ page }) => {
@@ -176,7 +178,7 @@ test.describe('Flight Search Component', () => {
     for (let i = 0; i < 2; i++) {
       await flightSearchPage.form.increasePassengerCounter('infants');
     };
-    await expect(flightSearchPage.form.expectDisabledIncreaseButton('infants'));
+    await flightSearchPage.form.expectDisabledIncreaseButton('infants');
   });
 
   test('error is shown when user tries to decrease adult count lower than infant count @regression', async () => {
@@ -200,7 +202,7 @@ test.describe('Flight Search Component', () => {
   test('navigating directly to a URL with infants exceeding adults shows no offers found @regression', async ({ page }) => {
     const departureDate = getDateData(startOfTomorrow(), 2);
     const returnDate = getDateData(startOfTomorrow(), 7);
-    await page.goto(`/?originLocationCode=YYZ&destinationLocationCode=YVR&departureDate=${departureDate.url}&returnDate=${returnDate.url}&adults=8&children=2&childAges=2%2C2`);
+    await page.goto(`/?originLocationCode=YYZ&destinationLocationCode=YVR&departureDate=${departureDate.url}&returnDate=${returnDate.url}&adults=1&infants=2&infantAges=0%2C2`);
     await expect(page.getByText("No offers found")).toBeVisible();
   })
 })

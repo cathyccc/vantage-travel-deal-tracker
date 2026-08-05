@@ -2,20 +2,32 @@ import { test, expect, Page, Locator } from '@playwright/test';
 import { FlightSearchForm } from '../components/FlightSearchForm';
 import { Results } from '../components/Results';
 import { format } from 'date-fns';
+import { OfferDetailsDialog } from '../components/OfferDetailsDialog';
 
 export class FlightSearchPage {
   readonly page: Page;
   readonly form: FlightSearchForm;
   readonly results: Results;
+  readonly offerDialog: OfferDetailsDialog;
 
   constructor(page: Page) {
     this.page = page;
     this.form = new FlightSearchForm(page);
     this.results = new Results(page);
+    this.offerDialog = new OfferDetailsDialog(page);
   }
 
   async goto() {
     await this.page.goto('/')
+  }
+
+  async setScenario(scenario: string) {
+    await this.page.setExtraHTTPHeaders({ 'x-scenario': scenario });
+  }
+
+  async gotoWithScenario(scenario: string, path = '/') {
+    await this.setScenario(scenario);
+    await this.page.goto(path);
   }
 
   async completeSearchForm(origin: string, destination: string, departureDate: Date, returnDate: Date, adults: number, children: number, infants: number) {

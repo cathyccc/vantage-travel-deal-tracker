@@ -1,695 +1,697 @@
 {
-  "intended_payment_methods": [],
-  "total_emissions_kg": "713",
-  "intended_services": [],
-  "available_airline_credit_ids": [],
-  "payment_requirements": {
-    "requires_instant_payment": false,
-    "price_guarantee_expires_at": "2026-07-16T15:39:24Z",
-    "payment_required_by": "2026-07-17T15:39:24Z"
-  },
-  "supported_passenger_identity_document_types": [
-    "passport",
-    "known_traveler_number",
-    "passenger_redress_number"
-  ],
-  "passenger_identity_documents_required": false,
-  "tax_currency": "USD",
-  "available_services": [],
-  "supported_loyalty_programmes": [
-    "AA",
-    "AS",
-    "CX",
-    "MH",
-    "BA",
-    "AY",
-    "UL",
-    "QF",
-    "IB",
-    "JM",
-    "QR",
-    "UM",
-    "RJ",
-    "AT"
-  ],
-  "private_fares": [],
-  "tax_amount": "65.67",
-  "base_amount": "364.83",
-  "base_currency": "USD",
-  "total_currency": "USD",
-  "live_mode": false,
-  "total_amount": "430.50",
-  "created_at": "2026-07-14T15:39:24.231025Z",
-  "slices": [
-    {
-      "comparison_key": "Ae9YGA==",
-      "ngs_shelf": 1,
-      "destination_type": "airport",
-      "origin_type": "airport",
-      "fare_brand_name": "Basic Economy",
-      "segments": [
-        {
-          "origin_terminal": "2",
-          "destination_terminal": "1",
-          "aircraft": null,
-          "departing_at": "2026-07-30T22:27:00",
-          "arriving_at": "2026-07-31T01:18:00",
-          "stops": [],
-          "operating_carrier": {
-            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-            "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-            "iata_code": "AA",
-            "name": "American Airlines",
-            "id": "arl_00009VME7DAGiJjwomhv32"
-          },
-          "marketing_carrier": {
-            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-            "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-            "iata_code": "AA",
-            "name": "American Airlines",
-            "id": "arl_00009VME7DAGiJjwomhv32"
-          },
-          "operating_carrier_flight_number": "1274",
-          "marketing_carrier_flight_number": "1274",
-          "passengers": [
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1I",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
+  "data": {
+    "intended_payment_methods": [],
+    "total_emissions_kg": "713",
+    "intended_services": [],
+    "available_airline_credit_ids": [],
+    "payment_requirements": {
+      "requires_instant_payment": false,
+      "price_guarantee_expires_at": "2026-07-16T15:39:24Z",
+      "payment_required_by": "2026-07-17T15:39:24Z"
+    },
+    "supported_passenger_identity_document_types": [
+      "passport",
+      "known_traveler_number",
+      "passenger_redress_number"
+    ],
+    "passenger_identity_documents_required": false,
+    "tax_currency": "USD",
+    "available_services": [],
+    "supported_loyalty_programmes": [
+      "AA",
+      "AS",
+      "CX",
+      "MH",
+      "BA",
+      "AY",
+      "UL",
+      "QF",
+      "IB",
+      "JM",
+      "QR",
+      "UM",
+      "RJ",
+      "AT"
+    ],
+    "private_fares": [],
+    "tax_amount": "65.67",
+    "base_amount": "364.83",
+    "base_currency": "USD",
+    "total_currency": "USD",
+    "live_mode": false,
+    "total_amount": "430.50",
+    "created_at": "2026-07-14T15:39:24.231025Z",
+    "slices": [
+      {
+        "comparison_key": "Ae9YGA==",
+        "ngs_shelf": 1,
+        "destination_type": "airport",
+        "origin_type": "airport",
+        "fare_brand_name": "Basic Economy",
+        "segments": [
+          {
+            "origin_terminal": "2",
+            "destination_terminal": "1",
+            "aircraft": null,
+            "departing_at": "2026-07-30T22:27:00",
+            "arriving_at": "2026-07-31T01:18:00",
+            "stops": [],
+            "operating_carrier": {
+              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+              "iata_code": "AA",
+              "name": "American Airlines",
+              "id": "arl_00009VME7DAGiJjwomhv32"
             },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1Y",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
+            "marketing_carrier": {
+              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+              "iata_code": "AA",
+              "name": "American Airlines",
+              "id": "arl_00009VME7DAGiJjwomhv32"
             },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1r",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
+            "operating_carrier_flight_number": "1274",
+            "marketing_carrier_flight_number": "1274",
+            "passengers": [
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
                   },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
                   }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1I",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
                 },
-                "marketing_name": "Economy",
-                "name": "economy"
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
               },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh29",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
                   },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
                   }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1Y",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
                 },
-                "marketing_name": "Economy",
-                "name": "economy"
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
               },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            }
-          ],
-          "distance": "1702.0301343874235",
-          "duration": "PT2H51M",
-          "destination": {
-            "airports": null,
-            "city_name": "Orlando",
-            "iata_city_code": "ORL",
-            "iata_country_code": "US",
-            "icao_code": "KMCO",
-            "iata_code": "MCO",
-            "latitude": 28.43026,
-            "longitude": -81.308493,
-            "city": {
-              "city_name": null,
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1r",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              },
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh29",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              }
+            ],
+            "distance": "1702.0301343874235",
+            "duration": "PT2H51M",
+            "destination": {
+              "airports": null,
+              "city_name": "Orlando",
               "iata_city_code": "ORL",
               "iata_country_code": "US",
-              "icao_code": null,
-              "iata_code": "ORL",
-              "latitude": null,
-              "longitude": null,
-              "time_zone": null,
-              "type": "city",
-              "name": "Orlando",
-              "id": "cit_orl_us"
+              "icao_code": "KMCO",
+              "iata_code": "MCO",
+              "latitude": 28.43026,
+              "longitude": -81.308493,
+              "city": {
+                "city_name": null,
+                "iata_city_code": "ORL",
+                "iata_country_code": "US",
+                "icao_code": null,
+                "iata_code": "ORL",
+                "latitude": null,
+                "longitude": null,
+                "time_zone": null,
+                "type": "city",
+                "name": "Orlando",
+                "id": "cit_orl_us"
+              },
+              "time_zone": "America/New_York",
+              "type": "airport",
+              "name": "Orlando International Airport",
+              "id": "arp_mco_us"
             },
-            "time_zone": "America/New_York",
-            "type": "airport",
-            "name": "Orlando International Airport",
-            "id": "arp_mco_us"
-          },
-          "origin": {
-            "airports": null,
-            "city_name": "Toronto",
-            "iata_city_code": "YTO",
-            "iata_country_code": "CA",
-            "icao_code": "CYYZ",
-            "iata_code": "YYZ",
-            "latitude": 43.677459,
-            "longitude": -79.62771,
-            "city": {
-              "city_name": null,
+            "origin": {
+              "airports": null,
+              "city_name": "Toronto",
               "iata_city_code": "YTO",
               "iata_country_code": "CA",
-              "icao_code": null,
-              "iata_code": "YTO",
-              "latitude": null,
-              "longitude": null,
-              "time_zone": null,
-              "type": "city",
-              "name": "Toronto",
-              "id": "cit_yto_ca"
+              "icao_code": "CYYZ",
+              "iata_code": "YYZ",
+              "latitude": 43.677459,
+              "longitude": -79.62771,
+              "city": {
+                "city_name": null,
+                "iata_city_code": "YTO",
+                "iata_country_code": "CA",
+                "icao_code": null,
+                "iata_code": "YTO",
+                "latitude": null,
+                "longitude": null,
+                "time_zone": null,
+                "type": "city",
+                "name": "Toronto",
+                "id": "cit_yto_ca"
+              },
+              "time_zone": "America/Toronto",
+              "type": "airport",
+              "name": "Toronto Pearson International Airport",
+              "id": "arp_yyz_ca"
             },
-            "time_zone": "America/Toronto",
-            "type": "airport",
-            "name": "Toronto Pearson International Airport",
-            "id": "arp_yyz_ca"
+            "id": "seg_0000B8Kb42ZuWhtgg9Z9F2"
+          }
+        ],
+        "conditions": {
+          "change_before_departure": {
+            "penalty_currency": "USD",
+            "penalty_amount": "70.00",
+            "allowed": true
           },
-          "id": "seg_0000B8Kb42ZuWhtgg9Z9F2"
-        }
-      ],
-      "conditions": {
-        "change_before_departure": {
-          "penalty_currency": "USD",
-          "penalty_amount": "70.00",
-          "allowed": true
+          "priority_check_in": null,
+          "priority_boarding": null,
+          "advance_seat_selection": null
         },
-        "priority_check_in": null,
-        "priority_boarding": null,
-        "advance_seat_selection": null
-      },
-      "duration": "PT2H51M",
-      "destination": {
-        "airports": null,
-        "city_name": "Orlando",
-        "iata_city_code": "ORL",
-        "iata_country_code": "US",
-        "icao_code": "KMCO",
-        "iata_code": "MCO",
-        "latitude": 28.43026,
-        "longitude": -81.308493,
-        "city": {
-          "city_name": null,
+        "duration": "PT2H51M",
+        "destination": {
+          "airports": null,
+          "city_name": "Orlando",
           "iata_city_code": "ORL",
           "iata_country_code": "US",
-          "icao_code": null,
-          "iata_code": "ORL",
-          "latitude": null,
-          "longitude": null,
-          "time_zone": null,
-          "type": "city",
-          "name": "Orlando",
-          "id": "cit_orl_us"
-        },
-        "time_zone": "America/New_York",
-        "type": "airport",
-        "name": "Orlando International Airport",
-        "id": "arp_mco_us"
-      },
-      "origin": {
-        "airports": null,
-        "city_name": "Toronto",
-        "iata_city_code": "YTO",
-        "iata_country_code": "CA",
-        "icao_code": "CYYZ",
-        "iata_code": "YYZ",
-        "latitude": 43.677459,
-        "longitude": -79.62771,
-        "city": {
-          "city_name": null,
-          "iata_city_code": "YTO",
-          "iata_country_code": "CA",
-          "icao_code": null,
-          "iata_code": "YTO",
-          "latitude": null,
-          "longitude": null,
-          "time_zone": null,
-          "type": "city",
-          "name": "Toronto",
-          "id": "cit_yto_ca"
-        },
-        "time_zone": "America/Toronto",
-        "type": "airport",
-        "name": "Toronto Pearson International Airport",
-        "id": "arp_yyz_ca"
-      },
-      "id": "sli_0000B8Kb42ZuWhtgg9Z9F3"
-    },
-    {
-      "comparison_key": "BEluBQ==",
-      "ngs_shelf": 1,
-      "destination_type": "airport",
-      "origin_type": "airport",
-      "fare_brand_name": "Basic Economy",
-      "segments": [
-        {
-          "origin_terminal": "2",
-          "destination_terminal": "1",
-          "aircraft": null,
-          "departing_at": "2026-08-07T04:38:00",
-          "arriving_at": "2026-08-07T07:29:00",
-          "stops": [],
-          "operating_carrier": {
-            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-            "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-            "iata_code": "AA",
-            "name": "American Airlines",
-            "id": "arl_00009VME7DAGiJjwomhv32"
-          },
-          "marketing_carrier": {
-            "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-            "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-            "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-            "iata_code": "AA",
-            "name": "American Airlines",
-            "id": "arl_00009VME7DAGiJjwomhv32"
-          },
-          "operating_carrier_flight_number": "1274",
-          "marketing_carrier_flight_number": "1274",
-          "passengers": [
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1I",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1Y",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1r",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            },
-            {
-              "baggages": [
-                {
-                  "quantity": 1,
-                  "type": "checked"
-                },
-                {
-                  "quantity": 1,
-                  "type": "carry_on"
-                }
-              ],
-              "cabin_class_marketing_name": "Economy",
-              "passenger_id": "pas_0000B8Kb42J8JAUpR3hh29",
-              "cabin": {
-                "amenities": {
-                  "seat": {
-                    "pitch": "30",
-                    "legroom": "n/a",
-                    "type": null
-                  },
-                  "wifi": {
-                    "cost": "paid",
-                    "available": true
-                  },
-                  "power": {
-                    "available": true
-                  }
-                },
-                "marketing_name": "Economy",
-                "name": "economy"
-              },
-              "cabin_class": "economy",
-              "fare_basis_code": "Y20LGTN2"
-            }
-          ],
-          "distance": "1702.0301343874235",
-          "duration": "PT2H51M",
-          "destination": {
-            "airports": null,
-            "city_name": "Toronto",
-            "iata_city_code": "YTO",
-            "iata_country_code": "CA",
-            "icao_code": "CYYZ",
-            "iata_code": "YYZ",
-            "latitude": 43.677459,
-            "longitude": -79.62771,
-            "city": {
-              "city_name": null,
-              "iata_city_code": "YTO",
-              "iata_country_code": "CA",
-              "icao_code": null,
-              "iata_code": "YTO",
-              "latitude": null,
-              "longitude": null,
-              "time_zone": null,
-              "type": "city",
-              "name": "Toronto",
-              "id": "cit_yto_ca"
-            },
-            "time_zone": "America/Toronto",
-            "type": "airport",
-            "name": "Toronto Pearson International Airport",
-            "id": "arp_yyz_ca"
-          },
-          "origin": {
-            "airports": null,
-            "city_name": "Orlando",
+          "icao_code": "KMCO",
+          "iata_code": "MCO",
+          "latitude": 28.43026,
+          "longitude": -81.308493,
+          "city": {
+            "city_name": null,
             "iata_city_code": "ORL",
             "iata_country_code": "US",
-            "icao_code": "KMCO",
-            "iata_code": "MCO",
-            "latitude": 28.43026,
-            "longitude": -81.308493,
-            "city": {
-              "city_name": null,
-              "iata_city_code": "ORL",
-              "iata_country_code": "US",
-              "icao_code": null,
-              "iata_code": "ORL",
-              "latitude": null,
-              "longitude": null,
-              "time_zone": null,
-              "type": "city",
-              "name": "Orlando",
-              "id": "cit_orl_us"
-            },
-            "time_zone": "America/New_York",
-            "type": "airport",
-            "name": "Orlando International Airport",
-            "id": "arp_mco_us"
+            "icao_code": null,
+            "iata_code": "ORL",
+            "latitude": null,
+            "longitude": null,
+            "time_zone": null,
+            "type": "city",
+            "name": "Orlando",
+            "id": "cit_orl_us"
           },
-          "id": "seg_0000B8Kb42ZuWhtgg9Z9F4"
-        }
-      ],
-      "conditions": {
-        "change_before_departure": {
-          "penalty_currency": "USD",
-          "penalty_amount": "70.00",
-          "allowed": true
+          "time_zone": "America/New_York",
+          "type": "airport",
+          "name": "Orlando International Airport",
+          "id": "arp_mco_us"
         },
-        "priority_check_in": null,
-        "priority_boarding": null,
-        "advance_seat_selection": null
-      },
-      "duration": "PT2H51M",
-      "destination": {
-        "airports": null,
-        "city_name": "Toronto",
-        "iata_city_code": "YTO",
-        "iata_country_code": "CA",
-        "icao_code": "CYYZ",
-        "iata_code": "YYZ",
-        "latitude": 43.677459,
-        "longitude": -79.62771,
-        "city": {
-          "city_name": null,
+        "origin": {
+          "airports": null,
+          "city_name": "Toronto",
           "iata_city_code": "YTO",
           "iata_country_code": "CA",
-          "icao_code": null,
-          "iata_code": "YTO",
-          "latitude": null,
-          "longitude": null,
-          "time_zone": null,
-          "type": "city",
-          "name": "Toronto",
-          "id": "cit_yto_ca"
+          "icao_code": "CYYZ",
+          "iata_code": "YYZ",
+          "latitude": 43.677459,
+          "longitude": -79.62771,
+          "city": {
+            "city_name": null,
+            "iata_city_code": "YTO",
+            "iata_country_code": "CA",
+            "icao_code": null,
+            "iata_code": "YTO",
+            "latitude": null,
+            "longitude": null,
+            "time_zone": null,
+            "type": "city",
+            "name": "Toronto",
+            "id": "cit_yto_ca"
+          },
+          "time_zone": "America/Toronto",
+          "type": "airport",
+          "name": "Toronto Pearson International Airport",
+          "id": "arp_yyz_ca"
         },
-        "time_zone": "America/Toronto",
-        "type": "airport",
-        "name": "Toronto Pearson International Airport",
-        "id": "arp_yyz_ca"
+        "id": "sli_0000B8Kb42ZuWhtgg9Z9F3"
       },
-      "origin": {
-        "airports": null,
-        "city_name": "Orlando",
-        "iata_city_code": "ORL",
-        "iata_country_code": "US",
-        "icao_code": "KMCO",
-        "iata_code": "MCO",
-        "latitude": 28.43026,
-        "longitude": -81.308493,
-        "city": {
-          "city_name": null,
+      {
+        "comparison_key": "BEluBQ==",
+        "ngs_shelf": 1,
+        "destination_type": "airport",
+        "origin_type": "airport",
+        "fare_brand_name": "Basic Economy",
+        "segments": [
+          {
+            "origin_terminal": "2",
+            "destination_terminal": "1",
+            "aircraft": null,
+            "departing_at": "2026-08-07T04:38:00",
+            "arriving_at": "2026-08-07T07:29:00",
+            "stops": [],
+            "operating_carrier": {
+              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+              "iata_code": "AA",
+              "name": "American Airlines",
+              "id": "arl_00009VME7DAGiJjwomhv32"
+            },
+            "marketing_carrier": {
+              "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+              "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+              "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+              "iata_code": "AA",
+              "name": "American Airlines",
+              "id": "arl_00009VME7DAGiJjwomhv32"
+            },
+            "operating_carrier_flight_number": "1274",
+            "marketing_carrier_flight_number": "1274",
+            "passengers": [
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1I",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              },
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1Y",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              },
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh1r",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              },
+              {
+                "baggages": [
+                  {
+                    "quantity": 1,
+                    "type": "checked"
+                  },
+                  {
+                    "quantity": 1,
+                    "type": "carry_on"
+                  }
+                ],
+                "cabin_class_marketing_name": "Economy",
+                "passenger_id": "pas_0000B8Kb42J8JAUpR3hh29",
+                "cabin": {
+                  "amenities": {
+                    "seat": {
+                      "pitch": "30",
+                      "legroom": "n/a",
+                      "type": null
+                    },
+                    "wifi": {
+                      "cost": "paid",
+                      "available": true
+                    },
+                    "power": {
+                      "available": true
+                    }
+                  },
+                  "marketing_name": "Economy",
+                  "name": "economy"
+                },
+                "cabin_class": "economy",
+                "fare_basis_code": "Y20LGTN2"
+              }
+            ],
+            "distance": "1702.0301343874235",
+            "duration": "PT2H51M",
+            "destination": {
+              "airports": null,
+              "city_name": "Toronto",
+              "iata_city_code": "YTO",
+              "iata_country_code": "CA",
+              "icao_code": "CYYZ",
+              "iata_code": "YYZ",
+              "latitude": 43.677459,
+              "longitude": -79.62771,
+              "city": {
+                "city_name": null,
+                "iata_city_code": "YTO",
+                "iata_country_code": "CA",
+                "icao_code": null,
+                "iata_code": "YTO",
+                "latitude": null,
+                "longitude": null,
+                "time_zone": null,
+                "type": "city",
+                "name": "Toronto",
+                "id": "cit_yto_ca"
+              },
+              "time_zone": "America/Toronto",
+              "type": "airport",
+              "name": "Toronto Pearson International Airport",
+              "id": "arp_yyz_ca"
+            },
+            "origin": {
+              "airports": null,
+              "city_name": "Orlando",
+              "iata_city_code": "ORL",
+              "iata_country_code": "US",
+              "icao_code": "KMCO",
+              "iata_code": "MCO",
+              "latitude": 28.43026,
+              "longitude": -81.308493,
+              "city": {
+                "city_name": null,
+                "iata_city_code": "ORL",
+                "iata_country_code": "US",
+                "icao_code": null,
+                "iata_code": "ORL",
+                "latitude": null,
+                "longitude": null,
+                "time_zone": null,
+                "type": "city",
+                "name": "Orlando",
+                "id": "cit_orl_us"
+              },
+              "time_zone": "America/New_York",
+              "type": "airport",
+              "name": "Orlando International Airport",
+              "id": "arp_mco_us"
+            },
+            "id": "seg_0000B8Kb42ZuWhtgg9Z9F4"
+          }
+        ],
+        "conditions": {
+          "change_before_departure": {
+            "penalty_currency": "USD",
+            "penalty_amount": "70.00",
+            "allowed": true
+          },
+          "priority_check_in": null,
+          "priority_boarding": null,
+          "advance_seat_selection": null
+        },
+        "duration": "PT2H51M",
+        "destination": {
+          "airports": null,
+          "city_name": "Toronto",
+          "iata_city_code": "YTO",
+          "iata_country_code": "CA",
+          "icao_code": "CYYZ",
+          "iata_code": "YYZ",
+          "latitude": 43.677459,
+          "longitude": -79.62771,
+          "city": {
+            "city_name": null,
+            "iata_city_code": "YTO",
+            "iata_country_code": "CA",
+            "icao_code": null,
+            "iata_code": "YTO",
+            "latitude": null,
+            "longitude": null,
+            "time_zone": null,
+            "type": "city",
+            "name": "Toronto",
+            "id": "cit_yto_ca"
+          },
+          "time_zone": "America/Toronto",
+          "type": "airport",
+          "name": "Toronto Pearson International Airport",
+          "id": "arp_yyz_ca"
+        },
+        "origin": {
+          "airports": null,
+          "city_name": "Orlando",
           "iata_city_code": "ORL",
           "iata_country_code": "US",
-          "icao_code": null,
-          "iata_code": "ORL",
-          "latitude": null,
-          "longitude": null,
-          "time_zone": null,
-          "type": "city",
-          "name": "Orlando",
-          "id": "cit_orl_us"
+          "icao_code": "KMCO",
+          "iata_code": "MCO",
+          "latitude": 28.43026,
+          "longitude": -81.308493,
+          "city": {
+            "city_name": null,
+            "iata_city_code": "ORL",
+            "iata_country_code": "US",
+            "icao_code": null,
+            "iata_code": "ORL",
+            "latitude": null,
+            "longitude": null,
+            "time_zone": null,
+            "type": "city",
+            "name": "Orlando",
+            "id": "cit_orl_us"
+          },
+          "time_zone": "America/New_York",
+          "type": "airport",
+          "name": "Orlando International Airport",
+          "id": "arp_mco_us"
         },
-        "time_zone": "America/New_York",
-        "type": "airport",
-        "name": "Orlando International Airport",
-        "id": "arp_mco_us"
+        "id": "sli_0000B8Kb42ZuWhtgg9Z9F5"
+      }
+    ],
+    "passengers": [
+      {
+        "loyalty_programme_accounts": [],
+        "family_name": null,
+        "given_name": null,
+        "age": null,
+        "type": "adult",
+        "id": "pas_0000B8Kb42J8JAUpR3hh1I"
       },
-      "id": "sli_0000B8Kb42ZuWhtgg9Z9F5"
-    }
-  ],
-  "passengers": [
-    {
-      "loyalty_programme_accounts": [],
-      "family_name": null,
-      "given_name": null,
-      "age": null,
-      "type": "adult",
-      "id": "pas_0000B8Kb42J8JAUpR3hh1I"
+      {
+        "loyalty_programme_accounts": [],
+        "family_name": null,
+        "given_name": null,
+        "age": null,
+        "type": "adult",
+        "id": "pas_0000B8Kb42J8JAUpR3hh1Y"
+      },
+      {
+        "loyalty_programme_accounts": [],
+        "family_name": null,
+        "given_name": null,
+        "age": 5,
+        "type": "child",
+        "id": "pas_0000B8Kb42J8JAUpR3hh1r"
+      },
+      {
+        "loyalty_programme_accounts": [],
+        "family_name": null,
+        "given_name": null,
+        "age": 1,
+        "type": "infant_without_seat",
+        "id": "pas_0000B8Kb42J8JAUpR3hh29"
+      }
+    ],
+    "conditions": {
+      "refund_before_departure": {
+        "penalty_currency": null,
+        "penalty_amount": null,
+        "allowed": false
+      },
+      "change_before_departure": {
+        "penalty_currency": "USD",
+        "penalty_amount": "70.00",
+        "allowed": true
+      }
     },
-    {
-      "loyalty_programme_accounts": [],
-      "family_name": null,
-      "given_name": null,
-      "age": null,
-      "type": "adult",
-      "id": "pas_0000B8Kb42J8JAUpR3hh1Y"
+    "updated_at": "2026-07-14T15:40:12.403889Z",
+    "expires_at": "2026-07-14T16:09:24.231028Z",
+    "partial": false,
+    "owner": {
+      "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
+      "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
+      "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
+      "iata_code": "AA",
+      "name": "American Airlines",
+      "id": "arl_00009VME7DAGiJjwomhv32"
     },
-    {
-      "loyalty_programme_accounts": [],
-      "family_name": null,
-      "given_name": null,
-      "age": 5,
-      "type": "child",
-      "id": "pas_0000B8Kb42J8JAUpR3hh1r"
-    },
-    {
-      "loyalty_programme_accounts": [],
-      "family_name": null,
-      "given_name": null,
-      "age": 1,
-      "type": "infant_without_seat",
-      "id": "pas_0000B8Kb42J8JAUpR3hh29"
-    }
-  ],
-  "conditions": {
-    "refund_before_departure": {
-      "penalty_currency": null,
-      "penalty_amount": null,
-      "allowed": false
-    },
-    "change_before_departure": {
-      "penalty_currency": "USD",
-      "penalty_amount": "70.00",
-      "allowed": true
-    }
-  },
-  "updated_at": "2026-07-14T15:40:12.403889Z",
-  "expires_at": "2026-07-14T16:09:24.231028Z",
-  "partial": false,
-  "owner": {
-    "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/AA.svg",
-    "logo_lockup_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-lockup/AA.svg",
-    "conditions_of_carriage_url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp",
-    "iata_code": "AA",
-    "name": "American Airlines",
-    "id": "arl_00009VME7DAGiJjwomhv32"
-  },
-  "id": "off_0000B8Kb42aGVOBGhFjQnI"
+    "id": "off_0000B8Kb42aGVOBGhFjQnI"
+  }
 }
