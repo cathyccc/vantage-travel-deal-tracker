@@ -4,7 +4,7 @@ Vantage is a high-performance flight search and deal tracking application design
 
 ## 🚀 Features
 
-* **Real-time Search:** Powered by the **Amadeus Flight Offers API** for accurate, live pricing.
+* **Real-time Search:** Powered by the **Duffel API** for accurate, live pricing.
 * **Smart Autofill:** Currently leveraging **Fuse.js** for lightning-fast local fuzzy searching.
 * **Modern UI:** A sleek, responsive interface built with **Tailwind CSS** and **shadcn/ui** components.
 * **Hybrid Architecture:** Leveraging **Next.js** for routing and **Vite** for optimized development.
@@ -26,9 +26,8 @@ Vantage is a high-performance flight search and deal tracking application design
 ## 🗺️ Roadmap
 🎯 Current Focus: Test Automation
 - [ ] End-to-End Suite (Playwright): Implementing robust coverage for the full booking journey:
-  - Search & Offer Selection flow.
-  - Passenger form validation & data submission.
-  - Mock API/Payment integration tests.
+  - [x] Search & Offer Selection flow.
+  - [ ] Passenger form validation & data submission.
 - [ ] Confirmation UI verification.
 - [ ] Unit/Integration Testing: Implementing tests for core helper functions and API error handling.
 
@@ -53,10 +52,6 @@ cd vantage-flight-deal-tracker
 ### 2. Configure Environment Variables
 Create a file named .env in the root directory and add your credentials:
 ```code
-# Amadeus API Credentials
-AMADEUS_CLIENT_ID=your_amadeus_key_here
-AMADEUS_CLIENT_SECRET=your_amadeus_secret_here
-
 # Next Configuration
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
