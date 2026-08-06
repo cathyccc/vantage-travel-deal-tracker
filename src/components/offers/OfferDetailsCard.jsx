@@ -30,7 +30,7 @@ export default function OfferDetailsCard({offer, goToFare}) {
           {
             slices[0].segments.map(s => {
               return (
-                <FlightDetailsCard key={s.id} segment={s}/>
+                <FlightDetailsCard key={s.id} segment={s} sliceType="departure"/>
               )
             })
           }
@@ -54,7 +54,7 @@ export default function OfferDetailsCard({offer, goToFare}) {
           {
             slices[1].segments.map(s => {
               return (
-                <FlightDetailsCard key={s.id} segment={s}/>
+                <FlightDetailsCard key={s.id} segment={s} sliceType="return"/>
               )
             })
           }

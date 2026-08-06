@@ -77,7 +77,7 @@ export default function OfferResultsCard({offer}) {
     } else {
       return layoverArr.map(layover => {
         return (
-          <span key={layover.layoverLocationCode}  className="block text-[10px] text-violet-500 block">
+          <span data-testid={`offer-layover-duration-${layover.layoverLocationCode}`} key={layover.layoverLocationCode}  className="block text-[10px] text-violet-500 block">
             {layover.layoverDuration} in {getLocationName(layover.layoverLocationCode)}
           </span>
         )

@@ -1,14 +1,14 @@
 import { parseISODuration, formatCabinClassName, displayDateDiff, displayGateNum } from "@/lib/flightUtils";
 import { format } from 'date-fns';
 
-export default function FlightDetailsCard({ segment }) {
+export default function FlightDetailsCard({ segment, sliceType }) {
   const displayCheckedBagsQuantity = () => {
     const quantity = segment.passengers[0].baggages.find(b => b.type === "checked")?.quantity;
     return quantity === 0 ? 'No' : quantity;
   }
 
   return (
-    <div data-testid="flight-detail-segment" className="flex flex-col h-full bg-zinc-800 rounded-lg px-6 py-3 mt-3 flex-grow">
+    <div data-testid={`flight-detail-segment-${sliceType}`} className="flex flex-col h-full bg-zinc-800 rounded-lg px-6 py-3 mt-3 flex-grow">
         <div className="text-zinc-200 text-xs">
           {segment.marketing_carrier.name} – {segment.marketing_carrier.iata_code} {segment.marketing_carrier_flight_number}
           <span className="block text-[10px] font-extralight">
@@ -21,7 +21,7 @@ export default function FlightDetailsCard({ segment }) {
             <div className="absolute inset-0 w-0.5 bg-zinc-400 rounded-full left-0 -translate-x-4 mt-5 mb-12"></div>
             <div className="flex flex-col justify-between">
               <div>
-                <span className="block text-lg/5 text-zinc-200 ">{segment.origin.city_name}</span>
+                <span data-testid="flight-detail-origin-city" className="block text-lg/5 text-zinc-200 ">{segment.origin.city_name}</span>
                 <span className="block font-light text-xs text-zinc-200">{`${segment.origin.name} (${segment.origin.iata_code})`}</span>
                 <span className="block font-light text-[10px] text-zinc-400">({displayGateNum(segment.origin_terminal)})</span>
               </div>
@@ -29,7 +29,7 @@ export default function FlightDetailsCard({ segment }) {
                 <span data-testid="flight-detail-travel-time" className="block text-xs text-purple-300">Travel time: {parseISODuration(segment.duration)}</span>
               </div>
               <div>
-                <span className="block text-lg/5 text-zinc-200">{segment.destination.city_name}</span>
+                <span data-testid="flight-detail-destination-city" className="block text-lg/5 text-zinc-200">{segment.destination.city_name}</span>
                 <span className="block font-light text-xs text-zinc-200">{`${segment.destination.name} (${segment.destination.iata_code})`}</span>
                 <span className="block font-light text-[10px] text-zinc-400">({displayGateNum(segment.destination_terminal)})</span>
               </div>
@@ -38,16 +38,16 @@ export default function FlightDetailsCard({ segment }) {
 
           <div className="flex flex-col justify-between text-right py-2">
             <div>
-              <span className="block text-lg/5 text-zinc-200">{format(segment.departing_at, 'h:mm aaaa')}</span>
+              <span data-testid="flight-detail-departure-time"className="block text-lg/5 text-zinc-200">{format(segment.departing_at, 'h:mm aaaa')}</span>
               <span className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.departing_at, 'EEE, MMM d')}</span>
             </div>
             <div>
               <span className="flex items-baseline">
-                <span className="text-lg/5 text-zinc-200">{format(segment.arriving_at, 'h:mm aaaa')}</span>
+                <span data-testid="flight-detail-arrival-time" className="text-lg/5 text-zinc-200">{format(segment.arriving_at, 'h:mm aaaa')}</span>
                 <span className="text-xs text-rose-500 font-light tracking-wider pl-1 self-start">{displayDateDiff(segment)}</span>
               </span>
-              <span className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
+              <span  className="block font-light text-[10px] text-zinc-500">{`(Local Time)`}</span>
               <span className="block font-light text-xs text-zinc-200">{format(segment.arriving_at, 'EEE, MMM d')}</span>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 
-export class OfferCard {
+export class OfferResultsCard {
   readonly root: Locator;
   readonly price: Locator;
   readonly departureTime: Locator;
@@ -19,6 +19,10 @@ export class OfferCard {
     this.arrivalCity = root.getByTestId('offer-arrival-city');
     this.duration = root.getByTestId('offer-duration');
     this.viewDetailsButton = root.getByRole('button', { name: 'View Details' });
+  }
+
+  layoverDuration(location: string) {
+    return this.root.getByTestId(`offer-layover-duration-${location}`);
   }
 
   async clickViewDetails() {

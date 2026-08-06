@@ -60,7 +60,7 @@ export const handlers = [
     const fixture = SELECTED_OFFERS[params.offerId];
     if (!fixture) {
       return HttpResponse.json(
-        {errors: [{message: `Unknown test offerId "${params.offerId}`}]},
+        {errors: [{message: `Unknown test offerId "${params.offerId}"`}]},
         {status: 404},
       )
     }
